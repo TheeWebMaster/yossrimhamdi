@@ -1,12 +1,12 @@
 .frontal {
   position: relative;
-  text-transform: uppercase;
 
   &__headline {
-    font-size: 6rem;
+    font-size: 5.5rem;
     font-weight: 800;
     margin: 0;
     line-height: 0.82em;
+
     @mixin atLarge {
       font-size: 26rem;
     }
@@ -27,13 +27,5 @@
         right: 20vw;
       }
     }
-  }
-
-  &__message {
-    position: absolute;
-    left: 30vw;
-    transform: translate(-100%, -100%);
-    font-size: 1.2rem;
-    text-align: right;
   }
 }

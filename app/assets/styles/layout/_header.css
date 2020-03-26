@@ -1,0 +1,45 @@
+.header {
+  position: relative;
+  padding: 1em;
+  font-weight: 300;
+
+  @mixin atLarge {
+    font-size: 1.2rem;
+    padding: 3em 4em;
+  }
+  &__my-name {
+    font-size: 1.3rem;
+
+    @mixin atLarge {
+      font-size: 1.8rem;
+    }
+  }
+  &__professional-skill {
+    display: none;
+
+    @mixin atLarge {
+      display: block;
+    }
+  }
+  &__availability-message {
+    position: absolute;
+    bottom: 1em;
+    line-height: 1em;
+
+    @mixin atLarge {
+      line-height: 150%;
+      bottom: 0;
+      left: 30vw;
+      transform: translate(-100%, 50%);
+    }
+  }
+  &__nav {
+    line-height: 2.3em;
+    text-align: right;
+
+    @mixin atLarge {
+      line-height: 150%;
+      text-align: left;
+    }
+  }
+}

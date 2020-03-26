@@ -7,4 +7,5 @@ body {
   background-color: $skiny;
   margin: 0;
   overflow-x: hidden;
+  text-transform: uppercase;
 }
