@@ -1,5 +1,6 @@
-@import './base/_typography';
+@import './utils/_mixins';
 @import './utils/_variables';
+@import './base/_typography';
 @import './base/_general';
 @import './components/_frontal';
 @import './components/_list';

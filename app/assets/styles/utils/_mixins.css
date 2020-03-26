@@ -1,0 +1,5 @@
+@define-mixin atLarge {
+  @media only screen and (min-width: 1024px) {
+    @mixin-content;
+  }
+}

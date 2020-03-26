@@ -9,7 +9,7 @@ import hexRgba from 'postcss-hexrgba';
 
 const compileCss = () => {
   return src('./app/assets/styles/styles.css')
-    .pipe(postcss([imports, variables, nested, autoprefixer, mixins, hexRgba]))
+    .pipe(postcss([imports, mixins, variables, nested, autoprefixer, hexRgba]))
     .pipe(dest('./app/temp/styles/'));
 };
 
