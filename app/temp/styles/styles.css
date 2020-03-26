@@ -43,8 +43,6 @@
     margin: 5em 4em;
     border-top-width: 3px
 }
-  }.milestone__num {
-    font-size: 1rem;
   }@media only screen and (min-width: 1024px) {.milestone__num {
       font-size: 2rem
   }
@@ -60,9 +58,6 @@
     display: inline-flex;
   }.flex--space-between {
     justify-content: space-between;
-  }.flex--centered-on-cross-axes {
-    /* align-items: center; */
-    align-items: flex-start;
   }.flex--to-the-right {
     justify-content: flex-end;
   }.header {
