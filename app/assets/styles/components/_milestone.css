@@ -1,0 +1,16 @@
+.milestone {
+  border-top: 3px solid $mainBlack;
+  margin: 4em;
+  width: 800px;
+  padding-top: 0.4em;
+  text-transform: uppercase;
+
+  &__num {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  &__description {
+    order: 1;
+    font-size: 2.2rem;
+  }
+}

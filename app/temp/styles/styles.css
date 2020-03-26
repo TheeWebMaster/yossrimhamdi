@@ -38,3 +38,30 @@ body {
   list-style-type: none;
   padding-left: 0;
 }
+.milestone {
+  border-top: 3px solid #000;
+  margin: 4em;
+  width: 800px;
+  padding-top: 0.4em;
+  text-transform: uppercase;
+}
+.milestone__num {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+.milestone__description {
+    order: 1;
+    font-size: 2.2rem;
+  }
+.flex {
+  display: flex;
+}
+.flex--inline {
+    display: inline-flex;
+  }
+.flex--space-between {
+    justify-content: space-between;
+  }
+.flex--to-the-right {
+    justify-content: flex-end;
+  }

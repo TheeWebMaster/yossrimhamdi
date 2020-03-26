@@ -3,3 +3,5 @@
 @import './base/_general';
 @import './components/_frontal';
 @import './components/_list';
+@import './components/_milestone';
+@import './layout/_flex';
