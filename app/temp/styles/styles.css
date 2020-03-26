@@ -36,7 +36,7 @@
 }.milestone {
   border-top: 2px solid #000;
   margin: 3em 1em;
-  width: 100%;
+  flex-basis: 100%;
   padding-top: 0.4em;
 }@media only screen and (min-width: 1024px) {.milestone {
     width: 800px;
@@ -54,9 +54,7 @@
   }
   }.flex {
   display: flex;
-}.flex--inline {
-    display: inline-flex;
-  }.flex--space-between {
+}.flex--space-between {
     justify-content: space-between;
   }.flex--to-the-right {
     justify-content: flex-end;
