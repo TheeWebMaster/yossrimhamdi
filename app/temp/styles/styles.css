@@ -34,23 +34,24 @@
   padding-left: 0;
   margin: 0;
 }.milestone {
-  border-top: 2px solid #000;
-  margin: 3em 1em;
+  border-top: 1px solid #000;
+  margin: 3em 0.4em;
   flex-basis: 100%;
   padding-top: 0.4em;
+  font-weight: 300;
 }@media only screen and (min-width: 1024px) {.milestone {
     width: 800px;
     margin: 5em 4em;
-    border-top-width: 3px
+    border-top-width: 2px
 }
   }@media only screen and (min-width: 1024px) {.milestone__num {
       font-size: 2rem
   }
   }.milestone__description {
     order: 1;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }@media only screen and (min-width: 1024px) {.milestone__description {
-      font-size: 2.2rem
+      font-size: 2.1rem
   }
   }.flex {
   display: flex;
