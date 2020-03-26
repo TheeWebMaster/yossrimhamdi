@@ -10,17 +10,26 @@
   position: relative;
   text-transform: uppercase;
 }.frontal__headline {
-    font-size: 26rem;
+    font-size: 6rem;
     font-weight: 800;
     margin: 0;
-    line-height: 0.75em;
+    line-height: 0.82em;
+  }@media only screen and (min-width: 1024px) {.frontal__headline {
+      font-size: 26rem
+  }
   }.frontal__headline--to-the-right {
       position: relative;
-      left: 30vw;
-    }.frontal__headline--to-the-left {
+      left: 10vw;
+    }@media only screen and (min-width: 1024px) {.frontal__headline--to-the-right {
+        left: 30vw
+    }
+  }.frontal__headline--to-the-left {
       position: absolute;
-      right: 20vw;
-    }.frontal__message {
+      right: 0;
+    }@media only screen and (min-width: 1024px) {.frontal__headline--to-the-left {
+        right: 20vw
+    }
+  }.frontal__message {
     position: absolute;
     left: 30vw;
     transform: translate(-100%, -100%);
@@ -31,13 +40,13 @@
   padding-left: 0;
 }.milestone {
   border-top: 2px solid #000;
-  margin: 1em;
+  margin: 3em 1em;
   width: 100%;
   padding-top: 0.4em;
   text-transform: uppercase;
 }@media only screen and (min-width: 1024px) {.milestone {
     width: 800px;
-    margin: 4em;
+    margin: 5em 4em;
     border-top-width: 3px
 }
   }.milestone__num {

@@ -3,18 +3,29 @@
   text-transform: uppercase;
 
   &__headline {
-    font-size: 26rem;
+    font-size: 6rem;
     font-weight: 800;
     margin: 0;
-    line-height: 0.75em;
+    line-height: 0.82em;
+    @mixin atLarge {
+      font-size: 26rem;
+    }
 
     &--to-the-right {
       position: relative;
-      left: 30vw;
+      left: 10vw;
+
+      @mixin atLarge {
+        left: 30vw;
+      }
     }
     &--to-the-left {
       position: absolute;
-      right: 20vw;
+      right: 0;
+
+      @mixin atLarge {
+        right: 20vw;
+      }
     }
   }
 

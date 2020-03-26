@@ -1,13 +1,13 @@
 .milestone {
   border-top: 2px solid $mainBlack;
-  margin: 1em;
+  margin: 3em 1em;
   width: 100%;
   padding-top: 0.4em;
   text-transform: uppercase;
 
   @mixin atLarge {
     width: 800px;
-    margin: 4em;
+    margin: 5em 4em;
     border-top-width: 3px;
   }
 
