@@ -1,3 +1,5 @@
-@import './base/_typography.css';
+@import './base/_typography';
 @import './utils/_variables';
-@import './base/_general.css';
+@import './base/_general';
+@import './components/_forehead';
+@import './components/_list';

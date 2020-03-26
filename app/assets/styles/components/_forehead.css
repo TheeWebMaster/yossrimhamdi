@@ -1,0 +1,28 @@
+.forehead {
+  position: relative;
+  text-transform: uppercase;
+
+  &__headline {
+    font-size: 26rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 0.75em;
+
+    &--to-the-right {
+      position: relative;
+      left: 30vw;
+    }
+    &--to-the-left {
+      position: absolute;
+      right: 20vw;
+    }
+  }
+
+  &__message {
+    position: absolute;
+    left: 30vw;
+    transform: translate(-100%, -100%);
+    font-size: 1.2rem;
+    text-align: right;
+  }
+}

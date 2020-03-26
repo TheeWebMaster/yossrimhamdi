@@ -1,5 +1,10 @@
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: 'Prompt', sans-serif;
   color: $mainBlack;
   background-color: $skiny;
+  margin: 0;
+  overflow-x: hidden;
 }
