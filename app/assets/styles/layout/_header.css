@@ -21,16 +21,7 @@
       display: block;
     }
   }
-  &__nav {
-    line-height: 2.3em;
-    text-align: right;
-
-    @mixin atLarge {
-      line-height: 150%;
-      text-align: left;
-    }
-  }
-  &__message {
+  &__availability-message {
     position: absolute;
     bottom: 1em;
     line-height: 1em;
@@ -40,6 +31,15 @@
       bottom: 0;
       left: 30vw;
       transform: translate(-100%, 50%);
+    }
+  }
+  &__nav {
+    line-height: 2.3em;
+    text-align: right;
+
+    @mixin atLarge {
+      line-height: 150%;
+      text-align: left;
     }
   }
 }

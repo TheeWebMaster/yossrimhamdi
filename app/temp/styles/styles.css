@@ -78,21 +78,21 @@
   }@media only screen and (min-width: 1024px) {.header__professional-skill {
       display: block
   }
+  }.header__availability-message {
+    position: absolute;
+    bottom: 1em;
+    line-height: 1em;
+  }@media only screen and (min-width: 1024px) {.header__availability-message {
+      line-height: 150%;
+      bottom: 0;
+      left: 30vw;
+      transform: translate(-100%, 50%)
+  }
   }.header__nav {
     line-height: 2.3em;
     text-align: right;
   }@media only screen and (min-width: 1024px) {.header__nav {
       line-height: 150%;
       text-align: left
-  }
-  }.header__message {
-    position: absolute;
-    bottom: 1em;
-    line-height: 1em;
-  }@media only screen and (min-width: 1024px) {.header__message {
-      line-height: 150%;
-      bottom: 0;
-      left: 30vw;
-      transform: translate(-100%, 50%)
   }
   }
