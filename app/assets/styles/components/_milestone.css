@@ -3,7 +3,6 @@
   margin: 3em 1em;
   width: 100%;
   padding-top: 0.4em;
-  text-transform: uppercase;
 
   @mixin atLarge {
     width: 800px;

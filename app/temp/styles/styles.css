@@ -6,11 +6,11 @@
   background-color: #faf5f1;
   margin: 0;
   overflow-x: hidden;
+  text-transform: uppercase;
 }.frontal {
   position: relative;
-  text-transform: uppercase;
 }.frontal__headline {
-    font-size: 6rem;
+    font-size: 5.5rem;
     font-weight: 800;
     margin: 0;
     line-height: 0.82em;
@@ -29,21 +29,15 @@
     }@media only screen and (min-width: 1024px) {.frontal__headline--to-the-left {
         right: 20vw
     }
-  }.frontal__message {
-    position: absolute;
-    left: 30vw;
-    transform: translate(-100%, -100%);
-    font-size: 1.2rem;
-    text-align: right;
   }.list {
   list-style-type: none;
   padding-left: 0;
+  margin: 0;
 }.milestone {
   border-top: 2px solid #000;
   margin: 3em 1em;
   width: 100%;
   padding-top: 0.4em;
-  text-transform: uppercase;
 }@media only screen and (min-width: 1024px) {.milestone {
     width: 800px;
     margin: 5em 4em;
@@ -66,6 +60,44 @@
     display: inline-flex;
   }.flex--space-between {
     justify-content: space-between;
+  }.flex--centered-on-cross-axes {
+    /* align-items: center; */
+    align-items: flex-start;
   }.flex--to-the-right {
     justify-content: flex-end;
+  }.header {
+  position: relative;
+  padding: 1em;
+  font-weight: 300;
+}@media only screen and (min-width: 1024px) {.header {
+    font-size: 1.2rem;
+    padding: 3em 4em
+}
+  }.header__my-name {
+    font-size: 1.3rem;
+  }@media only screen and (min-width: 1024px) {.header__my-name {
+      font-size: 1.8rem
+  }
+  }.header__professional-skill {
+    display: none;
+  }@media only screen and (min-width: 1024px) {.header__professional-skill {
+      display: block
+  }
+  }.header__nav {
+    line-height: 2.3em;
+    text-align: right;
+  }@media only screen and (min-width: 1024px) {.header__nav {
+      line-height: 150%;
+      text-align: left
+  }
+  }.header__message {
+    position: absolute;
+    bottom: 1em;
+    line-height: 1em;
+  }@media only screen and (min-width: 1024px) {.header__message {
+      line-height: 150%;
+      bottom: 0;
+      left: 30vw;
+      transform: translate(-100%, 50%)
+  }
   }
