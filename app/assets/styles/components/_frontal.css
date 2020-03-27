@@ -4,7 +4,6 @@
   &__headline {
     font-size: 5.5rem;
     font-weight: 800;
-    margin: 0;
     line-height: 0.82em;
 
     @mixin atLarge {

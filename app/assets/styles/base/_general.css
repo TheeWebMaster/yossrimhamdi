@@ -1,11 +1,12 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
   font-family: 'Prompt', sans-serif;
   color: $mainBlack;
   background-color: $skiny;
-  margin: 0;
   text-transform: uppercase;
   counter-reset: milestone-num;
 }

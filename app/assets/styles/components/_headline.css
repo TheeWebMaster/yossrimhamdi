@@ -1,0 +1,52 @@
+.headline {
+  line-height: 1;
+
+  &:nth-child(even) &__wrapper {
+    @mixin atLarge {
+      left: 40vw;
+    }
+  }
+  &:nth-child(odd) &__wrapper {
+    @mixin atLarge {
+      left: 10vw;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 3em;
+
+    @mixin atLarge {
+      margin-bottom: 10em;
+    }
+  }
+
+  &__wrapper {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 3rem;
+    padding-bottom: 15px;
+
+    @mixin atLarge {
+      font-size: 8.5rem;
+      padding-bottom: 10px;
+    }
+  }
+  &__sub {
+    color: $mainRed;
+    word-spacing: 15px;
+    position: absolute;
+    white-space: nowrap;
+    bottom: 0;
+    left: 1px;
+    font-size: 0.8rem;
+
+    @mixin atLarge {
+      left: 8px;
+      font-size: 1rem;
+    }
+  }
+}
