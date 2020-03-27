@@ -22,11 +22,13 @@
     }
   }
   &__availability-message {
+    width: 100px;
     position: absolute;
     bottom: 1em;
     line-height: 1em;
 
     @mixin atLarge {
+      width: 120px;
       line-height: 150%;
       bottom: 0;
       left: 30vw;
