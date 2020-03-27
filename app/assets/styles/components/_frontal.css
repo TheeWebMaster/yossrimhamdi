@@ -7,7 +7,7 @@
     line-height: 0.82em;
 
     @mixin atLarge {
-      font-size: 26rem;
+      font-size: 22rem;
     }
 
     &--to-the-right {
