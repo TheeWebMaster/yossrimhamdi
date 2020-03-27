@@ -1,0 +1,17 @@
+.paragraph {
+  margin: 0;
+  text-transform: lowercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 120%;
+  text-align: justify;
+
+  @mixin atLarge {
+    width: 70%;
+    line-height: 4.5rem;
+  }
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
