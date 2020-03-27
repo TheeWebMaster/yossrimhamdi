@@ -6,7 +6,10 @@ body {
   color: $mainBlack;
   background-color: $skiny;
   margin: 0;
-  overflow-x: hidden;
   text-transform: uppercase;
   counter-reset: milestone-num;
+}
+html,
+body {
+  overflow-x: hidden;
 }
