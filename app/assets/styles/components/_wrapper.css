@@ -1,0 +1,9 @@
+.wrapper {
+  padding-right: 0.8em;
+  padding-left: 0.8em;
+
+  @mixin atLarge {
+    padding-right: 4em;
+    padding-left: 4em;
+  }
+}

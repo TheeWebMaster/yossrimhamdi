@@ -38,13 +38,11 @@ body {
   margin: 0;
 }.milestone {
   border-top: 1px solid #000;
-  margin: 3em 0.4em;
   flex-basis: 100%;
   padding-top: 0.4em;
   font-weight: 300;
 }@media only screen and (min-width: 1024px) {.milestone {
     flex-basis: 50vw;
-    margin: 5em 4em;
     border-top-width: 2px
 }
   }.milestone::before {
@@ -105,4 +103,18 @@ body {
       line-height: 150%;
       text-align: left
   }
+  }.wrapper {
+  padding-right: 0.8em;
+  padding-left: 0.8em;
+}@media only screen and (min-width: 1024px) {.wrapper {
+    padding-right: 4em;
+    padding-left: 4em
+}
+  }.page-section {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}@media only screen and (min-width: 1024px) {.page-section {
+    padding-top: 4em;
+    padding-bottom: 4em
+}
   }
