@@ -7,6 +7,7 @@
   margin: 0;
   overflow-x: hidden;
   text-transform: uppercase;
+  counter-reset: milestone-num;
 }.frontal {
   position: relative;
 }.frontal__headline {
@@ -44,7 +45,10 @@
     margin: 5em 4em;
     border-top-width: 2px
 }
-  }@media only screen and (min-width: 1024px) {.milestone__num {
+  }.milestone::before {
+    counter-increment: milestone-num;
+    content: 'N°' counter(milestone-num);
+  }@media only screen and (min-width: 1024px) {.milestone::before {
       font-size: 2rem
   }
   }.milestone__description {

@@ -11,7 +11,10 @@
     border-top-width: 2px;
   }
 
-  &__num {
+  &::before {
+    counter-increment: milestone-num;
+    content: 'N°' counter(milestone-num);
+
     @mixin atLarge {
       font-size: 2rem;
     }
