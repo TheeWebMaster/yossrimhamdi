@@ -6,7 +6,7 @@
   font-weight: 300;
 
   @mixin atLarge {
-    width: 800px;
+    flex-basis: 50vw;
     margin: 5em 4em;
     border-top-width: 2px;
   }
@@ -22,8 +22,11 @@
   &__description {
     order: 1;
     font-size: 1.1rem;
+    width: 200px;
+    text-align: right;
 
     @mixin atLarge {
+      width: 250px;
       font-size: 2.1rem;
     }
   }
