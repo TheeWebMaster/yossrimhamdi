@@ -66,11 +66,9 @@ body {
     justify-content: flex-end;
   }.header {
   position: relative;
-  padding: 1em;
   font-weight: 300;
 }@media only screen and (min-width: 1024px) {.header {
-    font-size: 1.2rem;
-    padding: 3em 4em
+    font-size: 1.2rem
 }
   }.header__my-name {
     font-size: 1.3rem;
@@ -115,6 +113,9 @@ body {
     padding-top: 3em;
     padding-bottom: 3em
 }
+  }.page-section--small {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
   }.page-section--no-top-padding {
     padding-top: 0;
   }.paragraph {

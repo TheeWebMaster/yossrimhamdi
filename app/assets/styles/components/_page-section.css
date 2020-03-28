@@ -7,6 +7,11 @@
     padding-bottom: 3em;
   }
 
+  &--small {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+  }
+
   &--no-top-padding {
     padding-top: 0;
   }

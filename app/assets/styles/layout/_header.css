@@ -1,11 +1,9 @@
 .header {
   position: relative;
-  padding: 1em;
   font-weight: 300;
 
   @mixin atLarge {
     font-size: 1.2rem;
-    padding: 3em 4em;
   }
   &__my-name {
     font-size: 1.3rem;
