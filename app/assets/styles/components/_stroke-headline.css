@@ -1,0 +1,14 @@
+.stroke-headline {
+  font-size: 17rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px black;
+  position: absolute;
+
+  &--to-right-centered {
+    right: 0;
+    top: 50%;
+  }
+  &--rotated {
+    transform: translate(39%, -50%) rotate(-90deg);
+  }
+}
