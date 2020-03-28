@@ -3,7 +3,7 @@
   padding-left: 0.8em;
 
   @mixin atLarge {
-    padding-right: 4em;
-    padding-left: 4em;
+    padding-right: 3em;
+    padding-left: 3em;
   }
 }
