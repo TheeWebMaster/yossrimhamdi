@@ -1,0 +1,13 @@
+.award {
+  &:not(:last-child) {
+    margin-bottom: 3em;
+  }
+  &__title {
+    font-weight: 500;
+    width: 400px;
+    font-size: 2rem;
+  }
+  &__list {
+    font-size: 1.2rem;
+  }
+}
