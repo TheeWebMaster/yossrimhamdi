@@ -1,0 +1,26 @@
+.contact-me {
+  &__message {
+    width: 400px;
+    margin-bottom: 0.5em;
+
+    @mixin atLarge {
+      margin-bottom: 0;
+      margin-right: 300px;
+    }
+  }
+  &__list {
+    font-weight: 500;
+    text-decoration: underline;
+    @mixin atLarge {
+      font-size: 2rem;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2em;
+
+      @mixin atLarge {
+        margin-right: 5em;
+      }
+    }
+  }
+}
