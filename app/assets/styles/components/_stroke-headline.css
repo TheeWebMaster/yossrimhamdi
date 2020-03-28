@@ -19,9 +19,14 @@
     top: 50%;
   }
   &--top-position {
-    top: 0;
+    top: 0px;
+    left: -20px;
     line-height: 0.74;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
+
+    @mixin atLarge {
+      transform: translateY(-75%);
+    }
   }
   &--rotated {
     transform: translate(39%, -65%) rotate(-90deg);

@@ -1,11 +1,17 @@
 .wrapper {
   position: relative;
-
   padding-right: 0.8em;
   padding-left: 0.8em;
 
   @mixin atLarge {
     padding-right: 3em;
     padding-left: 3em;
+  }
+
+  &--centered-at-large {
+    @mixin atLarge {
+      width: 80vw;
+      margin: 0 auto;
+    }
   }
 }
