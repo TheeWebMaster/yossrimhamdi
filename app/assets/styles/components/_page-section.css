@@ -10,6 +10,11 @@
   &--small {
     padding-top: 0.8em;
     padding-bottom: 0.8em;
+
+    @mixin atLarge {
+      padding-top: 3em;
+      padding-bottom: 3em;
+    }
   }
 
   &--no-top-padding {
