@@ -8,15 +8,20 @@
     font-size: 17rem;
   }
   &--small {
-    font-size: 6rem;
+    font-size: 5.5rem;
 
     @mixin atLarge {
-      font-size: 10rem;
+      font-size: 14rem;
     }
   }
   &--to-right-centered {
     right: 0;
     top: 50%;
+  }
+  &--top-position {
+    top: 0;
+    line-height: 0.74;
+    transform: translateY(-50%);
   }
   &--rotated {
     transform: translate(39%, -65%) rotate(-90deg);

@@ -13,4 +13,7 @@
   &::first-letter {
     text-transform: uppercase;
   }
+  &--margin-b {
+    margin-bottom: 2.5em;
+  }
 }

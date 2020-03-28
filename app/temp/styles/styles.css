@@ -141,6 +141,8 @@ body {
 }
   }.paragraph::first-letter {
     text-transform: uppercase;
+  }.paragraph--margin-b {
+    margin-bottom: 2.5em;
   }.headline {
   line-height: 1;
 }@media only screen and (min-width: 1024px) {.headline:nth-child(even) .headline__wrapper {
@@ -187,13 +189,17 @@ body {
     font-size: 17rem
 }
   }.stroke-headline--small {
-    font-size: 6rem;
+    font-size: 5.5rem;
   }@media only screen and (min-width: 1024px) {.stroke-headline--small {
-      font-size: 10rem
+      font-size: 14rem
   }
   }.stroke-headline--to-right-centered {
     right: 0;
     top: 50%;
+  }.stroke-headline--top-position {
+    top: 0;
+    line-height: 0.74;
+    transform: translateY(-50%);
   }.stroke-headline--rotated {
     transform: translate(39%, -65%) rotate(-90deg);
   }.award:not(:last-child) {
