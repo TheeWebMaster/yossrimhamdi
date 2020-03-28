@@ -1,0 +1,24 @@
+.footer {
+  border-top: 1px solid $mainBlack;
+  padding: 1em;
+
+  @mixin atLarge {
+    padding: 1em 2em;
+    border-top-width: 2px;
+  }
+
+  & > * {
+    font-weight: 500;
+    margin-bottom: 0.3em;
+
+    @mixin atLarge {
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+  }
+
+  &__my-name {
+    font-style: italic;
+    text-decoration: underline;
+  }
+}
