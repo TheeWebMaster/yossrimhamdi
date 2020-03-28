@@ -100,6 +100,8 @@ body {
       text-align: left
   }
   }.wrapper {
+  position: relative;
+
   padding-right: 0.8em;
   padding-left: 0.8em;
 }@media only screen and (min-width: 1024px) {.wrapper {
@@ -171,4 +173,14 @@ body {
       left: 8px;
       font-size: 1rem
   }
+  }.stroke-headline {
+  font-size: 17rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px black;
+  position: absolute;
+}.stroke-headline--to-right-centered {
+    right: 0;
+    top: 50%;
+  }.stroke-headline--rotated {
+    transform: translate(39%, -50%) rotate(-90deg);
   }
