@@ -1,11 +1,12 @@
 .contact-me {
   &__message {
-    width: 400px;
     margin-bottom: 0.5em;
 
     @mixin atLarge {
       margin-bottom: 0;
       margin-right: 300px;
+      width: 400px;
+      flex-shrink: 0;
     }
   }
   &__list {

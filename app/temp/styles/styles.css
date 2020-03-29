@@ -146,8 +146,6 @@ body {
     text-transform: uppercase;
   }.paragraph--margin-b {
     margin-bottom: 2.5em;
-  }.paragraph--auto-width {
-    width: auto;
   }.headline {
   line-height: 1;
 }@media only screen and (min-width: 1024px) {.headline:nth-child(even) .headline__wrapper {
@@ -229,11 +227,12 @@ body {
       font-size: 1.2rem
   }
   }.contact-me__message {
-    width: 400px;
     margin-bottom: 0.5em;
   }@media only screen and (min-width: 1024px) {.contact-me__message {
       margin-bottom: 0;
-      margin-right: 300px
+      margin-right: 300px;
+      width: 400px;
+      flex-shrink: 0
   }
   }.contact-me__list {
     font-weight: 500;
