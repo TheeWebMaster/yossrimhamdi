@@ -1,0 +1,10 @@
+.scroller {
+  height: 0;
+  width: 4px;
+  background-color: $mainRed;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}

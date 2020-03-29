@@ -271,4 +271,13 @@ body {
   }.footer__my-name {
     font-style: italic;
     text-decoration: underline;
-  }
+  }.scroller {
+  height: 0;
+  width: 4px;
+  background-color: #ff0d00;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}

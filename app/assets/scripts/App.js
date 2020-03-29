@@ -1,12 +1,4 @@
-import { smoothScroll } from '@smoovy/scroller';
+import ScrollerBar from './modules/ScrollerBar';
+import scroller from './modules/Scroller';
 
-const scroller = smoothScroll(
-  {
-    element: document.querySelector('.container')
-  },
-  {
-    styles: {
-      height: '100vh'
-    }
-  }
-);
+new ScrollerBar(scroller);
