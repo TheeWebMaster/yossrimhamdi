@@ -28,6 +28,11 @@
       transform: translateY(-75%);
     }
   }
+  &--centered {
+    top: 50%;
+    left: 45%;
+    transform: translateY(-50%);
+  }
   &--rotated {
     transform: translate(39%, -65%) rotate(-90deg);
   }
