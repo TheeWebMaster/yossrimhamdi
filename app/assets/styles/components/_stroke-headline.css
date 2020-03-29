@@ -14,11 +14,11 @@
       font-size: 14rem;
     }
   }
-  &--to-right-centered {
+  &--right-edge {
     right: 0;
     top: 50%;
   }
-  &--top-position {
+  &--top {
     top: 0px;
     left: -20px;
     line-height: 0.74;

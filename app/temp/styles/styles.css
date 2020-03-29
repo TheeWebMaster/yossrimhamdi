@@ -193,15 +193,15 @@ body {
   }@media only screen and (min-width: 1024px) {.stroke-headline--small {
       font-size: 14rem
   }
-  }.stroke-headline--to-right-centered {
+  }.stroke-headline--right-edge {
     right: 0;
     top: 50%;
-  }.stroke-headline--top-position {
+  }.stroke-headline--top {
     top: 0px;
     left: -20px;
     line-height: 0.74;
     transform: translateY(-60%);
-  }@media only screen and (min-width: 1024px) {.stroke-headline--top-position {
+  }@media only screen and (min-width: 1024px) {.stroke-headline--top {
       transform: translateY(-75%)
   }
   }.stroke-headline--rotated {
