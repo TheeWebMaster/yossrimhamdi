@@ -5,13 +5,13 @@
   position: absolute;
 
   @mixin atLarge {
-    font-size: 17rem;
+    font-size: 13rem;
   }
   &--small {
     font-size: 5.5rem;
 
     @mixin atLarge {
-      font-size: 14rem;
+      font-size: 9rem;
     }
   }
   &--right-edge {
