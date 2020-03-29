@@ -151,13 +151,7 @@ body {
     margin-bottom: 2.5em;
   }.headline {
   line-height: 1;
-}@media only screen and (min-width: 1024px) {.headline:nth-child(even) .headline__wrapper {
-      left: 40vw
-  }
-  }@media only screen and (min-width: 1024px) {.headline:nth-child(odd) .headline__wrapper {
-      left: 10vw
-  }
-  }.headline:not(:last-child) {
+}.headline:not(:last-child) {
     margin-bottom: 3em;
   }@media only screen and (min-width: 1024px) {.headline:not(:last-child) {
       margin-bottom: 10em

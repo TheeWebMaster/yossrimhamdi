@@ -1,17 +1,6 @@
 .headline {
   line-height: 1;
 
-  &:nth-child(even) &__wrapper {
-    @mixin atLarge {
-      left: 40vw;
-    }
-  }
-  &:nth-child(odd) &__wrapper {
-    @mixin atLarge {
-      left: 10vw;
-    }
-  }
-
   &:not(:last-child) {
     margin-bottom: 3em;
 
