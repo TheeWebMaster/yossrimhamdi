@@ -94,7 +94,19 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollerBar */ \"./app/assets/scripts/modules/ScrollerBar.js\");\n/* harmony import */ var _modules_Scroller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Scroller */ \"./app/assets/scripts/modules/Scroller.js\");\n\n\n\nnew _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollerBar */ \"./app/assets/scripts/modules/ScrollerBar.js\");\n/* harmony import */ var _modules_Scroller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Scroller */ \"./app/assets/scripts/modules/Scroller.js\");\n/* harmony import */ var _modules_TranslateFrontalHeadlines__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/TranslateFrontalHeadlines */ \"./app/assets/scripts/modules/TranslateFrontalHeadlines.js\");\n\n\n\n\nnew _modules_TranslateFrontalHeadlines__WEBPACK_IMPORTED_MODULE_2__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\nnew _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/ScrollInput.js":
+/*!***************************************************!*\
+  !*** ./app/assets/scripts/modules/ScrollInput.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollInput {\r\n  constructor(scroller, offset) {\r\n    this.scrollY = {\r\n      start: offset.top,\r\n      end: offset.end,\r\n      get range() {\r\n        return this.end - this.start;\r\n      },\r\n      fraction: 0\r\n    };\r\n    scroller.onScroll(this.calcFraction.bind(this));\r\n  }\r\n  calcFraction({ y: yPosition }) {\r\n    this.scrollY.fraction = (yPosition - this.scrollY.start) / this.scrollY.range;\r\n    this.adjustFraction(this.scrollY.fraction);\r\n  }\r\n  adjustFraction(fraction) {\r\n    if (fraction < 0) {\r\n      this.scrollY.fraction = 0;\r\n    } else if (fraction > 1) {\r\n      this.scrollY.fraction = 1;\r\n    }\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollInput);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollInput.js?");
 
 /***/ }),
 
@@ -119,6 +131,30 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _smo
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollerBar {\n  constructor(scroller) {\n    this.scrollerDOM = document.querySelector('.scroller');\n    this.htmlContentVisibleHeight =\n      document.querySelector('.smoovy-wrapper').clientHeight - window.innerHeight;\n    scroller.onScroll(this.updateScrollBarHeight.bind(this));\n  }\n  updateScrollBarHeight({ y: yPosition }) {\n    this.scrollerDOM.style.height = `${(yPosition / this.htmlContentVisibleHeight) * 100}vh`;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollerBar);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollerBar.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/TranslateFrontalHeadlines.js":
+/*!*****************************************************************!*\
+  !*** ./app/assets/scripts/modules/TranslateFrontalHeadlines.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _TranslateX__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TranslateX */ \"./app/assets/scripts/modules/TranslateX.js\");\n/* harmony import */ var _ScrollInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScrollInput */ \"./app/assets/scripts/modules/ScrollInput.js\");\n\r\n\r\n\r\nclass TranslateFrontalHeadlines {\r\n  constructor(scroller) {\r\n    this.headlines = document.querySelectorAll('.frontal-headline--to-translate');\r\n    this.scroller = scroller;\r\n    this.scrollerInput = new _ScrollInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"](this.scroller, {\r\n      top: 0,\r\n      bottom: 0,\r\n      end: window.innerHeight\r\n    });\r\n    this.limits = [\r\n      { min: -200, max: 0, range: 200 },\r\n      { min: 0, max: 200, range: 200 }\r\n    ];\r\n    this.setTranslateXObject();\r\n  }\r\n  setTranslateXObject() {\r\n    this.headlines.forEach((headline, index) => {\r\n      new _TranslateX__WEBPACK_IMPORTED_MODULE_0__[\"default\"](this.scroller, this.scrollerInput, headline, this.limits[index], index == 0);\r\n    });\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateFrontalHeadlines);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateFrontalHeadlines.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/TranslateX.js":
+/*!**************************************************!*\
+  !*** ./app/assets/scripts/modules/TranslateX.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass TranslateX {\r\n  constructor(scroller, scrollInput, element, limit, toRight) {\r\n    this.limit = limit;\r\n    this.scrollInput = scrollInput;\r\n    this.element = element;\r\n    this.toRight = toRight;\r\n    scroller.onScroll(this.translateX.bind(this));\r\n  }\r\n  translateX() {\r\n    const { min, max, range } = this.limit;\r\n    const { fraction } = this.scrollInput.scrollY;\r\n\r\n    if (this.toRight) {\r\n      this.scrollInput.currentX = max - fraction * range;\r\n    } else {\r\n      this.scrollInput.currentX = min + fraction * range;\r\n    }\r\n    this.element.style.transform = `translateX(${this.scrollInput.currentX}px)`;\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateX);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateX.js?");
 
 /***/ }),
 
