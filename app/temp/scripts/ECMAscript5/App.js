@@ -284,7 +284,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   function appAssetsScriptsModulesScrollerJs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
-    eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _smoovy_scroller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @smoovy/scroller */ \"./node_modules/@smoovy/scroller/dist/bundles/index.esm.js\");\n\r\n\r\nconst scroller = Object(_smoovy_scroller__WEBPACK_IMPORTED_MODULE_0__[\"smoothScroll\"])(\r\n  {\r\n    element: document.querySelector('.container')\r\n  },\r\n  {\r\n    styles: {\r\n      height: '100vh'\r\n    }\r\n  }\r\n);\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (scroller);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Scroller.js?");
+    eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _smoovy_scroller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @smoovy/scroller */ \"./node_modules/@smoovy/scroller/dist/bundles/index.esm.js\");\n\n\nconst scroller = Object(_smoovy_scroller__WEBPACK_IMPORTED_MODULE_0__[\"smoothScroll\"])(\n  {\n    element: document.querySelector('.container')\n  },\n  {\n    styles: {\n      height: '100vh'\n    }\n  }\n);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (scroller);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Scroller.js?");
     /***/
   },
 
@@ -300,7 +300,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   function appAssetsScriptsModulesScrollerBarJs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
-    eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollerBar {\r\n  constructor(scroller) {\r\n    this.scrollerDOM = document.querySelector('.scroller');\r\n    this.htmlContentVisibleHeight =\r\n      document.querySelector('.smoovy-wrapper').clientHeight - window.innerHeight;\r\n    scroller.onScroll(this.updateScrollBarHeight.bind(this));\r\n  }\r\n  updateScrollBarHeight({ y: yPosition }) {\r\n    this.scrollerDOM.style.height = `${(yPosition / this.htmlContentVisibleHeight) * 100}vh`;\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollerBar);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollerBar.js?");
+    eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollerBar {\n  constructor(scroller) {\n    this.scrollerDOM = document.querySelector('.scroller');\n    this.htmlContentVisibleHeight =\n      document.querySelector('.smoovy-wrapper').clientHeight - window.innerHeight;\n    scroller.onScroll(this.updateScrollBarHeight.bind(this));\n  }\n  updateScrollBarHeight({ y: yPosition }) {\n    this.scrollerDOM.style.height = `${(yPosition / this.htmlContentVisibleHeight) * 100}vh`;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollerBar);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollerBar.js?");
     /***/
   },
 
