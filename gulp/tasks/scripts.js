@@ -16,5 +16,5 @@ export const es5 = () => {
         presets: ['@babel/env']
       })
     )
-    .pipe(dest('./app/temp/scripts/ECMAscprit5'));
+    .pipe(dest('./app/temp/scripts/ECMAscript5'));
 };
