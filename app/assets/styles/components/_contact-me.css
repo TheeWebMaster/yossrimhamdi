@@ -4,9 +4,11 @@
 
     @mixin atLarge {
       margin-bottom: 0;
-      margin-right: 300px;
       width: 400px;
       flex-shrink: 0;
+    }
+    @mixin atHuge {
+      margin-right: 300px;
     }
   }
   &__list {

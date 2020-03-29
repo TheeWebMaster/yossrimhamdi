@@ -11,6 +11,11 @@
   &--space-between {
     justify-content: space-between;
   }
+  &--stretch-at-huge {
+    @mixin atHuge {
+      justify-content: stretch;
+    }
+  }
   &--to-the-right {
     justify-content: flex-end;
   }

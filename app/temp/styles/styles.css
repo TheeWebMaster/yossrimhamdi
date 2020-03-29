@@ -67,6 +67,9 @@ body {
   }
   }.flex--space-between {
     justify-content: space-between;
+  }@media only screen and (min-width: 1500px) {.flex--stretch-at-huge {
+      justify-content: stretch
+  }
   }.flex--to-the-right {
     justify-content: flex-end;
   }.header {
@@ -230,9 +233,11 @@ body {
     margin-bottom: 0.5em;
   }@media only screen and (min-width: 1024px) {.contact-me__message {
       margin-bottom: 0;
-      margin-right: 300px;
       width: 400px;
       flex-shrink: 0
+  }
+  }@media only screen and (min-width: 1500px) {.contact-me__message {
+      margin-right: 300px
   }
   }.contact-me__list {
     font-weight: 500;
