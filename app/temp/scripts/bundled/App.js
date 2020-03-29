@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollerBar */ \"./app/assets/scripts/modules/ScrollerBar.js\");\n/* harmony import */ var _modules_Scroller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Scroller */ \"./app/assets/scripts/modules/Scroller.js\");\n\n\n\nnew _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollerBar */ \"./app/assets/scripts/modules/ScrollerBar.js\");\n/* harmony import */ var _modules_Scroller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Scroller */ \"./app/assets/scripts/modules/Scroller.js\");\n/* harmony import */ var _modules_scrollInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/scrollInput */ \"./app/assets/scripts/modules/scrollInput.js\");\n\n\n\n\nnew _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\nnew _modules_scrollInput__WEBPACK_IMPORTED_MODULE_2__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"], { top: 1000, bottom: 1000 });\n\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
 
 /***/ }),
 
@@ -119,6 +119,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _smo
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollerBar {\n  constructor(scroller) {\n    this.scrollerDOM = document.querySelector('.scroller');\n    this.htmlContentVisibleHeight =\n      document.querySelector('.smoovy-wrapper').clientHeight - window.innerHeight;\n    scroller.onScroll(this.updateScrollBarHeight.bind(this));\n  }\n  updateScrollBarHeight({ y: yPosition }) {\n    this.scrollerDOM.style.height = `${(yPosition / this.htmlContentVisibleHeight) * 100}vh`;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollerBar);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollerBar.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/scrollInput.js":
+/*!***************************************************!*\
+  !*** ./app/assets/scripts/modules/scrollInput.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollInput {\r\n  constructor(scroller, offset) {\r\n    this.scrollY = {\r\n      start: offset.top,\r\n      end:\r\n        document.querySelector('.smoovy-wrapper').clientHeight -\r\n        (window.innerHeight + offset.bottom),\r\n      get range() {\r\n        return this.end - this.start;\r\n      }\r\n    };\r\n    scroller.onScroll(this.calcFraction.bind(this));\r\n  }\r\n  calcFraction({ y: yPosition }) {\r\n    this.scrollY.fraction = (yPosition - this.scrollY.start) / this.scrollY.range;\r\n    this.adjustFraction(this.scrollY.fraction);\r\n    console.log(this.scrollY.fraction);\r\n  }\r\n  adjustFraction(fraction) {\r\n    if (fraction < 0) {\r\n      this.scrollY.fraction = 0;\r\n    } else if (fraction > 1) {\r\n      this.scrollY.fraction = 1;\r\n    }\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollInput);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/scrollInput.js?");
 
 /***/ }),
 
