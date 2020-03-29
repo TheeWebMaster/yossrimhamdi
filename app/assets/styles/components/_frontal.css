@@ -3,11 +3,11 @@
 
   &__headline {
     font-size: 5.5rem;
-    font-weight: 800;
+    font-weight: 900;
     line-height: 0.82em;
 
     @mixin atLarge {
-      font-size: 18rem;
+      font-size: 22rem;
     }
 
     &--to-the-right {

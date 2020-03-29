@@ -1,6 +1,8 @@
 import ScrollerBar from './modules/ScrollerBar';
 import scroller from './modules/Scroller';
-import TranslateFrontalHeadlines from './modules/TranslateFrontalHeadlines';
+import TranslateFrontalHeadlinesOnScroll from './modules/TranslateFrontalHeadlinesOnScroll';
+import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
 
-new TranslateFrontalHeadlines(scroller);
+new AnimateMileStonesOnScroll(scroller);
+new TranslateFrontalHeadlinesOnScroll(scroller);
 new ScrollerBar(scroller);

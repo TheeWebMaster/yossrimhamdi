@@ -15,10 +15,10 @@ body {
   position: relative;
 }.frontal__headline {
     font-size: 5.5rem;
-    font-weight: 800;
+    font-weight: 900;
     line-height: 0.82em;
   }@media only screen and (min-width: 1024px) {.frontal__headline {
-      font-size: 18rem
+      font-size: 22rem
   }
   }.frontal__headline--to-the-right {
       position: relative;
@@ -35,13 +35,13 @@ body {
   }.list {
   list-style-type: none;
 }.milestone {
-  border-top: 1px solid #000;
+  position: relative;
   flex-basis: 100%;
   padding-top: 0.4em;
   font-weight: 300;
+  overflow: hidden;
 }@media only screen and (min-width: 1024px) {.milestone {
-    flex-basis: 50vw;
-    border-top-width: 2px
+    flex-basis: 50vw
 }
   }.milestone::before {
     counter-increment: milestone-num;
@@ -49,6 +49,15 @@ body {
   }@media only screen and (min-width: 1024px) {.milestone::before {
       font-size: 2rem
   }
+  }.milestone__top-border {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 0;
+    background-color: #000;
+    transform: translateX(-50%);
   }.milestone__description {
     order: 1;
     font-size: 1.1rem;

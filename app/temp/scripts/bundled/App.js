@@ -94,7 +94,19 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollerBar */ \"./app/assets/scripts/modules/ScrollerBar.js\");\n/* harmony import */ var _modules_Scroller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Scroller */ \"./app/assets/scripts/modules/Scroller.js\");\n/* harmony import */ var _modules_TranslateFrontalHeadlines__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/TranslateFrontalHeadlines */ \"./app/assets/scripts/modules/TranslateFrontalHeadlines.js\");\n\n\n\n\nnew _modules_TranslateFrontalHeadlines__WEBPACK_IMPORTED_MODULE_2__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\nnew _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/ScrollerBar */ \"./app/assets/scripts/modules/ScrollerBar.js\");\n/* harmony import */ var _modules_Scroller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Scroller */ \"./app/assets/scripts/modules/Scroller.js\");\n/* harmony import */ var _modules_TranslateFrontalHeadlinesOnScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/TranslateFrontalHeadlinesOnScroll */ \"./app/assets/scripts/modules/TranslateFrontalHeadlinesOnScroll.js\");\n/* harmony import */ var _modules_AnimateMileStonesOnScroll__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/AnimateMileStonesOnScroll */ \"./app/assets/scripts/modules/AnimateMileStonesOnScroll.js\");\n\n\n\n\n\nnew _modules_AnimateMileStonesOnScroll__WEBPACK_IMPORTED_MODULE_3__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\nnew _modules_TranslateFrontalHeadlinesOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\nnew _modules_ScrollerBar__WEBPACK_IMPORTED_MODULE_0__[\"default\"](_modules_Scroller__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/App.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/AnimateMileStonesOnScroll.js":
+/*!*****************************************************************!*\
+  !*** ./app/assets/scripts/modules/AnimateMileStonesOnScroll.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _TranslateX__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TranslateX */ \"./app/assets/scripts/modules/TranslateX.js\");\n/* harmony import */ var _ScrollInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScrollInput */ \"./app/assets/scripts/modules/ScrollInput.js\");\n\r\n\r\n\r\nclass AnimateMileStonesOnScroll {\r\n  constructor(scroller) {\r\n    this.mileStones = document.querySelectorAll('.milestone');\r\n    this.scroller = scroller;\r\n    this.limits = this.getLimits();\r\n    this.setTranslateXObjects();\r\n  }\r\n  getLimits() {\r\n    const limits = [];\r\n    this.mileStones.forEach(mileStone => {\r\n      limits.push({\r\n        start: mileStone.getBoundingClientRect().top - window.innerHeight,\r\n        end:\r\n          mileStone.getBoundingClientRect().top + mileStone.clientHeight - window.innerHeight + 400\r\n      });\r\n    });\r\n    return limits;\r\n  }\r\n  setTranslateXObjects() {\r\n    this.mileStones.forEach((mileStone, i) => {\r\n      new _TranslateX__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\r\n        this.scroller,\r\n        new _ScrollInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"](this.scroller, this.limits[i]),\r\n        mileStone.querySelector('.milestone__top-border'),\r\n        { min: -50, max: 0, range: 50 },\r\n        true,\r\n        '%'\r\n      );\r\n    });\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (AnimateMileStonesOnScroll);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/AnimateMileStonesOnScroll.js?");
 
 /***/ }),
 
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollInput {\n  constructor(scroller, offset) {\n    this.scrollY = {\n      start: offset.top,\n      end: offset.end,\n      get range() {\n        return this.end - this.start;\n      },\n      fraction: 0\n    };\n    scroller.onScroll(this.calcFraction.bind(this));\n  }\n  calcFraction({ y: yPosition }) {\n    this.scrollY.fraction = (yPosition - this.scrollY.start) / this.scrollY.range;\n    this.adjustFraction(this.scrollY.fraction);\n  }\n  adjustFraction(fraction) {\n    if (fraction < 0) {\n      this.scrollY.fraction = 0;\n    } else if (fraction > 1) {\n      this.scrollY.fraction = 1;\n    }\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollInput);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollInput.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollInput {\n  constructor(scroller, offset) {\n    this.scrollY = {\n      start: offset.start,\n      end: offset.end,\n      get range() {\n        return this.end - this.start;\n      },\n      fraction: 0\n    };\n    scroller.onScroll(this.calcFraction.bind(this));\n  }\n  calcFraction({ y: yPosition }) {\n    this.scrollY.fraction = (yPosition - this.scrollY.start) / this.scrollY.range;\n    this.adjustFraction(this.scrollY.fraction);\n  }\n  adjustFraction(fraction) {\n    if (fraction < 0) {\n      this.scrollY.fraction = 0;\n    } else if (fraction > 1) {\n      this.scrollY.fraction = 1;\n    }\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollInput);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollInput.js?");
 
 /***/ }),
 
@@ -134,15 +146,15 @@ eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollerBar {\n  constr
 
 /***/ }),
 
-/***/ "./app/assets/scripts/modules/TranslateFrontalHeadlines.js":
-/*!*****************************************************************!*\
-  !*** ./app/assets/scripts/modules/TranslateFrontalHeadlines.js ***!
-  \*****************************************************************/
+/***/ "./app/assets/scripts/modules/TranslateFrontalHeadlinesOnScroll.js":
+/*!*************************************************************************!*\
+  !*** ./app/assets/scripts/modules/TranslateFrontalHeadlinesOnScroll.js ***!
+  \*************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _TranslateX__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TranslateX */ \"./app/assets/scripts/modules/TranslateX.js\");\n/* harmony import */ var _ScrollInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScrollInput */ \"./app/assets/scripts/modules/ScrollInput.js\");\n\n\n\nclass TranslateFrontalHeadlines {\n  constructor(scroller) {\n    this.headlines = document.querySelectorAll('.frontal-headline--to-translate');\n    this.scroller = scroller;\n    this.scrollerInput = new _ScrollInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"](this.scroller, {\n      top: 0,\n      bottom: 0,\n      end: window.innerHeight\n    });\n    this.limits = [\n      { min: -200, max: 0, range: 200 },\n      { min: 0, max: 200, range: 200 }\n    ];\n    this.setTranslateXObject();\n  }\n  setTranslateXObject() {\n    this.headlines.forEach((headline, index) => {\n      new _TranslateX__WEBPACK_IMPORTED_MODULE_0__[\"default\"](this.scroller, this.scrollerInput, headline, this.limits[index], index == 0);\n    });\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateFrontalHeadlines);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateFrontalHeadlines.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _TranslateX__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TranslateX */ \"./app/assets/scripts/modules/TranslateX.js\");\n/* harmony import */ var _ScrollInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScrollInput */ \"./app/assets/scripts/modules/ScrollInput.js\");\n\n\n\nclass TranslateFrontalHeadlinesOnScroll {\n  constructor(scroller) {\n    this.headlines = document.querySelectorAll('.frontal-headline--to-translate');\n    this.scroller = scroller;\n    this.scrollerInput = new _ScrollInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"](this.scroller, {\n      start: 0,\n      end: window.innerHeight\n    });\n    this.limits = [\n      { min: -200, max: 0, range: 200 },\n      { min: 0, max: 200, range: 200 }\n    ];\n    this.setTranslateXObject();\n  }\n  setTranslateXObject() {\n    this.headlines.forEach((headline, index) => {\n      new _TranslateX__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\n        this.scroller,\n        this.scrollerInput,\n        headline,\n        this.limits[index],\n        index == 1,\n        'px'\n      );\n    });\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateFrontalHeadlinesOnScroll);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateFrontalHeadlinesOnScroll.js?");
 
 /***/ }),
 
@@ -154,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Tra
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass TranslateX {\n  constructor(scroller, scrollInput, element, limit, toRight) {\n    this.limit = limit;\n    this.scrollInput = scrollInput;\n    this.element = element;\n    this.toRight = toRight;\n    scroller.onScroll(this.translateX.bind(this));\n  }\n  translateX() {\n    const { min, max, range } = this.limit;\n    const { fraction } = this.scrollInput.scrollY;\n\n    if (this.toRight) {\n      this.scrollInput.currentX = max - fraction * range;\n    } else {\n      this.scrollInput.currentX = min + fraction * range;\n    }\n    this.element.style.transform = `translateX(${this.scrollInput.currentX}px)`;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateX);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateX.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass TranslateX {\n  constructor(scroller, scrollInput, element, limit, toRight, translateUnit) {\n    this.limit = limit;\n    this.scrollInput = scrollInput;\n    this.element = element;\n    this.toRight = toRight;\n    this.translateUnit = translateUnit;\n    scroller.onScroll(this.translateX.bind(this));\n  }\n  translateX() {\n    const { min, max, range } = this.limit;\n    const { fraction } = this.scrollInput.scrollY;\n\n    if (this.toRight) {\n      this.scrollInput.currentX = min + fraction * range;\n    } else {\n      this.scrollInput.currentX = max - fraction * range;\n    }\n    this.element.style.transform = `translateX(${this.scrollInput.currentX}${this.translateUnit})`;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateX);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateX.js?");
 
 /***/ }),
 

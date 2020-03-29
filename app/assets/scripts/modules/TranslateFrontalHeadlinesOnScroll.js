@@ -1,13 +1,12 @@
 import TranslateX from './TranslateX';
 import ScrollInput from './ScrollInput';
 
-class TranslateFrontalHeadlines {
+class TranslateFrontalHeadlinesOnScroll {
   constructor(scroller) {
     this.headlines = document.querySelectorAll('.frontal-headline--to-translate');
     this.scroller = scroller;
     this.scrollerInput = new ScrollInput(this.scroller, {
-      top: 0,
-      bottom: 0,
+      start: 0,
       end: window.innerHeight
     });
     this.limits = [
@@ -18,9 +17,16 @@ class TranslateFrontalHeadlines {
   }
   setTranslateXObject() {
     this.headlines.forEach((headline, index) => {
-      new TranslateX(this.scroller, this.scrollerInput, headline, this.limits[index], index == 0);
+      new TranslateX(
+        this.scroller,
+        this.scrollerInput,
+        headline,
+        this.limits[index],
+        index == 1,
+        'px'
+      );
     });
   }
 }
 
-export default TranslateFrontalHeadlines;
+export default TranslateFrontalHeadlinesOnScroll;

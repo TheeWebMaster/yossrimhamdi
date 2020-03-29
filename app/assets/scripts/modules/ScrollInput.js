@@ -1,7 +1,7 @@
 class ScrollInput {
   constructor(scroller, offset) {
     this.scrollY = {
-      start: offset.top,
+      start: offset.start,
       end: offset.end,
       get range() {
         return this.end - this.start;
