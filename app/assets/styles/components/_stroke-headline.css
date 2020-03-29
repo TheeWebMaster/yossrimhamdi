@@ -29,11 +29,20 @@
     }
   }
   &--centered {
-    top: 50%;
-    left: 45%;
-    transform: translateY(-50%);
+    @mixin atLarge {
+      top: 50%;
+      left: 45%;
+      transform: translateY(-50%);
+    }
   }
   &--rotated {
     transform: translate(39%, -65%) rotate(-90deg);
+  }
+  &--visible-at-large {
+    display: none;
+
+    @mixin atLarge {
+      display: block;
+    }
   }
 }
