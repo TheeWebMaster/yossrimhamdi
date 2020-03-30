@@ -9,22 +9,15 @@ class TranslateFrontalHeadlinesOnScroll {
       start: 0,
       end: window.innerHeight
     });
-    this.limits = [
-      { min: -200, max: 0, range: 200 },
-      { min: 0, max: 200, range: 200 }
+    this.transitionXLimits = [
+      { start: 0, end: -200 },
+      { start: 0, end: 200 }
     ];
     this.setTranslateXObject();
   }
   setTranslateXObject() {
-    this.headlines.forEach((headline, index) => {
-      new TranslateX(
-        this.scroller,
-        this.scrollerInput,
-        headline,
-        this.limits[index],
-        index == 1,
-        'px'
-      );
+    this.headlines.forEach((headline, i) => {
+      new TranslateX(this.scroller, this.scrollerInput, headline, this.transitionXLimits[i], 'px');
     });
   }
 }

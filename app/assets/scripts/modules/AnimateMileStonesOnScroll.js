@@ -5,30 +5,30 @@ class AnimateMileStonesOnScroll {
   constructor(scroller) {
     this.mileStones = document.querySelectorAll('.milestone');
     this.scroller = scroller;
-    this.limits = this.getLimits();
+    this.offset = 300;
+    this.transitionXLimits = { start: -50, end: 0 };
+    this.topElementsOffset = this.getLimits();
     this.setTranslateXObjects();
   }
   getLimits() {
-    const limits = [];
+    const topElementsOffset = [];
+
     this.mileStones.forEach(mileStone => {
-      limits.push({
-        start: mileStone.getBoundingClientRect().top - window.innerHeight,
-        end:
-          mileStone.getBoundingClientRect().top + mileStone.clientHeight - window.innerHeight + 400
+      const topRelativePosition = mileStone.getBoundingClientRect().top - window.innerHeight;
+
+      topElementsOffset.push({
+        start: topRelativePosition,
+        end: topRelativePosition + mileStone.clientHeight + this.offset
       });
     });
-    return limits;
+    return topElementsOffset;
   }
   setTranslateXObjects() {
     this.mileStones.forEach((mileStone, i) => {
-      new TranslateX(
-        this.scroller,
-        new ScrollInput(this.scroller, this.limits[i]),
-        mileStone.querySelector('.milestone__top-border'),
-        { min: -50, max: 0, range: 50 },
-        true,
-        '%'
-      );
+      const topBorderElement = mileStone.querySelector('.milestone__top-border');
+      const relativeScrollInput = new ScrollInput(this.scroller, this.topElementsOffset[i]);
+
+      new TranslateX(this.scroller, relativeScrollInput, topBorderElement, this.transitionXLimits, '%');
     });
   }
 }
