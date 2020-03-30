@@ -63,11 +63,15 @@ body {
     font-size: 1.1rem;
     width: 200px;
     text-align: right;
+    opacity: 0;
+    transition: opacity 300ms;
   }@media only screen and (min-width: 1024px) {.milestone__description {
       width: 250px;
       font-size: 2.1rem
   }
-  }.flex {
+  }.milestone__description--is-visible {
+      opacity: 1;
+    }.flex {
   display: flex;
 }.flex--at-large {
     display: block;
