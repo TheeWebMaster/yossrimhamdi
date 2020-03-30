@@ -11,7 +11,6 @@ class TranslateX {
     const { start, range } = this.transitionXLimits;
     const { fraction } = this.scrollInput.scrollY;
     const transitionValue = start + fraction * range;
-
     this.element.style.transform = `translateX(${transitionValue}${this.translateUnit})`;
   }
   calcRange() {
