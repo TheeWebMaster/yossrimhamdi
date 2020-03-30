@@ -1,5 +1,5 @@
 class ScrollInput {
-  constructor(scroller, topElementOffset) {
+  constructor(scroller, topElementOffset, callback) {
     this.scrollY = {
       start: topElementOffset.start,
       end: topElementOffset.end,
@@ -8,6 +8,7 @@ class ScrollInput {
       },
       fraction: 0
     };
+    this.callback = callback;
     scroller.onScroll(this.calcFraction.bind(this));
   }
   calcFraction({ y: yPosition }) {
@@ -19,6 +20,7 @@ class ScrollInput {
       this.scrollY.fraction = 0;
     } else if (fraction > 1) {
       this.scrollY.fraction = 1;
+      this.callback();
     }
   }
 }

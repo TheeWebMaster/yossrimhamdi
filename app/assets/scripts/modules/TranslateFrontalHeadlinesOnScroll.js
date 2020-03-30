@@ -5,10 +5,14 @@ class TranslateFrontalHeadlinesOnScroll {
   constructor(scroller) {
     this.headlines = document.querySelectorAll('.frontal-headline--to-translate');
     this.scroller = scroller;
-    this.scrollerInput = new ScrollInput(this.scroller, {
-      start: 0,
-      end: window.innerHeight
-    });
+    this.scrollerInput = new ScrollInput(
+      this.scroller,
+      {
+        start: 0,
+        end: window.innerHeight
+      },
+      () => {}
+    );
     this.transitionXLimits = [
       { start: 0, end: -200 },
       { start: 0, end: 200 }
