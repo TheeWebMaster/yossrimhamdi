@@ -3,9 +3,11 @@ import scroller from './modules/Scroller';
 import TranslateFrontalHeadlinesOnScroll from './modules/TranslateFrontalHeadlinesOnScroll';
 import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
 import TranslateXHeadlinesOnScroll from './modules/TranslateXHeadlinesOnScroll';
-import TranslateYWorkHeadlineOnScroll from './modules/TranslateYWorkHeadlineOnScroll';
+import TransformWorkHeadlineOnScroll from './modules/TransformWorkHeadlineOnScroll';
+import TranslateXStrokeHeadlinesOnScroll from './modules/TranslateXStrokeHeadlinesOnScroll';
 
-new TranslateYWorkHeadlineOnScroll(scroller);
+new TranslateXStrokeHeadlinesOnScroll(scroller);
+new TransformWorkHeadlineOnScroll(scroller);
 new TranslateXHeadlinesOnScroll(scroller);
 new AnimateMileStonesOnScroll(scroller);
 new TranslateFrontalHeadlinesOnScroll(scroller);

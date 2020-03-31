@@ -19,7 +19,7 @@
     top: 50%;
   }
   &--top {
-    top: 0px;
+    top: -67px;
     left: -20px;
     line-height: 0.74;
     transform: translateY(-60%);
@@ -32,7 +32,7 @@
     @mixin atLarge {
       top: 50%;
       left: 45%;
-      transform: translateY(-50%);
+      top: -67px;
     }
   }
   &--rotated {

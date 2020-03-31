@@ -212,7 +212,7 @@ body {
     right: 0;
     top: 50%;
   }.stroke-headline--top {
-    top: 0px;
+    top: -67px;
     left: -20px;
     line-height: 0.74;
     transform: translateY(-60%);
@@ -222,7 +222,7 @@ body {
   }@media only screen and (min-width: 1024px) {.stroke-headline--centered {
       top: 50%;
       left: 45%;
-      transform: translateY(-50%)
+      top: -67px
   }
   }.stroke-headline--rotated {
     transform: translateX(39%) rotate(-90deg);
