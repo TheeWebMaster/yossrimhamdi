@@ -36,7 +36,7 @@
     }
   }
   &--rotated {
-    transform: translate(39%, -65%) rotate(-90deg);
+    transform: translateX(39%) rotate(-90deg);
   }
   &--visible-at-large {
     display: none;

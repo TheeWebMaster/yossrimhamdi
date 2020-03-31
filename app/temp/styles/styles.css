@@ -225,7 +225,7 @@ body {
       transform: translateY(-50%)
   }
   }.stroke-headline--rotated {
-    transform: translate(39%, -65%) rotate(-90deg);
+    transform: translateX(39%) rotate(-90deg);
   }.stroke-headline--visible-at-large {
     display: none;
   }@media only screen and (min-width: 1024px) {.stroke-headline--visible-at-large {

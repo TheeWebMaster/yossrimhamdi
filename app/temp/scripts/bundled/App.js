@@ -118,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Tra
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollInput {\n  constructor(scroller, topElementOffset, callback) {\n    this.scrollY = {\n      start: topElementOffset.start,\n      end: topElementOffset.end,\n      get range() {\n        return this.end - this.start;\n      },\n      fraction: 0\n    };\n    this.callback = callback;\n    scroller.onScroll(this.calcFraction.bind(this));\n  }\n  calcFraction({ y: yPosition }) {\n    this.scrollY.fraction = (yPosition - this.scrollY.start) / this.scrollY.range;\n    this.adjustFraction(this.scrollY.fraction);\n  }\n  adjustFraction(fraction) {\n    if (fraction < 0) {\n      this.scrollY.fraction = 0;\n    } else if (fraction > 1) {\n      this.scrollY.fraction = 1;\n      this.callback();\n    }\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollInput);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollInput.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollInput {\n  constructor(scroller, topElementOffset, callback) {\n    this.scrollY = {\n      start: topElementOffset.start,\n      end: topElementOffset.end,\n      get range() {\n        return this.end - this.start;\n      },\n      fraction: 0\n    };\n    this.callback = callback;\n    scroller.onScroll(this.calcFraction.bind(this));\n  }\n  calcFraction({ y: yPosition }) {\n    this.scrollY.fraction = (yPosition - this.scrollY.start) / this.scrollY.range;\n    this.adjustFraction(this.scrollY.fraction);\n    console.log(this.scrollY.fraction);\n  }\n  adjustFraction(fraction) {\n    if (fraction < 0) {\n      this.scrollY.fraction = 0;\n    } else if (fraction > 1) {\n      this.scrollY.fraction = 1;\n      this.callback();\n    }\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollInput);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollInput.js?");
 
 /***/ }),
 
@@ -143,6 +143,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _smo
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollerBar {\n  constructor(scroller) {\n    this.scrollerDOM = document.querySelector('.scroller');\n    this.htmlContentVisibleHeight =\n      document.querySelector('.smoovy-wrapper').clientHeight - window.innerHeight;\n    scroller.onScroll(this.updateScrollBarHeight.bind(this));\n  }\n  updateScrollBarHeight({ y: yPosition }) {\n    this.scrollerDOM.style.height = `${(yPosition / this.htmlContentVisibleHeight) * 100}vh`;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (ScrollerBar);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/ScrollerBar.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/TransformWorkHeadline.js":
+/*!*************************************************************!*\
+  !*** ./app/assets/scripts/modules/TransformWorkHeadline.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass TransformWrokHeadline {\r\n  constructor(scroller, scrollInput, element, transitionYLimits) {\r\n    this.element = element;\r\n    this.scrollInput = scrollInput;\r\n    this.transitionYLimits = transitionYLimits;\r\n    this.calcRange();\r\n    scroller.onScroll(this.transform.bind(this));\r\n  }\r\n  transform() {\r\n    const { start, range } = this.transitionYLimits;\r\n    const { fraction } = this.scrollInput.scrollY;\r\n    const transitionValue = start + fraction * range;\r\n    this.element.style.transform = `translate(39%, ${transitionValue}px) rotate(-90deg)`;\r\n  }\r\n  calcRange() {\r\n    this.transitionYLimits.range = this.transitionYLimits.end - this.transitionYLimits.start;\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (TransformWrokHeadline);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TransformWorkHeadline.js?");
 
 /***/ }),
 
@@ -190,7 +202,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Scr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ScrollInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ScrollInput */ \"./app/assets/scripts/modules/ScrollInput.js\");\n\r\n\r\nclass TranslateYWorkHeadlineOnScroll {\r\n  constructor(scroller) {\r\n    this.scroller = scroller;\r\n    this.workHeadline = document.querySelector('.stroke-headline');\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateYWorkHeadlineOnScroll);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateYWorkHeadlineOnScroll.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ScrollInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ScrollInput */ \"./app/assets/scripts/modules/ScrollInput.js\");\n/* harmony import */ var _TransformWorkHeadline__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TransformWorkHeadline */ \"./app/assets/scripts/modules/TransformWorkHeadline.js\");\n\r\n\r\n\r\nclass TranslateYWorkHeadlineOnScroll {\r\n  constructor(scroller) {\r\n    this.scroller = scroller;\r\n    this.workHeadline = document.querySelector('.stroke-headline--work');\r\n    this.topBoundings = this.getTopBoundings();\r\n    this.translateYLimits = { start: 0, end: -200 };\r\n    this.relativeScrollInput = new _ScrollInput__WEBPACK_IMPORTED_MODULE_0__[\"default\"](scroller, this.topBoundings, function() {});\r\n    this.setTransformObject();\r\n  }\r\n  getTopBoundings() {\r\n    const topBounding = this.workHeadline.getBoundingClientRect().top;\r\n    return {\r\n      start: topBounding - window.innerHeight,\r\n      end: topBounding + this.workHeadline.clientWidth\r\n    };\r\n  }\r\n  setTransformObject() {\r\n    new _TransformWorkHeadline__WEBPACK_IMPORTED_MODULE_1__[\"default\"](\r\n      this.scroller,\r\n      this.relativeScrollInput,\r\n      this.workHeadline,\r\n      this.translateYLimits\r\n    );\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateYWorkHeadlineOnScroll);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateYWorkHeadlineOnScroll.js?");
 
 /***/ }),
 
