@@ -14,6 +14,7 @@ class ScrollInput {
   calcFraction({ y: yPosition }) {
     this.scrollY.fraction = (yPosition - this.scrollY.start) / this.scrollY.range;
     this.adjustFraction(this.scrollY.fraction);
+    // console.log(this.scrollY.fraction);
   }
   adjustFraction(fraction) {
     if (fraction < 0) {
