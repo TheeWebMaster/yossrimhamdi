@@ -9,7 +9,7 @@ const scroller = smoothScroll(
       height: '100vh'
     },
     lerp: {
-      damping: 0.04
+      damping: 0.02
     }
   }
 );

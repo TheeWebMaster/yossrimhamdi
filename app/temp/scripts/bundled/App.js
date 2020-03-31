@@ -130,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nclass ScrollInput {\n  constr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _smoovy_scroller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @smoovy/scroller */ \"./node_modules/@smoovy/scroller/dist/bundles/index.esm.js\");\n\n\nconst scroller = Object(_smoovy_scroller__WEBPACK_IMPORTED_MODULE_0__[\"smoothScroll\"])(\n  {\n    element: document.querySelector('.container')\n  },\n  {\n    styles: {\n      height: '100vh'\n    },\n    lerp: {\n      damping: 0.04\n    }\n  }\n);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (scroller);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Scroller.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _smoovy_scroller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @smoovy/scroller */ \"./node_modules/@smoovy/scroller/dist/bundles/index.esm.js\");\n\n\nconst scroller = Object(_smoovy_scroller__WEBPACK_IMPORTED_MODULE_0__[\"smoothScroll\"])(\n  {\n    element: document.querySelector('.container')\n  },\n  {\n    styles: {\n      height: '100vh'\n    },\n    lerp: {\n      damping: 0.02\n    }\n  }\n);\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (scroller);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Scroller.js?");
 
 /***/ }),
 
