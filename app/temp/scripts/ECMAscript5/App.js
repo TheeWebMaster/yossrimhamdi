@@ -385,22 +385,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   },
 
   /***/
-  "./app/assets/scripts/modules/TransformWorkHeadline.js":
-  /*!*************************************************************!*\
-    !*** ./app/assets/scripts/modules/TransformWorkHeadline.js ***!
-    \*************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function appAssetsScriptsModulesTransformWorkHeadlineJs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    eval("__webpack_require__.r(__webpack_exports__);\nclass TransformWrokHeadline {\n  constructor(scroller, scrollInput, element, transitionYLimits) {\n    this.element = element;\n    this.scrollInput = scrollInput;\n    this.transitionYLimits = transitionYLimits;\n    this.calcRange();\n    scroller.onScroll(this.transform.bind(this));\n  }\n  transform() {\n    const { start, range } = this.transitionYLimits;\n    const { fraction } = this.scrollInput.scrollY;\n    const transitionValue = start + fraction * range;\n    this.element.style.transform = `translate(39%, ${transitionValue}px) rotate(-90deg)`;\n  }\n  calcRange() {\n    this.transitionYLimits.range = this.transitionYLimits.end - this.transitionYLimits.start;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TransformWrokHeadline);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TransformWorkHeadline.js?");
-    /***/
-  },
-
-  /***/
   "./app/assets/scripts/modules/TransformWorkHeadlineOnScroll.js":
   /*!*********************************************************************!*\
     !*** ./app/assets/scripts/modules/TransformWorkHeadlineOnScroll.js ***!
@@ -412,7 +396,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   function appAssetsScriptsModulesTransformWorkHeadlineOnScrollJs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
-    eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _TransformWorkHeadline__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TransformWorkHeadline */ \"./app/assets/scripts/modules/TransformWorkHeadline.js\");\n/* harmony import */ var _SetupParallaxEnviroment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SetupParallaxEnviroment */ \"./app/assets/scripts/modules/SetupParallaxEnviroment.js\");\n\n\n\nclass TranslateYWorkHeadlineOnScroll extends _SetupParallaxEnviroment__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  constructor(scroller) {\n    super(scroller, '.stroke-headline--work', 120); //topBounding + this.workHeadline.clientWidth\n    this.scroller = scroller;\n    this.workHeadline = document.querySelector('.stroke-headline--work');\n    this.translateYLimits = { start: 0, end: -200 };\n    this.setTransformObject();\n  }\n  setTransformObject() {\n    new _TransformWorkHeadline__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\n      this.scroller,\n      this.relativeScrollInputs[0],\n      this.elements[0],\n      this.translateYLimits\n    );\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateYWorkHeadlineOnScroll);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TransformWorkHeadlineOnScroll.js?");
+    eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _TranslateX__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TranslateX */ \"./app/assets/scripts/modules/TranslateX.js\");\n/* harmony import */ var _SetupParallaxEnviroment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SetupParallaxEnviroment */ \"./app/assets/scripts/modules/SetupParallaxEnviroment.js\");\n\n\n\nclass TranslateYWorkHeadlineOnScroll extends _SetupParallaxEnviroment__WEBPACK_IMPORTED_MODULE_1__[\"default\"] {\n  constructor(scroller) {\n    super(scroller, '.stroke-headline--work', 120); //topBounding + this.workHeadline.clientWidth\n    this.scroller = scroller;\n    this.workHeadline = document.querySelector('.stroke-headline--work');\n    this.translateYLimits = { start: 0, end: -50 };\n    this.setTransformObject();\n  }\n  setTransformObject() {\n    new _TranslateX__WEBPACK_IMPORTED_MODULE_0__[\"default\"](\n      this.scroller,\n      this.relativeScrollInputs[0],\n      this.elements[0],\n      this.translateYLimits,\n      'px',\n      this.TransformFunction\n    );\n  }\n  TransformFunction() {\n    this.element.style.transform = `translate(39%, ${this.calcCurrentValue()}px) rotate(-90deg)`;\n  }\n}\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateYWorkHeadlineOnScroll);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TransformWorkHeadlineOnScroll.js?");
     /***/
   },
 
