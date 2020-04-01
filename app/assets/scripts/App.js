@@ -5,6 +5,9 @@ import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
 import TranslateXHeadlinesOnScroll from './modules/TranslateXHeadlinesOnScroll';
 import TransformWorkHeadlineOnScroll from './modules/TransformWorkHeadlineOnScroll';
 import TranslateXStrokeHeadlinesOnScroll from './modules/TranslateXStrokeHeadlinesOnScroll';
+import FixedHeaderPosition from './modules/FixedHeaderPosition';
+
+new FixedHeaderPosition(scroller);
 
 new TranslateXStrokeHeadlinesOnScroll(scroller);
 new TransformWorkHeadlineOnScroll(scroller);
