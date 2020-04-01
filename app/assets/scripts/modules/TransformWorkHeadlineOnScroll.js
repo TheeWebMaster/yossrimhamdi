@@ -1,4 +1,3 @@
-import ScrollInput from './ScrollInput';
 import TransformWorkHeadline from './TransformWorkHeadline';
 import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 

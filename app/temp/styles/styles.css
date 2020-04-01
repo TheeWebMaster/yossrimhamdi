@@ -212,7 +212,7 @@ body {
     right: 0;
     top: 50%;
   }.stroke-headline--top {
-    top: -67px;
+    top: 0;
     left: -20px;
     line-height: 0.74;
     transform: translateY(-60%);

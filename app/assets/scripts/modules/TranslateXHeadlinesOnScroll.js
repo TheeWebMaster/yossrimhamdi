@@ -4,7 +4,7 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 class TranslateXHeadlinesOnScroll extends SetupParallaxEnviroment {
   constructor(scroller) {
     super(scroller, '.headline', window.innerHeight);
-    this.translateXLimits = [
+    this.xLimits = [
       { start: 100, end: 400 },
       { start: 0, end: -400 }
     ];
@@ -12,9 +12,8 @@ class TranslateXHeadlinesOnScroll extends SetupParallaxEnviroment {
   }
   setTranslateXObject() {
     this.elements.forEach((element, i) => {
-      const xLimits = i === 0 ? this.translateXLimits[0] : this.translateXLimits[1];
-
-      new TranslateX(this.scroller, this.relativeScrollInputs[i], element, xLimits, 'px');
+      const xLimits = i % 2 === 0 ? this.xLimits[0] : this.xLimits[1];
+      new TranslateX(this.scroller, this.relativeScrollInputs[i], element, xLimits);
     });
   }
 }

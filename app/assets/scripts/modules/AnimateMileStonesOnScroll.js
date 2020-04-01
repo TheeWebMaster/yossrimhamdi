@@ -5,7 +5,7 @@ class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
   constructor(scroller) {
     super(scroller, '.milestone', 200 - window.innerHeight);
     this.scroller = scroller;
-    this.transitionXLimits = { start: -50, end: 0 };
+    this.xLimits = { start: -50, end: 0 };
     this.setTranslateXObjects();
   }
   /*   getrelative() {
@@ -24,14 +24,7 @@ class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
   setTranslateXObjects() {
     this.elements.forEach((element, i) => {
       const topBorderElement = element.querySelector('.milestone__top-border');
-
-      new TranslateX(
-        this.scroller,
-        this.relativeScrollInputs[i],
-        topBorderElement,
-        this.transitionXLimits,
-        '%'
-      );
+      new TranslateX(this.scroller, this.relativeScrollInputs[i], topBorderElement, this.xLimits, '%');
     });
   }
   displayMileStoneDiscription(element) {

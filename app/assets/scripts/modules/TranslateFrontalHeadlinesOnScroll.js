@@ -17,7 +17,7 @@ class TranslateFrontalHeadlinesOnScroll {
   }
   setTranslateXObject() {
     this.headlines.forEach((headline, i) => {
-      new TranslateX(this.scroller, this.scrollInput, headline, this.transitionXLimits[i], 'px');
+      new TranslateX(this.scroller, this.scrollInput, headline, this.transitionXLimits[i]);
     });
   }
 }

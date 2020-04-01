@@ -1,20 +1,18 @@
 class TranslateX {
-  constructor(scroller, scrollInput, element, transitionXLimits, translateUnit) {
-    this.transitionXLimits = transitionXLimits;
+  constructor(scroller, scrollInput, element, xLimits, unit = 'px') {
     this.scrollInput = scrollInput;
+    this.xLimits = xLimits;
     this.element = element;
-    this.translateUnit = translateUnit;
-    this.calcRange();
+    this.unit = unit;
     scroller.onScroll(this.translateX.bind(this));
   }
   translateX() {
-    const { start, range } = this.transitionXLimits;
-    const { fraction } = this.scrollInput.scrollY;
-    const transitionValue = start + fraction * range;
-    this.element.style.transform = `translateX(${transitionValue}${this.translateUnit})`;
+    this.element.style.transform = `translateX(${this.calcCurrentValue()}${this.unit})`;
   }
-  calcRange() {
-    this.transitionXLimits.range = this.transitionXLimits.end - this.transitionXLimits.start;
+  calcCurrentValue() {
+    const { start, end } = this.xLimits;
+    const { fraction } = this.scrollInput.scrollY;
+    return start + fraction * (end - start);
   }
 }
 
