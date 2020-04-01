@@ -6,7 +6,9 @@ import TranslateXHeadlinesOnScroll from './modules/TranslateXHeadlinesOnScroll';
 import TransformWorkHeadlineOnScroll from './modules/TransformWorkHeadlineOnScroll';
 import TranslateXStrokeHeadlinesOnScroll from './modules/TranslateXStrokeHeadlinesOnScroll';
 import FixedHeaderPosition from './modules/FixedHeaderPosition';
+import AnimateAvailabilityMessageOnScroll from './modules/AnimateAvailabilityMessageOnScroll';
 
+new AnimateAvailabilityMessageOnScroll(scroller);
 new FixedHeaderPosition(scroller);
 
 new TranslateXStrokeHeadlinesOnScroll(scroller);
