@@ -3,6 +3,7 @@
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px black;
   position: absolute;
+  line-height: 0.74;
 
   @mixin atLarge {
     font-size: 13rem;
@@ -11,7 +12,7 @@
     font-size: 5.5rem;
 
     @mixin atLarge {
-      font-size: 9rem;
+      font-size: 10rem;
     }
   }
   &--right-edge {
@@ -19,30 +20,9 @@
     top: 50%;
   }
   &--top {
-    top: 0;
-    left: -20px;
-    line-height: 0.74;
     transform: translateY(-60%);
-
-    @mixin atLarge {
-      transform: translateY(-75%);
-    }
-  }
-  &--centered {
-    @mixin atLarge {
-      top: 50%;
-      left: 45%;
-      top: -67px;
-    }
   }
   &--rotated {
     transform: translateX(39%) rotate(-90deg);
-  }
-  &--visible-at-large {
-    display: none;
-
-    @mixin atLarge {
-      display: block;
-    }
   }
 }
