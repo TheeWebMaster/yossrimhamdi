@@ -88,6 +88,8 @@ body {
   }.header {
   position: relative;
   font-weight: 300;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }@media only screen and (min-width: 1024px) {.header {
     font-size: 1.2rem
 }
@@ -102,12 +104,10 @@ body {
       display: block
   }
   }.header__availability-message {
-    width: 100px;
     position: absolute;
     bottom: 1em;
     line-height: 1em;
   }@media only screen and (min-width: 1024px) {.header__availability-message {
-      width: 120px;
       line-height: 150%;
       bottom: 0;
       left: 30vw;
