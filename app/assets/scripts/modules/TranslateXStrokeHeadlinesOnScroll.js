@@ -1,4 +1,4 @@
-import TranslateX from './TranslateX';
+import Transform from './Transform';
 import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class TranslateXStrokeHeadlinesOnScroll extends SetupParallaxEnviroment {
@@ -10,14 +10,7 @@ class TranslateXStrokeHeadlinesOnScroll extends SetupParallaxEnviroment {
   }
   setTranslateXObjects() {
     this.elements.forEach((element, i) => {
-      new TranslateX(
-        this.scroller,
-        this.relativeScrollInputs[i],
-        element,
-        this.xLimits,
-        'px',
-        this.transform
-      );
+      new Transform(this.scroller, this.relativeScrollInputs[i], element, this.xLimits, 'px', this.transform);
     });
   }
   transform() {

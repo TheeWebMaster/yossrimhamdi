@@ -1,4 +1,4 @@
-import TranslateX from './TranslateX';
+import Transform from './Transform';
 import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
@@ -9,12 +9,12 @@ class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
     super(scroller, '.milestone', 200 - window.innerHeight, displayMileStoneDiscription);
     this.scroller = scroller;
     this.xLimits = { start: -50, end: 0 };
-    this.setTranslateXObjects();
+    this.setTransformObjects();
   }
-  setTranslateXObjects() {
+  setTransformObjects() {
     this.elements.forEach((element, i) => {
       const topBorderElement = element.querySelector('.milestone__top-border');
-      new TranslateX(this.scroller, this.relativeScrollInputs[i], topBorderElement, this.xLimits, '%');
+      new Transform(this.scroller, this.relativeScrollInputs[i], topBorderElement, this.xLimits, '%');
     });
   }
 }

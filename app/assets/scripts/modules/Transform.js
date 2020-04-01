@@ -1,10 +1,12 @@
-class TranslateX {
-  constructor(scroller, scrollInput, element, xLimits, unit = 'px', costumTransX) {
+class Transform {
+  constructor(scroller, scrollInput, element, xLimits, unit = 'px', costumTransformFunction) {
     this.scrollInput = scrollInput;
     this.xLimits = xLimits;
     this.element = element;
     this.unit = unit;
-    scroller.onScroll(costumTransX ? costumTransX.bind(this) : this.translateX.bind(this));
+    scroller.onScroll(
+      costumTransformFunction ? costumTransformFunction.bind(this) : this.translateX.bind(this)
+    );
   }
   translateX() {
     this.element.style.transform = `translateX(${this.calcCurrentValue()}${this.unit})`;
@@ -16,4 +18,4 @@ class TranslateX {
   }
 }
 
-export default TranslateX;
+export default Transform;
