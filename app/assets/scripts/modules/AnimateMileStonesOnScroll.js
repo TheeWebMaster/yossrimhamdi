@@ -1,42 +1,41 @@
 import TranslateX from './TranslateX';
-import ScrollInput from './ScrollInput';
+import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
-class AnimateMileStonesOnScroll {
+class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
   constructor(scroller) {
-    this.mileStones = document.querySelectorAll('.milestone');
+    super(scroller, '.milestone', 200 - window.innerHeight);
     this.scroller = scroller;
-    this.offset = 200;
     this.transitionXLimits = { start: -50, end: 0 };
-    this.topElementsOffset = this.getLimits();
     this.setTranslateXObjects();
   }
-  getLimits() {
-    const topElementsOffset = [];
-
-    this.mileStones.forEach(mileStone => {
-      const topRelativePosition = mileStone.getBoundingClientRect().top - window.innerHeight;
-
-      topElementsOffset.push({
-        start: topRelativePosition,
-        end: topRelativePosition + mileStone.clientHeight + this.offset
-      });
-    });
-    return topElementsOffset;
-  }
-  setTranslateXObjects() {
-    this.mileStones.forEach((mileStone, i) => {
-      const topBorderElement = mileStone.querySelector('.milestone__top-border');
-      const relativeScrollInput = new ScrollInput(
-        this.scroller,
-        this.topElementsOffset[i],
-        this.displayMileStoneDiscription.bind(this, mileStone)
+  /*   getrelative() {
+    const relative = [];
+    this.elements.forEach((element, i) => {
+      relative.push(
+        new ScrollInput(
+          this.scroller,
+          this.topBoundings[i],
+          this.displayMileStoneDiscription.bind(this, element)
+        )
       );
+    });
+    return relative;
+  } */
+  setTranslateXObjects() {
+    this.elements.forEach((element, i) => {
+      const topBorderElement = element.querySelector('.milestone__top-border');
 
-      new TranslateX(this.scroller, relativeScrollInput, topBorderElement, this.transitionXLimits, '%');
+      new TranslateX(
+        this.scroller,
+        this.relativeScrollInputs[i],
+        topBorderElement,
+        this.transitionXLimits,
+        '%'
+      );
     });
   }
-  displayMileStoneDiscription(mileStone) {
-    mileStone.querySelector('.milestone__description').classList.add('milestone__description--is-visible');
+  displayMileStoneDiscription(element) {
+    element.querySelector('.milestone__description').classList.add('milestone__description--is-visible');
   }
 }
 

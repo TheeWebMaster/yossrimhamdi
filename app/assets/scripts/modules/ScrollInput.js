@@ -1,20 +1,19 @@
 class ScrollInput {
-  constructor(scroller, topElementOffset, callback) {
+  constructor(scroller, topBounding, callback) {
+    this.callback = callback;
     this.scrollY = {
-      start: topElementOffset.start,
-      end: topElementOffset.end,
+      start: topBounding.start,
+      end: topBounding.end,
       get range() {
         return this.end - this.start;
       },
       fraction: 0
     };
-    this.callback = callback;
     scroller.onScroll(this.calcFraction.bind(this));
   }
   calcFraction({ y: yPosition }) {
     this.scrollY.fraction = (yPosition - this.scrollY.start) / this.scrollY.range;
     this.adjustFraction(this.scrollY.fraction);
-    // console.log(this.scrollY.fraction);
   }
   adjustFraction(fraction) {
     if (fraction < 0) {

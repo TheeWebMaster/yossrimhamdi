@@ -1,27 +1,20 @@
 import ScrollInput from './ScrollInput';
 import TransformWorkHeadline from './TransformWorkHeadline';
+import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
-class TranslateYWorkHeadlineOnScroll {
+class TranslateYWorkHeadlineOnScroll extends SetupParallaxEnviroment {
   constructor(scroller) {
+    super(scroller, '.stroke-headline--work', 120); //topBounding + this.workHeadline.clientWidth
     this.scroller = scroller;
     this.workHeadline = document.querySelector('.stroke-headline--work');
-    this.topBoundings = this.getTopBoundings();
     this.translateYLimits = { start: 0, end: -200 };
-    this.relativeScrollInput = new ScrollInput(scroller, this.topBoundings, function() {});
     this.setTransformObject();
-  }
-  getTopBoundings() {
-    const topBounding = this.workHeadline.getBoundingClientRect().top;
-    return {
-      start: topBounding - window.innerHeight,
-      end: topBounding + this.workHeadline.clientWidth
-    };
   }
   setTransformObject() {
     new TransformWorkHeadline(
       this.scroller,
-      this.relativeScrollInput,
-      this.workHeadline,
+      this.relativeScrollInputs[0],
+      this.elements[0],
       this.translateYLimits
     );
   }
