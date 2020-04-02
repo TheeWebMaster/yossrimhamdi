@@ -16,8 +16,9 @@
     display: inline-block;
     position: relative;
     overflow: hidden;
+    backface-visibilty: hidden;
   }
-  &__text {
+  &__title {
     font-weight: 500;
     font-size: 3rem;
     padding-bottom: 15px;
@@ -27,18 +28,24 @@
       padding-bottom: 10px;
     }
   }
-  &__sub {
+  &__marqee {
     color: $mainRed;
     word-spacing: 15px;
     position: absolute;
     white-space: nowrap;
     bottom: 0;
-    left: 1px;
     font-size: 0.8rem;
+    animation: marqee 30s linear infinite;
 
     @mixin atLarge {
       left: 8px;
       font-size: 1rem;
+    }
+
+    &--left-content-support {
+      transform: translateX(-100%);
+      padding-right: 20px;
+      animation: left-marqee 30s linear infinite;
     }
   }
 }
