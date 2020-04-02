@@ -7,6 +7,9 @@
     line-height: 0.82;
 
     @mixin atLarge {
+      font-size: 16rem;
+    }
+    @mixin atHuge {
       font-size: 22rem;
     }
 
