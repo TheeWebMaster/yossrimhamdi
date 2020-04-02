@@ -1,4 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');* {
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');@-webkit-keyframes marqee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}@keyframes marqee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}@-webkit-keyframes left-marqee {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}@keyframes left-marqee {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -221,27 +249,34 @@ body {
     display: inline-block;
     position: relative;
     overflow: hidden;
-  }.headline__text {
+    backface-visibilty: hidden;
+  }.headline__title {
     font-weight: 500;
     font-size: 3rem;
     padding-bottom: 15px;
-  }@media only screen and (min-width: 1024px) {.headline__text {
+  }@media only screen and (min-width: 1024px) {.headline__title {
       font-size: 8.5rem;
       padding-bottom: 10px
   }
-  }.headline__sub {
+  }.headline__marqee {
     color: #ff0d00;
     word-spacing: 15px;
     position: absolute;
     white-space: nowrap;
     bottom: 0;
-    left: 1px;
     font-size: 0.8rem;
-  }@media only screen and (min-width: 1024px) {.headline__sub {
+    -webkit-animation: marqee 30s linear infinite;
+            animation: marqee 30s linear infinite;
+  }@media only screen and (min-width: 1024px) {.headline__marqee {
       left: 8px;
       font-size: 1rem
   }
-  }.stroke-headline {
+  }.headline__marqee--left-content-support {
+      transform: translateX(-100%);
+      padding-right: 20px;
+      -webkit-animation: left-marqee 30s linear infinite;
+              animation: left-marqee 30s linear infinite;
+    }.stroke-headline {
   font-size: 8rem;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px black;
