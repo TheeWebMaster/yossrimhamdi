@@ -2,6 +2,7 @@
   position: relative;
   font-weight: 300;
   backface-visibility: hidden;
+  z-index: 1;
 
   @mixin atLarge {
     font-size: 1.2rem;
@@ -35,10 +36,45 @@
   &__nav {
     line-height: 2.3em;
     text-align: right;
+    counter-reset: nav-counter;
 
     @mixin atLarge {
       line-height: 150%;
-      text-align: left;
+    }
+    & span {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+
+      &::after {
+        counter-increment: nav-counter;
+        content: '0' counter(nav-counter);
+        display: block;
+        font-size: 0.6rem;
+        font-weight: 400;
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 1.3;
+        transform: translateX(115%);
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 2px;
+        background-color: $mainRed;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-100%, -50%);
+        opacity: 0;
+        transition: all 200ms;
+      }
+      &:hover::before {
+        opacity: 1;
+        transform: translate(-170%, -50%);
+      }
     }
   }
 }
