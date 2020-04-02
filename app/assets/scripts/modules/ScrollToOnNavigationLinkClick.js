@@ -1,0 +1,25 @@
+class ScrollToOnNavigationLinkClick {
+  constructor(scroller) {
+    this.scroller = scroller;
+    this.milestones = document.querySelectorAll('.milestone--target');
+    this.nav = document.querySelector('.header__nav');
+    this.boundaries = this.getBoundaries();
+    this.setClickEvent();
+  }
+  getBoundaries() {
+    const boundaries = new Map();
+    this.milestones.forEach(milestone => {
+      boundaries.set(milestone.id, milestone.getBoundingClientRect().top);
+    });
+
+    return boundaries;
+  }
+  setClickEvent() {
+    this.nav.addEventListener('click', this.handleClickEvent.bind(this));
+  }
+  handleClickEvent(e) {
+    this.scroller.scrollTo({ y: this.boundaries.get(e.target.textContent) });
+  }
+}
+
+export default ScrollToOnNavigationLinkClick;
