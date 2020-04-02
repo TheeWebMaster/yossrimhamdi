@@ -8,12 +8,12 @@ import TranslateXStrokeHeadlinesOnScroll from './modules/TranslateXStrokeHeadlin
 import FixedHeaderPosition from './modules/FixedHeaderPosition';
 import AnimateAvailabilityMessageOnScroll from './modules/AnimateAvailabilityMessageOnScroll';
 import ScrollToOnNavigationLinkClick from './modules/ScrollToOnNavigationLinkClick';
+import TranslateNavLinksOnWaypoints from './modules/TranslateNavLinksOnWaypoints';
 
+new TranslateNavLinksOnWaypoints(scroller);
 new ScrollToOnNavigationLinkClick(scroller);
-
 new AnimateAvailabilityMessageOnScroll(scroller);
 new FixedHeaderPosition(scroller);
-
 new TranslateXStrokeHeadlinesOnScroll(scroller);
 new TransformWorkHeadlineOnScroll(scroller);
 new TranslateXHeadlinesOnScroll(scroller);

@@ -37,19 +37,22 @@
     line-height: 2.3em;
     text-align: right;
     counter-reset: nav-counter;
+    height: 112px;
 
     @mixin atLarge {
       line-height: 150%;
     }
+    & ul {
+      transition: transform 400ms;
+    }
     & span {
       position: relative;
-      display: inline-block;
       cursor: pointer;
+      padding-left: 1em;
 
       &::after {
         counter-increment: nav-counter;
         content: '0' counter(nav-counter);
-        display: block;
         font-size: 0.6rem;
         font-weight: 400;
         position: absolute;
@@ -60,21 +63,39 @@
       }
       &::before {
         content: '';
-        display: block;
         width: 8px;
         height: 2px;
         background-color: $mainRed;
         position: absolute;
         top: 50%;
         left: 0;
-        transform: translate(-100%, -50%);
+        transform: translate(110%, -50%);
         opacity: 0;
-        transition: all 200ms;
+        transition: all 300ms;
       }
       &:hover::before {
         opacity: 1;
-        transform: translate(-170%, -50%);
+        transform: translate(80%, -50%);
       }
+    }
+
+    &:hover {
+      .header__nav-list-wrapper {
+        max-height: 112px;
+      }
+      & ul {
+        transform: translateY(0) !important;
+      }
+    }
+  }
+  &__nav-list-wrapper {
+    padding-right: 0.8em;
+    overflow-y: hidden;
+    transition: max-height 400ms;
+    max-height: 28px;
+
+    &--is-visible {
+      max-height: 112px !important;
     }
   }
 }
