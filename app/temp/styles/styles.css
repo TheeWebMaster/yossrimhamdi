@@ -232,6 +232,13 @@ body {
     width: 70%;
     font-size: 4rem
 }
+  }.paragraph span {
+    display: inline-block;
+  }.paragraph > span {
+    overflow: hidden;
+  }.paragraph > span > span {
+    transition: transform 500ms;
+    transform: translateY(100%);
   }.paragraph::first-letter {
     text-transform: uppercase;
   }.paragraph--margin-b {

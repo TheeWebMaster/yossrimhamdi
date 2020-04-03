@@ -9,6 +9,9 @@ import FixedHeaderPosition from './modules/FixedHeaderPosition';
 import AnimateAvailabilityMessageOnScroll from './modules/AnimateAvailabilityMessageOnScroll';
 import ScrollToOnNavigationLinkClick from './modules/ScrollToOnNavigationLinkClick';
 import TranslateNavLinksOnWaypoints from './modules/TranslateNavLinksOnWaypoints';
+import AnimateTextOnScroll from './modules/AnimateTextOnScroll';
+
+new AnimateTextOnScroll(scroller);
 
 new TranslateNavLinksOnWaypoints(scroller);
 new ScrollToOnNavigationLinkClick(scroller);
