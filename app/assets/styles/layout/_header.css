@@ -14,12 +14,18 @@
       font-size: 1.8rem;
     }
   }
-  &__professional-skill {
+  &__add {
+    height: 31px;
     display: none;
+    text-align: center;
+    overflow: hidden;
 
     @mixin atLarge {
       display: block;
     }
+  }
+  &__ad-list {
+    transition: transform 500ms;
   }
   &__availability-message {
     position: absolute;
