@@ -130,11 +130,16 @@ body {
   }@media only screen and (min-width: 1024px) {.header__my-name {
       font-size: 1.8rem
   }
-  }.header__professional-skill {
+  }.header__add {
+    height: 31px;
     display: none;
-  }@media only screen and (min-width: 1024px) {.header__professional-skill {
+    text-align: center;
+    overflow: hidden;
+  }@media only screen and (min-width: 1024px) {.header__add {
       display: block
   }
+  }.header__ad-list {
+    transition: transform 500ms;
   }.header__availability-message {
     position: absolute;
     bottom: 1em;

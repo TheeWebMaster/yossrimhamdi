@@ -10,6 +10,9 @@ import AnimateAvailabilityMessageOnScroll from './modules/AnimateAvailabilityMes
 import ScrollToOnNavigationLinkClick from './modules/ScrollToOnNavigationLinkClick';
 import TranslateNavLinksOnWaypoints from './modules/TranslateNavLinksOnWaypoints';
 import AnimateTextOnScroll from './modules/AnimateTextOnScroll';
+import ChangeAdOnTiming from './modules/ChangeAdOnTiming';
+
+new ChangeAdOnTiming(scroller);
 
 new AnimateTextOnScroll(scroller);
 
