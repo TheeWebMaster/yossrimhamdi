@@ -9,13 +9,11 @@ import FixedHeaderPosition from './modules/FixedHeaderPosition';
 import AnimateAvailabilityMessageOnScroll from './modules/AnimateAvailabilityMessageOnScroll';
 import ScrollToOnNavigationLinkClick from './modules/ScrollToOnNavigationLinkClick';
 import TranslateNavLinksOnWaypoints from './modules/TranslateNavLinksOnWaypoints';
-import AnimateTextOnScroll from './modules/AnimateTextOnScroll';
+import AnimateParagraphOnScroll from './modules/AnimateParagraphOnScroll';
 import ChangeAdOnTiming from './modules/ChangeAdOnTiming';
 
 new ChangeAdOnTiming(scroller);
-
-new AnimateTextOnScroll(scroller);
-
+new AnimateParagraphOnScroll(scroller);
 new TranslateNavLinksOnWaypoints(scroller);
 new ScrollToOnNavigationLinkClick(scroller);
 new AnimateAvailabilityMessageOnScroll(scroller);

@@ -1,8 +1,8 @@
-class AnimateTextOnScroll {
+class AnimateParagraphOnScroll {
   constructor(scroller) {
     this.paragraphs = {
       DOM: document.querySelectorAll('.paragraph--to-animate-js'),
-      innerSpans: []
+      innerSpans: [],
     };
     this.topBoundings = this.getTopBoundings();
     this.divideParagraphsTextIntoSpans();
@@ -10,15 +10,15 @@ class AnimateTextOnScroll {
     scroller.onScroll(this.animateParagraphs.bind(this));
   }
   divideParagraphsTextIntoSpans() {
-    this.paragraphs.DOM.forEach(paragraph => {
+    this.paragraphs.DOM.forEach((paragraph) => {
       paragraph.innerHTML = paragraph.innerText
         .split(' ')
-        .map(word => `<span><span>${word}</span></span>`)
+        .map((word) => `<span><span>${word}</span></span>`)
         .join(' ');
     });
   }
   selectInnerParagraphDOMspans() {
-    this.paragraphs.DOM.forEach(paragraph => {
+    this.paragraphs.DOM.forEach((paragraph) => {
       this.paragraphs.innerSpans.push(paragraph.querySelectorAll('span > span'));
     });
   }
@@ -45,7 +45,7 @@ class AnimateTextOnScroll {
   getTopBoundings() {
     const topBoundings = [];
 
-    this.paragraphs.DOM.forEach(paragraph => {
+    this.paragraphs.DOM.forEach((paragraph) => {
       topBoundings.push(paragraph.getBoundingClientRect().top - window.innerHeight + paragraph.clientHeight);
     });
 
@@ -53,4 +53,4 @@ class AnimateTextOnScroll {
   }
 }
 
-export default AnimateTextOnScroll;
+export default AnimateParagraphOnScroll;
