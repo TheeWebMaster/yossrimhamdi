@@ -279,7 +279,6 @@ body {
     position: absolute;
     white-space: nowrap;
     bottom: 0;
-    font-weight: 300;
     font-size: 0.8rem;
     -webkit-animation: marqee 30s linear infinite;
             animation: marqee 30s linear infinite;
