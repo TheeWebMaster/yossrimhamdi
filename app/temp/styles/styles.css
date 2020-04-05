@@ -235,6 +235,9 @@ body {
   text-align: justify;
 }@media only screen and (min-width: 1024px) {.paragraph {
     width: 70%;
+    font-size: 3rem
+}
+  }@media only screen and (min-width: 1500px) {.paragraph {
     font-size: 4rem
 }
   }.paragraph span {

@@ -7,6 +7,9 @@
 
   @mixin atLarge {
     width: 70%;
+    font-size: 3rem;
+  }
+  @mixin atHuge {
     font-size: 4rem;
   }
   & span {
