@@ -101,7 +101,7 @@
     max-height: 112px;
 
     &--is-hidden {
-      max-height: 28px !important;
+      max-height: 28px;
     }
   }
 }
