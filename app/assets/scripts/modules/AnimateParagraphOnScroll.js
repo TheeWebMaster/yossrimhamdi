@@ -46,7 +46,9 @@ class AnimateParagraphOnScroll {
     const topBoundings = [];
 
     this.paragraphs.DOM.forEach((paragraph) => {
-      topBoundings.push(paragraph.getBoundingClientRect().top - window.innerHeight + paragraph.clientHeight);
+      topBoundings.push(
+        paragraph.getBoundingClientRect().top - window.innerHeight + paragraph.clientHeight * (1 - 1 / 5)
+      );
     });
 
     return topBoundings;
