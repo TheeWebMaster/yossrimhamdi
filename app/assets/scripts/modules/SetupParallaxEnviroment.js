@@ -1,7 +1,7 @@
 import ScrollInput from './ScrollInput';
 
 class SetupParallaxEnviroment {
-  constructor(scroller, className, endBoundingOffset = 0, callback = function() {}) {
+  constructor(scroller, className, endBoundingOffset = 0, callback = function () {}) {
     this.callback = callback;
     this.scroller = scroller;
     this.elements = document.querySelectorAll(className);
@@ -12,12 +12,12 @@ class SetupParallaxEnviroment {
   getTopElementsBounding() {
     const topBoundings = [];
 
-    this.elements.forEach(element => {
+    this.elements.forEach((element) => {
       const topBounding = element.getBoundingClientRect().top;
 
       topBoundings.push({
         start: topBounding - window.innerHeight,
-        end: topBounding + element.clientHeight + this.endBoundingOffset
+        end: topBounding + element.clientHeight + this.endBoundingOffset,
       });
     });
 

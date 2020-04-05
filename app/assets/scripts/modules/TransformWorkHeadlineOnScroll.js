@@ -3,10 +3,9 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class TranslateYWorkHeadlineOnScroll extends SetupParallaxEnviroment {
   constructor(scroller) {
-    super(scroller, '.stroke-headline--work', 120); //topBounding + this.workHeadline.clientWidth
+    super(scroller, '.stroke-headline--work', document.querySelector('.stroke-headline--work').clientWidth);
     this.scroller = scroller;
-    this.workHeadline = document.querySelector('.stroke-headline--work');
-    this.transYLimits = { start: 0, end: -50 };
+    this.transYLimits = { start: 0, end: -200 };
     this.setTransformObject();
   }
   setTransformObject() {
