@@ -10,14 +10,14 @@ class TranslateNavLinksOnWaypoints {
     const topBoundings = new Map();
     let offset = 0;
 
-    this.waypoints.forEach(element => {
+    this.waypoints.forEach((element) => {
       topBoundings.set(element.id, { top: element.getBoundingClientRect().top, transValue: offset });
       offset += 28;
     });
     return topBoundings;
   }
   tranNavLinksWrapper({ y }) {
-    this.waypoints.forEach(waypoint => {
+    this.waypoints.forEach((waypoint) => {
       const currentTopBounding = this.topBoundings.get(waypoint.id);
 
       if (y > currentTopBounding.top - window.innerHeight + 200) {
@@ -26,9 +26,9 @@ class TranslateNavLinksOnWaypoints {
     });
 
     if (y < window.innerHeight / 2) {
-      this.navListWrapper.classList.add('header__nav-list-wrapper--is-visible');
+      this.navListWrapper.classList.remove('header__nav-list-wrapper--is-hidden');
     } else {
-      this.navListWrapper.classList.remove('header__nav-list-wrapper--is-visible');
+      this.navListWrapper.classList.add('header__nav-list-wrapper--is-hidden');
     }
   }
 }
