@@ -7,12 +7,12 @@ class ScrollInput {
       get range() {
         return this.end - this.start;
       },
-      fraction: 0
+      fraction: 0,
     };
-    scroller.onScroll(this.calcFraction.bind(this));
+    scroller.addListener(this.calcFraction.bind(this));
   }
-  calcFraction({ y: yPosition }) {
-    this.scrollY.fraction = (yPosition - this.scrollY.start) / this.scrollY.range;
+  calcFraction({ offset: { y } }) {
+    this.scrollY.fraction = (y - this.scrollY.start) / this.scrollY.range;
     this.adjustFraction(this.scrollY.fraction);
   }
   adjustFraction(fraction) {

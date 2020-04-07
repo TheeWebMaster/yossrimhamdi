@@ -8,7 +8,7 @@ class ScrollToOnNavigationLinkClick {
   }
   getBoundaries() {
     const boundaries = new Map();
-    this.milestones.forEach(milestone => {
+    this.milestones.forEach((milestone) => {
       boundaries.set(milestone.id, milestone.getBoundingClientRect().top);
     });
 
@@ -18,7 +18,7 @@ class ScrollToOnNavigationLinkClick {
     this.nav.addEventListener('click', this.handleClickEvent.bind(this));
   }
   handleClickEvent(e) {
-    this.scroller.scrollTo({ y: this.boundaries.get(e.target.textContent) });
+    this.scroller.scrollTo(0, this.boundaries.get(e.target.textContent), 600);
   }
 }
 

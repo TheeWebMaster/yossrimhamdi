@@ -2,6 +2,8 @@
 @import './utils/_variables';
 @import './base/_animations';
 @import './base/_typography';
+@import './base/_scroller';
+@import './components/_scrollbar';
 @import './base/_general';
 @import './components/_frontal';
 @import './components/_list';
@@ -16,4 +18,3 @@
 @import './components/_award';
 @import './components/_contact-me';
 @import './layout/_footer';
-@import './components/_scroller';

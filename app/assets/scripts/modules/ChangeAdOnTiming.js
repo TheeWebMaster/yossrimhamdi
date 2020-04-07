@@ -3,7 +3,7 @@ class ChangeAdOnTiming {
     this.adList = document.querySelector('.header__ad-list');
     this.offsets = this.getOffsets();
     this.interval = null;
-    scroller.onScroll(this.changeAd.bind(this));
+    scroller.addListener(this.changeAd.bind(this));
   }
   getOffsets() {
     const offsets = [];
@@ -24,7 +24,7 @@ class ChangeAdOnTiming {
       this.adList.style.transform = `translateY(-${randOffset}px)`;
     }, 3500);
   }
-  changeAd({ y }) {
+  changeAd({ offset: { y } }) {
     if (y < window.innerHeight - window.innerHeight / 2.5 && this.interval !== null) {
       this.adList.style.transform = 'translateY(0)';
       clearInterval(this.interval);

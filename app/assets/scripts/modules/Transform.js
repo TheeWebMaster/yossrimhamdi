@@ -4,7 +4,7 @@ class Transform {
     this.xLimits = xLimits;
     this.element = element;
     this.unit = unit;
-    scroller.onScroll(
+    scroller.addListener(
       costumTransformFunction ? costumTransformFunction.bind(this) : this.translateX.bind(this)
     );
   }
