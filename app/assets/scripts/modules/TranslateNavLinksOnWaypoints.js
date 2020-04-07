@@ -18,23 +18,22 @@ class TranslateNavLinksOnWaypoints {
     this.DOM.nav.style.height = `${this.LIsHeight * 4}px`;
   }
   getTopBoundings() {
-    const topBoundings = new Map();
+    const topBoundings = [];
     let offset = 0;
 
     this.DOM.waypoints.forEach((element) => {
-      topBoundings.set(element.id, { top: element.getBoundingClientRect().top, transValue: offset });
+      topBoundings.push({ top: element.getBoundingClientRect().top, transValue: offset });
       offset += this.LIsHeight;
     });
-    return topBoundings;
+    return topBoundings.reverse();
   }
   tranNavLinksWrapper({ offset: { y } }) {
-    this.DOM.waypoints.forEach((waypoint) => {
-      const currentTopBounding = this.topBoundings.get(waypoint.id);
-
-      if (y > currentTopBounding.top - window.innerHeight + 200) {
-        this.DOM.navList.style.transform = `translateY(-${currentTopBounding.transValue}px)`;
+    for (let topBounding of this.topBoundings) {
+      if (y > topBounding.top - window.innerHeight + 200) {
+        this.DOM.navList.style.transform = `translateY(-${topBounding.transValue}px)`;
+        break;
       }
-    });
+    }
 
     if (y < window.innerHeight / 2) {
       this.DOM.navListWrapper.style.maxHeight = `${this.LIsHeight * 4}px`;
