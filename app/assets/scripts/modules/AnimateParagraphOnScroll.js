@@ -7,7 +7,7 @@ class AnimateParagraphOnScroll {
     this.topBoundings = this.getTopBoundings();
     this.divideParagraphsTextIntoSpans();
     this.selectInnerParagraphDOMspans();
-    scroller.onScroll(this.animateParagraphs.bind(this));
+    scroller.addListener(this.animateParagraphs.bind(this));
   }
   divideParagraphsTextIntoSpans() {
     this.paragraphs.DOM.forEach((paragraph) => {
@@ -22,7 +22,7 @@ class AnimateParagraphOnScroll {
       this.paragraphs.innerSpans.push(paragraph.querySelectorAll('span > span'));
     });
   }
-  animateParagraphs({ y }) {
+  animateParagraphs({ offset: { y } }) {
     this.paragraphs.innerSpans.forEach((spans, i) => {
       const newTranslateYFunction = this.getNewTranslateYFunction(y, i);
 

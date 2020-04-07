@@ -1,4 +1,4 @@
-import ScrollerBar from './modules/ScrollerBar';
+import ScrollBar from './modules/Scrollbar';
 import scroller from './modules/Scroller';
 import TranslateXFrontalHeadlinesOnScroll from './modules/TranslateXFrontalHeadlinesOnScroll';
 import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
@@ -23,4 +23,4 @@ new TransformWorkHeadlineOnScroll(scroller);
 new TranslateXHeadlinesOnScroll(scroller);
 new AnimateMileStonesOnScroll(scroller);
 new TranslateXFrontalHeadlinesOnScroll(scroller);
-new ScrollerBar(scroller);
+new ScrollBar(scroller);

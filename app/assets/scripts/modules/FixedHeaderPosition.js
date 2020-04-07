@@ -1,10 +1,10 @@
 class FixedHeaderPosition {
   constructor(scroller) {
     this.header = document.querySelector('.header');
-    scroller.onScroll(this.modifyHeaderPosition.bind(this));
+    scroller.addListener(this.modifyHeaderPosition.bind(this));
   }
-  modifyHeaderPosition({ y: currentYposition }) {
-    this.header.style.transform = `translateY(${currentYposition}px)`;
+  modifyHeaderPosition({ offset: { y } }) {
+    this.header.style.transform = `translateY(${y}px)`;
   }
 }
 

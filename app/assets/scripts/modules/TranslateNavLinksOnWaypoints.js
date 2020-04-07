@@ -4,7 +4,7 @@ class TranslateNavLinksOnWaypoints {
     this.navList = document.querySelector('.header__nav ul');
     this.navListWrapper = document.querySelector('.header__nav-list-wrapper');
     this.topBoundings = this.getTopBoundings();
-    scroller.onScroll(this.tranNavLinksWrapper.bind(this));
+    scroller.addListener(this.tranNavLinksWrapper.bind(this));
   }
   getTopBoundings() {
     const topBoundings = new Map();
@@ -16,7 +16,7 @@ class TranslateNavLinksOnWaypoints {
     });
     return topBoundings;
   }
-  tranNavLinksWrapper({ y }) {
+  tranNavLinksWrapper({ offset: { y } }) {
     this.waypoints.forEach((waypoint) => {
       const currentTopBounding = this.topBoundings.get(waypoint.id);
 

@@ -6,11 +6,11 @@ class AnimateAvailabilityMessageOnScroll {
       items: document.querySelectorAll('.header__availability-message li'),
     };
     this.range = [0.4, 0.3, 0.2, 0.1];
-    scroller.onScroll(this.animateMessage.bind(this));
+    scroller.addListener(this.animateMessage.bind(this));
   }
-  animateMessage({ y: yPosition }) {
-    this.moveMessageListUp(yPosition);
-    this.addSpaceBetweenMessageLIs(yPosition);
+  animateMessage({ offset: { y } }) {
+    this.moveMessageListUp(y);
+    this.addSpaceBetweenMessageLIs(y);
   }
   moveMessageListUp(yPosition) {
     this.message.container.style.transform = `translateY(-${yPosition * 1.5}px)`;
