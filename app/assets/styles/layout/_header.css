@@ -39,11 +39,15 @@
       transform: translate(-100%, 50%);
     }
   }
+  &__nav-list-wrapper {
+    padding-right: 1em;
+    transition: max-height 400ms;
+    overflow: hidden;
+  }
   &__nav {
     line-height: 2.3em;
     text-align: right;
     counter-reset: nav-counter;
-    height: 112px;
 
     @mixin atLarge {
       line-height: 150%;
@@ -87,21 +91,15 @@
 
     &:hover {
       .header__nav-list-wrapper {
-        max-height: 112px;
+        max-height: 156px !important;
+
+        @mixin atLarge {
+          max-height: 112px !important;
+        }
       }
       & ul {
         transform: translateY(0) !important;
       }
-    }
-  }
-  &__nav-list-wrapper {
-    padding-right: 0.8em;
-    overflow-y: hidden;
-    transition: max-height 400ms;
-    max-height: 112px;
-
-    &--is-hidden {
-      max-height: 28px;
     }
   }
 }
