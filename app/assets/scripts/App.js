@@ -24,6 +24,6 @@ new AnimateMileStonesOnScroll(scroller);
 new TranslateXFrontalHeadlinesOnScroll(scroller);
 new ScrollBar(scroller);
 
-if (window.innerWdith >= 1024) {
+if (window.innerWidth >= 1024) {
   new TranslateXHeadlinesOnScroll(scroller);
 }

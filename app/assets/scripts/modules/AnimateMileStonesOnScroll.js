@@ -6,11 +6,13 @@ class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
     function displayMileStoneDiscription(element) {
       element.querySelector('.milestone__description').classList.add('milestone__description--is-visible');
     }
-    const offset = window.innerWidth >= 1024 ? 200 : 50;
+    const offset = window.innerWidth >= 1024 ? 200 : 70;
     super(scroller, '.milestone', offset - window.innerHeight, displayMileStoneDiscription);
-    this.scroller = scroller;
-    this.xLimits = { start: -50, end: 0 };
-    this.setTransformObjects();
+    if (window.innerWidth >= 1024) {
+      this.scroller = scroller;
+      this.xLimits = { start: -50, end: 0 };
+      this.setTransformObjects();
+    }
   }
   setTransformObjects() {
     this.elements.forEach((element, i) => {
