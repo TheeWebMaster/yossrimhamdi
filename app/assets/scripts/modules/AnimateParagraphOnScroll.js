@@ -1,13 +1,17 @@
 class AnimateParagraphOnScroll {
   constructor(scroller) {
     this.paragraphs = {
-      DOM: document.querySelectorAll('.paragraph--to-animate-js'),
+      DOM: this.getParagraphs(),
       innerSpans: [],
     };
     this.topBoundings = this.getTopBoundings();
     this.divideParagraphsTextIntoSpans();
     this.selectInnerParagraphDOMspans();
     scroller.addListener(this.animateParagraphs.bind(this));
+  }
+  getParagraphs() {
+    const paragraphs = document.querySelectorAll('.paragraph--to-animate-js');
+    return window.innerWidth >= 1024 ? paragraphs : [paragraphs[1]];
   }
   divideParagraphsTextIntoSpans() {
     this.paragraphs.DOM.forEach((paragraph) => {
