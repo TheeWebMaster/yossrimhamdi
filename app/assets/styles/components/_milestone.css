@@ -26,10 +26,6 @@
     top: 0;
     background-color: $mainBlack;
 
-    @mixi atLarge {
-      height: 2px;
-    }
-
     &--totally-visible-until-large {
       transform: translateX(0%);
     }

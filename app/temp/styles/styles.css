@@ -107,10 +107,6 @@ body {
     height: 1px;
     top: 0;
     background-color: #000;
-
-    @mixi atLarge {
-      height: 2px;
-    }
   }.milestone__top-border--totally-visible-until-large {
       transform: translateX(0%);
     }.milestone__description {
