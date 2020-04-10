@@ -107,12 +107,13 @@ body {
     height: 1px;
     top: 0;
     background-color: #000;
-    transform: translateX(-50%);
 
     @mixi atLarge {
       height: 2px;
     }
-  }.milestone__description {
+  }.milestone__top-border--totally-visible-until-large {
+      transform: translateX(0%);
+    }.milestone__description {
     order: 1;
     font-size: 1.1rem;
     width: 200px;
@@ -123,6 +124,11 @@ body {
       width: 250px;
       font-size: 2.1rem
   }
+  }.milestone__description--is-visible-until-large {
+      opacity: 1;
+    }@media only screen and (min-width: 1024px) {.milestone__description--is-visible-until-large {
+        opacity: 0
+    }
   }.milestone__description--is-visible {
       opacity: 1;
     }.flex {
