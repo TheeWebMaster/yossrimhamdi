@@ -22,10 +22,14 @@
     display: block;
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 1px;
     top: 0;
     background-color: $mainBlack;
     transform: translateX(-50%);
+
+    @mixi atLarge {
+      height: 2px;
+    }
   }
   &__description {
     order: 1;
