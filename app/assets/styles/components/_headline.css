@@ -2,7 +2,9 @@
   line-height: 1;
 
   &:nth-child(odd) {
-    text-align: center;
+    @mixin atLarge {
+      text-align: center;
+    }
   }
   &:not(:last-child) {
     margin-bottom: 3em;
@@ -22,6 +24,7 @@
     font-weight: 500;
     font-size: 3rem;
     padding-bottom: 15px;
+    white-space: nowrap;
 
     @mixin atLarge {
       font-size: 8.5rem;

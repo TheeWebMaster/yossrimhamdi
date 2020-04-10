@@ -6,7 +6,7 @@ class TranslateXHeadlinesOnScroll extends SetupParallaxEnviroment {
     super(scroller, '.headline', window.innerHeight);
     this.xLimits = [
       { start: 100, end: 400 },
-      { start: 100, end: -400 }
+      { start: 100, end: -400 },
     ];
     this.setTransformObject();
   }

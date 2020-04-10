@@ -271,8 +271,9 @@ body {
     margin-bottom: 2.5em;
   }.headline {
   line-height: 1;
-}.headline:nth-child(odd) {
-    text-align: center;
+}@media only screen and (min-width: 1024px) {.headline:nth-child(odd) {
+      text-align: center
+  }
   }.headline:not(:last-child) {
     margin-bottom: 3em;
   }@media only screen and (min-width: 1024px) {.headline:not(:last-child) {
@@ -287,6 +288,7 @@ body {
     font-weight: 500;
     font-size: 3rem;
     padding-bottom: 15px;
+    white-space: nowrap;
   }@media only screen and (min-width: 1024px) {.headline__title {
       font-size: 8.5rem;
       padding-bottom: 6px
