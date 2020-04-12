@@ -11,7 +11,9 @@ import ScrollToOnNavigationLinkClick from './modules/ScrollToOnNavigationLinkCli
 import AnimateNavOnWaypoints from './modules/AnimateNavOnWaypoints';
 import AnimateParagraphOnScroll from './modules/AnimateParagraphOnScroll';
 import ChangeAdOnTiming from './modules/ChangeAdOnTiming';
+import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM.js';
 
+new GenerateCostumHTMLLinksDOM();
 new AnimateParagraphOnScroll(scroller);
 new AnimateNavOnWaypoints(scroller);
 new ScrollToOnNavigationLinkClick(scroller);

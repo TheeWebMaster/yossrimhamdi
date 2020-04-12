@@ -1,8 +1,11 @@
 .header {
   position: relative;
   font-weight: 300;
-  backface-visibility: hidden;
   z-index: 1;
+
+  * {
+    backface-visibility: hidden;
+  }
 
   @mixin atLarge {
     font-size: 1.2rem;
@@ -39,16 +42,6 @@
       transform: translate(-100%, 50%);
     }
   }
-  &__nav-list-wrapper {
-    padding-right: 1em;
-    transition: max-height 400ms;
-    overflow: hidden;
-
-    &--is-fully-visible .header__nav-link--active::before {
-      width: 100%;
-      transform: translate(0.5em, -50%);
-    }
-  }
   &__nav {
     line-height: 2.3em;
     text-align: right;
@@ -74,8 +67,21 @@
         transform: translate(0.5em, -50%);
       }
       .header__nav-link--active .header__nav-link-bottom-portion {
-        transform: translateX(5px);
+        transform: translateX(3px);
       }
+    }
+  }
+  &__nav-list-wrapper {
+    padding-right: 1em;
+    transition: max-height 400ms;
+    overflow: hidden;
+
+    &--is-fully-visible .header__nav-link--active::before {
+      width: 100%;
+      transform: translate(0.5em, -50%);
+    }
+    &--is-fully-visible .header__nav-link--active .header__nav-link-bottom-portion {
+      transform: translateX(3px);
     }
   }
   &__nav-list {
@@ -98,7 +104,6 @@
       transform: translateX(115%);
     }
     &::before {
-      z-index: 1;
       content: '';
       width: 8px;
       height: 2px;
@@ -114,9 +119,17 @@
       opacity: 1;
       transform: translate(80%, -50%);
     }
+
+    &--active {
+      &::before {
+        opacity: 1;
+        transform: translate(80%, -50%);
+      }
+    }
   }
   &__nav-link-top-portion {
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+
     @mixin atLarge {
       position: relative;
       top: 0.5px;
@@ -127,11 +140,5 @@
     left: 1em;
     transition: transform 400ms;
     clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
-  }
-  &__nav-link--active {
-    &::before {
-      opacity: 1;
-      transform: translate(80%, -50%);
-    }
   }
 }
