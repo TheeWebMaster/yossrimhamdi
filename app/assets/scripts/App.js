@@ -20,10 +20,10 @@ new AnimateAvailabilityMessageOnScroll(scroller);
 new FixedHeaderPosition(scroller);
 new TranslateXStrokeHeadlinesOnScroll(scroller);
 new TransformWorkHeadlineOnScroll(scroller);
-new AnimateMileStonesOnScroll(scroller);
 new TranslateXFrontalHeadlinesOnScroll(scroller);
 new ScrollBar(scroller);
 
 if (window.innerWidth >= 1024) {
+  new AnimateMileStonesOnScroll(scroller);
   new TranslateXHeadlinesOnScroll(scroller);
 }

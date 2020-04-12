@@ -10,7 +10,7 @@
       font-size: 16rem;
     }
     @mixin atHuge {
-      font-size: 22rem;
+      font-size: 24rem;
     }
 
     &--to-the-right {

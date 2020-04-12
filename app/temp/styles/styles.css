@@ -68,7 +68,7 @@ body {
       font-size: 16rem
   }
   }@media only screen and (min-width: 1500px) {.frontal__headline {
-      font-size: 22rem
+      font-size: 24rem
   }
   }.frontal__headline--to-the-right {
       position: relative;
@@ -107,24 +107,17 @@ body {
     height: 1px;
     top: 0;
     background-color: #000;
-  }.milestone__top-border--totally-visible-until-large {
-      transform: translateX(0%);
-    }.milestone__description {
+  }.milestone__description {
     order: 1;
     font-size: 1.1rem;
     width: 200px;
     text-align: right;
-    opacity: 0;
     transition: opacity 300ms;
   }@media only screen and (min-width: 1024px) {.milestone__description {
       width: 250px;
-      font-size: 2.1rem
+      font-size: 2.1rem;
+      opacity: 0
   }
-  }.milestone__description--is-visible-until-large {
-      opacity: 1;
-    }@media only screen and (min-width: 1024px) {.milestone__description--is-visible-until-large {
-        opacity: 0
-    }
   }.milestone__description--is-visible {
       opacity: 1;
     }.flex {
