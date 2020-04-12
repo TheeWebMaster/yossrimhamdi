@@ -1,5 +1,5 @@
-import ScrollBar from './modules/Scrollbar';
 import scroller from './modules/Scroller';
+import ScrollBar from './modules/Scrollbar';
 import TranslateXFrontalHeadlinesOnScroll from './modules/TranslateXFrontalHeadlinesOnScroll';
 import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
 import TranslateXHeadlinesOnScroll from './modules/TranslateXHeadlinesOnScroll';
@@ -11,8 +11,11 @@ import ScrollToOnNavigationLinkClick from './modules/ScrollToOnNavigationLinkCli
 import AnimateNavOnWaypoints from './modules/AnimateNavOnWaypoints';
 import AnimateParagraphOnScroll from './modules/AnimateParagraphOnScroll';
 import ChangeAdOnTiming from './modules/ChangeAdOnTiming';
-import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM.js';
+import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM';
+import GenerateProjects from './modules/GenerateProjects';
 
+const scrollBar = new ScrollBar(scroller);
+new GenerateProjects(scrollBar);
 new GenerateCostumHTMLLinksDOM();
 new AnimateParagraphOnScroll(scroller);
 new AnimateNavOnWaypoints(scroller);
@@ -22,7 +25,6 @@ new FixedHeaderPosition(scroller);
 new TranslateXStrokeHeadlinesOnScroll(scroller);
 new TransformWorkHeadlineOnScroll(scroller);
 new TranslateXFrontalHeadlinesOnScroll(scroller);
-new ScrollBar(scroller);
 
 if (window.innerWidth >= 1024) {
   new AnimateMileStonesOnScroll(scroller);

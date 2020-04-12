@@ -8,6 +8,10 @@ class ScrollerBar {
   updateScrollBarHeight({ offset: { y } }) {
     this.scrollerBar.style.height = `${(y / this.htmlContentVisibleHeight) * 100}vh`;
   }
+  update() {
+    this.htmlContentVisibleHeight =
+      document.querySelector('.website-content').clientHeight - window.innerHeight;
+  }
 }
 
 export default ScrollerBar;
