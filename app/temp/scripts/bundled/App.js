@@ -178,7 +178,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nclass FixedHeaderPosition {\n
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass GenerateCostumHTMLLinksDOM {\r\n  constructor() {\r\n    this.links = document.querySelectorAll('.header__nav-link');\r\n    this.updateInnerHTML();\r\n  }\r\n  updateInnerHTML() {\r\n    this.links.forEach((link) => {\r\n      link.innerHTML = this.getNewInnerHTML(link.innerHTML);\r\n    });\r\n  }\r\n  getNewInnerHTML(linkTitle) {\r\n    return `<span class=\"header__nav-link-top-portion\">${linkTitle}</span>\r\n    <span class=\"header__nav-link-bottom-portion\">${linkTitle}</span>`;\r\n  }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (GenerateCostumHTMLLinksDOM);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/GenerateCostumHTMLLinksDOM.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass GenerateCostumHTMLLinksDOM {\n  constructor() {\n    this.links = document.querySelectorAll('.header__nav-link');\n    this.updateInnerHTML();\n  }\n  updateInnerHTML() {\n    this.links.forEach((link) => {\n      link.innerHTML = this.getNewInnerHTML(link.innerHTML);\n    });\n  }\n  getNewInnerHTML(linkTitle) {\n    return `<span class=\"header__nav-link-top-portion\">${linkTitle}</span>\n    <span class=\"header__nav-link-bottom-portion\">${linkTitle}</span>`;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (GenerateCostumHTMLLinksDOM);\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/GenerateCostumHTMLLinksDOM.js?");
 
 /***/ }),
 
