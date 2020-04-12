@@ -14,8 +14,8 @@ import ChangeAdOnTiming from './modules/ChangeAdOnTiming';
 import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM';
 import GenerateProjects from './modules/GenerateProjects';
 
-const scrollBar = new ScrollBar(scroller);
-new GenerateProjects(scrollBar);
+new ScrollBar(scroller);
+new GenerateProjects();
 new GenerateCostumHTMLLinksDOM();
 new AnimateParagraphOnScroll(scroller);
 new AnimateNavOnWaypoints(scroller);

@@ -1,5 +1,5 @@
 class GenerateProjects {
-  constructor(scrollBar) {
+  constructor() {
     this.projectsContainer = document.querySelector('.projects-container');
     this.projects = {
       title: ['roots', 'mackmedia', 'ammolite', 'grape garage', 'dorfjungs', 'mueller', 'my portfolio'],
@@ -8,7 +8,6 @@ class GenerateProjects {
       ),
     };
     this.generateDOMprojects();
-    scrollBar.update();
   }
   generateDOMprojects() {
     this.projects.title.forEach((projectTitle) => {
