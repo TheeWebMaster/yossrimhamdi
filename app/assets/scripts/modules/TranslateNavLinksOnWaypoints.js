@@ -3,8 +3,9 @@ class TranslateNavLinksOnWaypoints {
     this.DOM = {
       waypoints: document.querySelectorAll('.milestone--target'),
       nav: document.querySelector('.header__nav'),
-      navList: document.querySelector('.header__nav ul'),
       navListWrapper: document.querySelector('.header__nav-list-wrapper'),
+      navList: document.querySelector('.header__nav ul'),
+      navItem: document.querySelector('.header__nav li'),
     };
     this.LIsHeight = this.getLIsHeight();
     this.setNavHeight();
@@ -12,7 +13,7 @@ class TranslateNavLinksOnWaypoints {
     scroller.addListener(this.tranNavLinksWrapper.bind(this));
   }
   getLIsHeight() {
-    return this.DOM.navList.querySelector('li').clientHeight;
+    return this.DOM.navItem.clientHeight;
   }
   setNavHeight() {
     this.DOM.nav.style.height = `${this.LIsHeight * 4}px`;
