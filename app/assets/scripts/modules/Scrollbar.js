@@ -13,7 +13,6 @@ class ScrollerBar {
     setInterval(() => {
       this.htmlContentVisibleHeight =
         document.querySelector('.website-content').clientHeight - window.innerHeight;
-      console.log('updated');
     }, 200);
   }
 }
