@@ -1,9 +1,9 @@
 import Transform from './Transform';
 import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
-class TranslateXHeadlinesOnScroll extends SetupParallaxEnviroment {
+class TranslateXProjectsOnScroll extends SetupParallaxEnviroment {
   constructor(scroller) {
-    super(scroller, '.headline', window.innerHeight);
+    super(scroller, '.project', window.innerHeight);
     this.xLimits = [
       { start: 100, end: 400 },
       { start: 100, end: -400 },
@@ -18,4 +18,4 @@ class TranslateXHeadlinesOnScroll extends SetupParallaxEnviroment {
   }
 }
 
-export default TranslateXHeadlinesOnScroll;
+export default TranslateXProjectsOnScroll;

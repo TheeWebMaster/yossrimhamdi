@@ -1,9 +1,9 @@
 import Transform from './Transform';
 import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
-class TranslateXStrokeHeadlinesOnScroll extends SetupParallaxEnviroment {
+class TranslateXAwardHeadlinesOnScroll extends SetupParallaxEnviroment {
   constructor(scroller) {
-    super(scroller, '.stroke-headline--award');
+    super(scroller, '.headline--award');
     this.scroller = scroller;
     this.xLimits = { start: -60, end: 10 };
     this.setTranslateXObjects();
@@ -18,4 +18,4 @@ class TranslateXStrokeHeadlinesOnScroll extends SetupParallaxEnviroment {
   }
 }
 
-export default TranslateXStrokeHeadlinesOnScroll;
+export default TranslateXAwardHeadlinesOnScroll;

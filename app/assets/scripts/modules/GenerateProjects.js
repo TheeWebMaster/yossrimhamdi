@@ -28,7 +28,6 @@ class GenerateProjects {
     `;
   }
   shuffleMarqee() {
-    console.log(this.projects.marqee.length);
     for (let i = 0; i < this.projects.marqee.length; i++) {
       this.swap(i, this.getRandomI());
     }

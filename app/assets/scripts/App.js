@@ -2,9 +2,9 @@ import scroller from './modules/Scroller';
 import ScrollBar from './modules/Scrollbar';
 import TranslateXFrontalHeadlinesOnScroll from './modules/TranslateXFrontalHeadlinesOnScroll';
 import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
-import TranslateXHeadlinesOnScroll from './modules/TranslateXHeadlinesOnScroll';
-import TransformWorkHeadlineOnScroll from './modules/TransformWorkHeadlineOnScroll';
-import TranslateXStrokeHeadlinesOnScroll from './modules/TranslateXStrokeHeadlinesOnScroll';
+import TranslateXProjectsOnScroll from './modules/TranslateXProjectsOnScroll';
+import TranslateYWorkHeadlineOnScroll from './modules/TranslateYWorkHeadlineOnScroll';
+import TranslateXAwardHeadlinesOnScroll from './modules/TranslateXAwardHeadlinesOnScroll';
 import FixedHeaderPosition from './modules/FixedHeaderPosition';
 import AnimateAvailabilityMessageOnScroll from './modules/AnimateAvailabilityMessageOnScroll';
 import ScrollToOnNavigationLinkClick from './modules/ScrollToOnNavigationLinkClick';
@@ -22,12 +22,12 @@ new AnimateNavOnWaypoints(scroller);
 new ScrollToOnNavigationLinkClick(scroller);
 new AnimateAvailabilityMessageOnScroll(scroller);
 new FixedHeaderPosition(scroller);
-new TranslateXStrokeHeadlinesOnScroll(scroller);
-new TransformWorkHeadlineOnScroll(scroller);
+new TranslateXAwardHeadlinesOnScroll(scroller);
+new TranslateYWorkHeadlineOnScroll(scroller);
 new TranslateXFrontalHeadlinesOnScroll(scroller);
 
 if (window.innerWidth >= 1024) {
   new AnimateMileStonesOnScroll(scroller);
-  new TranslateXHeadlinesOnScroll(scroller);
+  new TranslateXProjectsOnScroll(scroller);
   new ChangeAdOnTiming(scroller);
 }
