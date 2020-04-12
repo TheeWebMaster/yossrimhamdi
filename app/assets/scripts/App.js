@@ -12,7 +12,6 @@ import TranslateNavLinksOnWaypoints from './modules/TranslateNavLinksOnWaypoints
 import AnimateParagraphOnScroll from './modules/AnimateParagraphOnScroll';
 import ChangeAdOnTiming from './modules/ChangeAdOnTiming';
 
-new ChangeAdOnTiming(scroller);
 new AnimateParagraphOnScroll(scroller);
 new TranslateNavLinksOnWaypoints(scroller);
 new ScrollToOnNavigationLinkClick(scroller);
@@ -26,4 +25,5 @@ new ScrollBar(scroller);
 if (window.innerWidth >= 1024) {
   new AnimateMileStonesOnScroll(scroller);
   new TranslateXHeadlinesOnScroll(scroller);
+  new ChangeAdOnTiming(scroller);
 }
