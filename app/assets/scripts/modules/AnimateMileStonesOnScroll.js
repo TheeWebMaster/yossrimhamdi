@@ -3,15 +3,9 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
   constructor(scroller) {
-    function displayMileStoneDiscription(element) {
+    super(scroller, '.milestone', 200 - window.innerHeight, (element) => {
       element.querySelector('.milestone__description').classList.add('milestone__description--is-visible');
-    }
-    super(
-      scroller,
-      '.milestone',
-      (window.innerWidth >= 1024 ? 200 : 70) - window.innerHeight,
-      displayMileStoneDiscription
-    );
+    });
     this.scroller = scroller;
     this.xLimits = { start: -50, end: 0 };
     this.setTransformObjects();

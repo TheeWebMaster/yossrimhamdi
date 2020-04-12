@@ -1,6 +1,9 @@
 .contact-me {
   &__message {
     margin-bottom: 0.5em;
+    font-size: 3.5rem;
+    font-weight: 500;
+    text-transform: lowercase;
 
     @mixin atLarge {
       margin-bottom: 0;
