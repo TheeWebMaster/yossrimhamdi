@@ -30,7 +30,7 @@
   &__availability-message {
     position: absolute;
     bottom: 1em;
-    line-height: 1em;
+    line-height: 1.15em;
 
     @mixin atLarge {
       line-height: 150%;
