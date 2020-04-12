@@ -35,7 +35,7 @@ class TranslateNavLinksOnWaypoints {
       }
     }
 
-    if (y < window.innerHeight / 2) {
+    if (y < 100) {
       this.DOM.navListWrapper.style.maxHeight = `${this.LIsHeight * 4}px`;
     } else {
       this.DOM.navListWrapper.style.maxHeight = `${this.LIsHeight}px`;
