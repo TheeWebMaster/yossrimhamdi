@@ -43,6 +43,11 @@
     padding-right: 1em;
     transition: max-height 400ms;
     overflow: hidden;
+
+    &--is-fully-visible .header__nav-link--active::before {
+      width: 100%;
+      transform: translate(0.5em, -50%);
+    }
   }
   &__nav {
     line-height: 2.3em;
@@ -51,42 +56,6 @@
 
     @mixin atLarge {
       line-height: 150%;
-    }
-    & ul {
-      transition: transform 400ms;
-    }
-    & span {
-      position: relative;
-      cursor: pointer;
-      padding-left: 1em;
-
-      &::after {
-        counter-increment: nav-counter;
-        content: '0' counter(nav-counter);
-        font-size: 0.6rem;
-        font-weight: 400;
-        position: absolute;
-        right: 0;
-        top: 0;
-        line-height: 1.3;
-        transform: translateX(115%);
-      }
-      &::before {
-        content: '';
-        width: 8px;
-        height: 2px;
-        background-color: $mainRed;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translate(110%, -50%);
-        opacity: 0;
-        transition: all 300ms;
-      }
-      &:hover::before {
-        opacity: 1;
-        transform: translate(80%, -50%);
-      }
     }
 
     &:hover {
@@ -97,9 +66,55 @@
           max-height: 112px !important;
         }
       }
-      & ul {
+      .header__nav-list {
         transform: translateY(0) !important;
       }
+      .header__nav-link--active::before {
+        width: 100%;
+        transform: translate(0.5em, -50%);
+      }
+    }
+  }
+  &__nav-list {
+    transition: transform 400ms;
+  }
+  &__nav-link {
+    position: relative;
+    cursor: pointer;
+    padding-left: 1em;
+
+    &::after {
+      counter-increment: nav-counter;
+      content: '0' counter(nav-counter);
+      font-size: 0.6rem;
+      font-weight: 400;
+      position: absolute;
+      right: 0;
+      top: 0;
+      line-height: 1.3;
+      transform: translateX(115%);
+    }
+    &::before {
+      content: '';
+      width: 8px;
+      height: 2px;
+      background-color: $mainRed;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(110%, -50%);
+      opacity: 0;
+      transition: all 300ms;
+    }
+    &:hover::before {
+      opacity: 1;
+      transform: translate(80%, -50%);
+    }
+  }
+  &__nav-link--active {
+    &::before {
+      opacity: 1;
+      transform: translate(80%, -50%);
     }
   }
 }
