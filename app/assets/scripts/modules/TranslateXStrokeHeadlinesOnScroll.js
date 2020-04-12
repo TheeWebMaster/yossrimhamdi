@@ -3,7 +3,7 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class TranslateXStrokeHeadlinesOnScroll extends SetupParallaxEnviroment {
   constructor(scroller) {
-    super(scroller, '.stroke-headline--award, .stroke-headline--contact');
+    super(scroller, '.stroke-headline--award');
     this.scroller = scroller;
     this.xLimits = { start: -60, end: 10 };
     this.setTranslateXObjects();
