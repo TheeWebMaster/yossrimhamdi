@@ -139,8 +139,7 @@ body {
   font-weight: 300;
   z-index: 1;
 }.header * {
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    transform: translateZ(0);
   }@media only screen and (min-width: 1024px) {.header {
     font-size: 1.2rem
 }
