@@ -13,6 +13,7 @@ import AnimateParagraphOnScroll from './modules/AnimateParagraphOnScroll';
 import ChangeAdOnTiming from './modules/ChangeAdOnTiming';
 import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM';
 import GenerateProjects from './modules/GenerateProjects';
+import ImageHoverEffect from './modules/ImageHoverEffect';
 
 new ScrollBar(scroller);
 new GenerateProjects();
@@ -30,4 +31,5 @@ if (window.innerWidth >= 1024) {
   new AnimateMileStonesOnScroll(scroller);
   new TranslateXProjectsOnScroll(scroller);
   new ChangeAdOnTiming(scroller);
+  new ImageHoverEffect();
 }

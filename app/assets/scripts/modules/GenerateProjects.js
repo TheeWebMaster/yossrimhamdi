@@ -3,7 +3,7 @@ class GenerateProjects {
     this.projectsContainer = document.querySelector('.projects-container');
     this.projects = {
       title: ['roots', 'mackmedia', 'ammolite', 'grape garage', 'dorfjungs', 'mueller', 'my portfolio'],
-      marqee: 'javascript wordpress tansition parallax great react nextjs scrolling smoovy gulp awesome post-css webpack node-js cool automation github git npm'.split(
+      marqee: 'javascript animations smooth wordpress tansition parallax react nextjs scrolling smoovy gulp post-css webpack node-js automation github git npm'.split(
         ' '
       ),
     };
@@ -18,10 +18,13 @@ class GenerateProjects {
     this.shuffleMarqee();
     return `
     <div class="project">
-      <div class="project__wrapper">
-        <h1 class="project__title">${projectTitle}</h1>
-        <p class="project__marqee">${this.projects.marqee.join(' ')}</p>
-        <p class="project__marqee project__marqee--left-content-support">${this.projects.marqee.join(' ')}</p>
+      <div class="project__container"> 
+        <div class="project__wrapper">
+          <h1 class="project__title">${projectTitle}</h1>
+          <p class="project__marqee">${this.projects.marqee.join(' ')}</p>
+          <p class="project__marqee project__marqee--left-content-support">${this.projects.marqee.join(' ')}</p>
+        </div>
+        <div class="project__image-container" data-project-title="${projectTitle.split(' ').join('-')}"></div>
       </div>
     </div>
     `;

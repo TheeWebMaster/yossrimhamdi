@@ -309,8 +309,14 @@ body {
   }.project:not(:last-child) {
     margin-bottom: 3em;
   }@media only screen and (min-width: 1024px) {.project:not(:last-child) {
-      margin-bottom: 10em
+      margin-bottom: 15em
   }
+  }@media only screen and (min-width: 1024px) {.project:last-child {
+      margin-bottom: 6em
+  }
+  }.project__container {
+    display: inline-block;
+    position: relative;
   }.project__wrapper {
     display: inline-block;
     position: relative;
@@ -343,6 +349,20 @@ body {
       padding-right: 20px;
       -webkit-animation: left-marqee 30s linear infinite;
               animation: left-marqee 30s linear infinite;
+    }.project__image-container {
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }.project__image-container canvas {
+      box-sizing: content-box;
+      padding: 0 10em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }.headline {
   font-size: 8rem;
   -webkit-text-fill-color: transparent;
