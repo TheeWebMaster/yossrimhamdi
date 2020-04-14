@@ -10,10 +10,19 @@
     margin-bottom: 3em;
 
     @mixin atLarge {
-      margin-bottom: 10em;
+      margin-bottom: 15em;
+    }
+  }
+  &:last-child {
+    @mixin atLarge {
+      margin-bottom: 6em;
     }
   }
 
+  &__container {
+    display: inline-block;
+    position: relative;
+  }
   &__wrapper {
     display: inline-block;
     position: relative;
@@ -49,6 +58,23 @@
       transform: translateX(-100%);
       padding-right: 20px;
       animation: left-marqee 30s linear infinite;
+    }
+  }
+  &__image-container {
+    position: absolute;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+    canvas {
+      box-sizing: content-box;
+      padding: 0 10em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }
