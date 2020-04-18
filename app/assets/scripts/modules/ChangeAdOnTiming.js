@@ -1,5 +1,7 @@
+import scroller from './scroller';
+
 class ChangeAdOnTiming {
-  constructor(scroller) {
+  constructor() {
     this.adList = document.querySelector('.header__ad-list');
     this.offsets = this.getOffsets();
     this.interval = null;

@@ -1,38 +1,27 @@
 import ScrollInput from './ScrollInput';
+import Transform from './Transform';
 
 class SetupParallaxEnviroment {
-  constructor(scroller, className, endBoundingOffset = 0, callback = function () {}) {
-    this.callback = callback;
-    this.scroller = scroller;
+  constructor(className, offset = { start: 0, end: 0 }) {
     this.elements = document.querySelectorAll(className);
-    this.endBoundingOffset = endBoundingOffset;
-    this.topBoundings = this.getTopElementsBounding();
+    this.topBoundings = this.getTopElementsBounding(offset);
     this.relativeScrollInputs = this.getRelativeScrollInputs();
   }
-  getTopElementsBounding() {
-    const topBoundings = [];
-
-    this.elements.forEach((element) => {
-      const topBounding = element.getBoundingClientRect().top;
-
-      topBoundings.push({
-        start: topBounding - window.innerHeight,
-        end: topBounding + element.clientHeight + this.endBoundingOffset,
-      });
+  getTopElementsBounding(offset) {
+    return Array.from(this.elements).map((element) => {
+      return {
+        start: element.getBoundingClientRect().top - window.innerHeight + offset.start,
+        end: element.getBoundingClientRect().top + element.clientHeight + offset.end,
+      };
     });
-
-    return topBoundings;
   }
   getRelativeScrollInputs() {
-    const relativeScrollInputs = [];
-
+    return Array.from(this.elements).map((element, i) => new ScrollInput(this.topBoundings[i]));
+  }
+  setTransformObjects() {
     this.elements.forEach((element, i) => {
-      relativeScrollInputs.push(
-        new ScrollInput(this.scroller, this.topBoundings[i], this.callback.bind(this, element))
-      );
+      new Transform(element, this.relativeScrollInputs[i], this.limits, this.transformFunction);
     });
-
-    return relativeScrollInputs;
   }
 }
 

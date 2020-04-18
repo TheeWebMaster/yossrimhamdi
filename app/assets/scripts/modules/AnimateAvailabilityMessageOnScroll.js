@@ -1,6 +1,7 @@
+import scroller from './scroller';
+
 class AnimateAvailabilityMessageOnScroll {
-  constructor(scroller) {
-    this.scroller = scroller;
+  constructor() {
     this.message = {
       container: document.querySelector('.header__availability-message ul'),
       items: document.querySelectorAll('.header__availability-message li'),
