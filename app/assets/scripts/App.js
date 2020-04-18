@@ -35,4 +35,4 @@ if (window.innerWidth >= 1024) {
   new ImageHoverEffect();
 }
 
-// new TranslateMyNameOnScroll(scroller);
+new TranslateMyNameOnScroll();
