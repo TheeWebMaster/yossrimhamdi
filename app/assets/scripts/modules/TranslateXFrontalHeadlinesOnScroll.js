@@ -8,12 +8,12 @@ class TranslateXFrontalHeadlinesOnScroll {
     this.scrollInput = this.getCostumScrollInput();
     this.transitionXLimits = [
       { start: 0, end: -200 },
-      { start: 0, end: 200 }
+      { start: 0, end: 200 },
     ];
     this.setTransformObject();
   }
   getCostumScrollInput() {
-    return new ScrollInput(this.scroller, { start: 0, end: window.innerHeight }, function() {});
+    return new ScrollInput(this.scroller, { start: 0, end: window.innerHeight }, function () {});
   }
   setTransformObject() {
     this.headlines.forEach((headline, i) => {

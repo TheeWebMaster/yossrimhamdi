@@ -24,15 +24,15 @@ new AnimateNavOnWaypoints(scroller);
 new ScrollToOnNavigationLinkClick(scroller);
 new AnimateAvailabilityMessageOnScroll(scroller);
 new FixedHeaderPosition(scroller);
-new TranslateXAwardHeadlinesOnScroll(scroller);
-new TranslateYWorkHeadlineOnScroll(scroller);
-new TranslateXFrontalHeadlinesOnScroll(scroller);
+// new TranslateXAwardHeadlinesOnScroll(scroller);
+// new TranslateYWorkHeadlineOnScroll(scroller);
+// new TranslateXFrontalHeadlinesOnScroll(scroller);
 
 if (window.innerWidth >= 1024) {
-  new AnimateMileStonesOnScroll(scroller);
-  new TranslateXProjectsOnScroll(scroller);
+  // new AnimateMileStonesOnScroll(scroller);
+  // new TranslateXProjectsOnScroll(scroller);
   new ChangeAdOnTiming(scroller);
   new ImageHoverEffect();
 }
 
-new TranslateMyNameOnScroll(scroller);
+// new TranslateMyNameOnScroll(scroller);

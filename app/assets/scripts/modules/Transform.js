@@ -1,18 +1,16 @@
+import scroller from './Scroller';
+
 class Transform {
-  constructor(scroller, scrollInput, element, xLimits, unit = 'px', costumTransformFunction) {
+  constructor(element, scrollInput, limits, transformFunction) {
     this.scrollInput = scrollInput;
-    this.xLimits = xLimits;
+    this.limits = limits;
     this.element = element;
-    this.unit = unit;
-    scroller.addListener(
-      costumTransformFunction ? costumTransformFunction.bind(this) : this.translateX.bind(this)
-    );
+
+    scroller.addListener(transformFunction.bind(this));
   }
-  translateX() {
-    this.element.style.transform = `translateX(${this.calcCurrentValue()}${this.unit})`;
-  }
+
   calcCurrentValue() {
-    const { start, end } = this.xLimits;
+    const { start, end } = this.limits;
     const { fraction } = this.scrollInput.scrollY;
     return start + fraction * (end - start);
   }
