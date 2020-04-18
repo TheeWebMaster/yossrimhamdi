@@ -28,7 +28,7 @@ new TranslateYWorkHeadlineOnScroll();
 new TranslateXFrontalHeadlinesOnScroll();
 
 if (window.innerWidth >= 1024) {
-  // new AnimateMileStonesOnScroll(scroller);
+  new AnimateMileStonesOnScroll();
   new TranslateXProjectsOnScroll();
   new ChangeAdOnTiming();
   new ImageHoverEffect();
