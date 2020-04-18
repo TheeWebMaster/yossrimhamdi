@@ -9,9 +9,10 @@ class Transform {
     scroller.addListener(transformFunction.bind(this));
   }
 
-  calcCurrentValue() {
+  getCurrentValue() {
     const { start, end } = this.limits;
-    const { fraction } = this.scrollInput.scrollY;
+    const { fraction } = this.scrollInput;
+
     return start + fraction * (end - start);
   }
 }
