@@ -24,7 +24,7 @@ new AnimateNavOnWaypoints(scroller);
 new ScrollToOnNavigationLinkClick(scroller);
 new AnimateAvailabilityMessageOnScroll(scroller);
 new FixedHeaderPosition(scroller);
-// new TranslateXAwardHeadlinesOnScroll(scroller);
+new TranslateXAwardHeadlinesOnScroll();
 new TranslateYWorkHeadlineOnScroll();
 new TranslateXFrontalHeadlinesOnScroll();
 
