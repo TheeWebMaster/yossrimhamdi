@@ -1,0 +1,12 @@
+.text-animation-on-scroll {
+  & span {
+    display: inline-block;
+  }
+  & > span {
+    overflow: hidden;
+  }
+  & > span > span {
+    transition: transform 500ms;
+    transform: translateY(100%);
+  }
+}

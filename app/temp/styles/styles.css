@@ -292,13 +292,6 @@ body {
   }@media only screen and (min-width: 1500px) {.paragraph {
     font-size: 3.5rem
 }
-  }.paragraph span {
-    display: inline-block;
-  }.paragraph > span {
-    overflow: hidden;
-  }.paragraph > span > span {
-    transition: transform 500ms;
-    transform: translateY(100%);
   }.paragraph::first-letter {
     text-transform: uppercase;
   }.paragraph--margin-b {
@@ -441,4 +434,19 @@ body {
   }.footer__my-name {
     font-style: italic;
     text-decoration: underline;
+  }.text-animation-on-scroll span {
+    display: inline-block;
+  }.text-animation-on-scroll > span {
+    overflow: hidden;
+  }.text-animation-on-scroll > span > span {
+    transition: transform 500ms;
+    transform: translateY(100%);
+  }.greeting {
+  display: inline-block;
+  transform: translateY(-12px);
+}.greeting::first-letter {
+    text-transform: uppercase;
+  }.greeting__my-name {
+    transform: translateY(-300px);
+    display: inline-block;
   }

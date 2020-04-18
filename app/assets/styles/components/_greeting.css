@@ -1,0 +1,13 @@
+.greeting {
+  display: inline-block;
+  transform: translateY(-12px);
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  &__my-name {
+    transform: translateY(-300px);
+    display: inline-block;
+  }
+}
