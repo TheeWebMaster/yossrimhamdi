@@ -2,17 +2,16 @@ import ScrollInput from './ScrollInput';
 import Transform from './Transform';
 
 class SetupParallaxEnviroment {
-  constructor(className, endBoundingOffset = 0) {
+  constructor(className, offset = { end: 0 }) {
     this.elements = document.querySelectorAll(className);
-    this.endBoundingOffset = endBoundingOffset;
-    this.topBoundings = this.getTopElementsBounding();
+    this.topBoundings = this.getTopElementsBounding(offset);
     this.relativeScrollInputs = this.getRelativeScrollInputs();
   }
-  getTopElementsBounding() {
+  getTopElementsBounding(offset) {
     return Array.from(this.elements).map((element) => {
       return {
         start: element.getBoundingClientRect().top - window.innerHeight,
-        end: element.getBoundingClientRect().top + element.clientHeight + this.endBoundingOffset,
+        end: element.getBoundingClientRect().top + element.clientHeight + offset.end,
       };
     });
   }
