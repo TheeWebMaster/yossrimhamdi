@@ -11,9 +11,7 @@ class Transform {
 
   getCurrentValue() {
     const { start, end } = this.limits;
-    const { fraction } = this.scrollInput;
-
-    return start + fraction * (end - start);
+    return start + this.scrollInput.fraction * (end - start);
   }
 }
 
