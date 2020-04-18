@@ -1,4 +1,5 @@
 import ScrollInput from './ScrollInput';
+import Transform from './Transform';
 
 class SetupParallaxEnviroment {
   constructor(className, endBoundingOffset = 0) {
@@ -8,17 +9,20 @@ class SetupParallaxEnviroment {
     this.relativeScrollInputs = this.getRelativeScrollInputs();
   }
   getTopElementsBounding() {
-    return this.elements.map((element) => {
-      const topBounding = element.getBoundingClientRect().top;
-
+    return Array.from(this.elements).map((element) => {
       return {
-        start: topBounding - window.innerHeight,
-        end: topBounding + element.clientHeight + this.endBoundingOffset,
+        start: element.getBoundingClientRect().top - window.innerHeight,
+        end: element.getBoundingClientRect().top + element.clientHeight + this.endBoundingOffset,
       };
     });
   }
   getRelativeScrollInputs() {
-    return this.elements.map((element, i) => new ScrollInput(this.topBoundings[i]));
+    return Array.from(this.elements).map((element, i) => new ScrollInput(this.topBoundings[i]));
+  }
+  setTransformObjects() {
+    this.elements.forEach((element, i) => {
+      new Transform(element, this.relativeScrollInputs[i], this.limits, this.transformFunction);
+    });
   }
 }
 

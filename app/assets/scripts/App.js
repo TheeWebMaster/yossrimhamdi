@@ -25,7 +25,7 @@ new ScrollToOnNavigationLinkClick(scroller);
 new AnimateAvailabilityMessageOnScroll(scroller);
 new FixedHeaderPosition(scroller);
 // new TranslateXAwardHeadlinesOnScroll(scroller);
-// new TranslateYWorkHeadlineOnScroll(scroller);
+new TranslateYWorkHeadlineOnScroll();
 new TranslateXFrontalHeadlinesOnScroll();
 
 if (window.innerWidth >= 1024) {
