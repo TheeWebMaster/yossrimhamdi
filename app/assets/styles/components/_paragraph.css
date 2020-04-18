@@ -12,16 +12,7 @@
   @mixin atHuge {
     font-size: 3.5rem;
   }
-  & span {
-    display: inline-block;
-  }
-  & > span {
-    overflow: hidden;
-  }
-  & > span > span {
-    transition: transform 500ms;
-    transform: translateY(100%);
-  }
+
   &::first-letter {
     text-transform: uppercase;
   }

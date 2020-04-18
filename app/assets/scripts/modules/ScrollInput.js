@@ -1,5 +1,5 @@
 class ScrollInput {
-  constructor(scroller, topBounding, callback) {
+  constructor(scroller, topBounding, callback = () => {}) {
     this.callback = callback;
     this.scrollY = {
       start: topBounding.start,

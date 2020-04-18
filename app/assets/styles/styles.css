@@ -18,3 +18,5 @@
 @import './components/_award';
 @import './components/_contact-me';
 @import './layout/_footer';
+@import './components/_text-animation-on-scroll';
+@import './components/_greeting';
