@@ -1,5 +1,7 @@
+import scroller from './Scroller';
+
 class AnimateTextOnScroll {
-  constructor(scroller) {
+  constructor() {
     this.paragraphs = {
       DOM: document.querySelectorAll('.text-animation-on-scroll'),
       innerSpans: [],

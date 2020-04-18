@@ -1,5 +1,4 @@
 import TranslateMyNameOnScroll from './modules/TranslateMyNameOnScroll';
-import scroller from './modules/Scroller';
 import ScrollBar from './modules/Scrollbar';
 import TranslateXFrontalHeadlinesOnScroll from './modules/TranslateXFrontalHeadlinesOnScroll';
 import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
@@ -16,14 +15,14 @@ import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM';
 import GenerateProjects from './modules/GenerateProjects';
 import ImageHoverEffect from './modules/ImageHoverEffect';
 
-new ScrollBar(scroller);
+new ScrollBar();
 new GenerateProjects();
 new GenerateCostumHTMLLinksDOM();
-new AnimateTextOnScroll(scroller);
-new AnimateNavOnWaypoints(scroller);
-new ScrollToOnNavigationLinkClick(scroller);
-new AnimateAvailabilityMessageOnScroll(scroller);
-new FixedHeaderPosition(scroller);
+new AnimateTextOnScroll();
+new AnimateNavOnWaypoints();
+new ScrollToOnNavigationLinkClick();
+new AnimateAvailabilityMessageOnScroll();
+new FixedHeaderPosition();
 new TranslateXAwardHeadlinesOnScroll();
 new TranslateYWorkHeadlineOnScroll();
 new TranslateXFrontalHeadlinesOnScroll();
@@ -31,8 +30,7 @@ new TranslateXFrontalHeadlinesOnScroll();
 if (window.innerWidth >= 1024) {
   // new AnimateMileStonesOnScroll(scroller);
   new TranslateXProjectsOnScroll();
-  new ChangeAdOnTiming(scroller);
+  new ChangeAdOnTiming();
   new ImageHoverEffect();
+  new TranslateMyNameOnScroll();
 }
-
-new TranslateMyNameOnScroll();

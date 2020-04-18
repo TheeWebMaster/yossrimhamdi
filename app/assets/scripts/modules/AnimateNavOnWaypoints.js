@@ -1,5 +1,7 @@
+import scroller from './scroller';
+
 class AnimateNavOnWaypoints {
-  constructor(scroller) {
+  constructor() {
     this.DOM = {
       waypoints: document.querySelectorAll('.milestone--target'),
       nav: document.querySelector('.header__nav'),

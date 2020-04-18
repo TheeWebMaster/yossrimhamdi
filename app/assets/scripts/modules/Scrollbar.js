@@ -1,8 +1,9 @@
+import scroller from './Scroller';
+
 class ScrollerBar {
-  constructor(scroller) {
+  constructor() {
     this.scrollerBar = document.querySelector('.scrollbar');
-    this.htmlContentVisibleHeight =
-      document.querySelector('.website-content').clientHeight - window.innerHeight;
+    this.htmlContentVisibleHeight = document.querySelector('.website-content').clientHeight - window.innerHeight;
     scroller.addListener(this.updateScrollBarHeight.bind(this));
     this.updateScrollBarOnInterval();
   }
@@ -11,8 +12,7 @@ class ScrollerBar {
   }
   updateScrollBarOnInterval() {
     setInterval(() => {
-      this.htmlContentVisibleHeight =
-        document.querySelector('.website-content').clientHeight - window.innerHeight;
+      this.htmlContentVisibleHeight = document.querySelector('.website-content').clientHeight - window.innerHeight;
     }, 200);
   }
 }

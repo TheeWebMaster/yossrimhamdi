@@ -1,5 +1,7 @@
+import scroller from './scroller';
+
 class FixedHeaderPosition {
-  constructor(scroller) {
+  constructor() {
     this.header = document.querySelector('.header');
     scroller.addListener(this.modifyHeaderPosition.bind(this));
   }

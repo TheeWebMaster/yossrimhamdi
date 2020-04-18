@@ -1,6 +1,7 @@
+import scroller from './scroller';
+
 class ScrollToOnNavigationLinkClick {
-  constructor(scroller) {
-    this.scroller = scroller;
+  constructor() {
     this.milestones = document.querySelectorAll('.milestone--target');
     this.nav = document.querySelector('.header__nav');
     this.boundaries = this.getBoundaries();
@@ -18,7 +19,7 @@ class ScrollToOnNavigationLinkClick {
     this.nav.addEventListener('click', this.handleClickEvent.bind(this));
   }
   handleClickEvent(e) {
-    this.scroller.scrollTo(0, this.boundaries.get(e.target.textContent), 600);
+    scroller.scrollTo(0, this.boundaries.get(e.target.textContent), 600);
   }
 }
 
