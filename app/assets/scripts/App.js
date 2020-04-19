@@ -1,4 +1,4 @@
-import TranslateMyNameOnScroll from './modules/TranslateMyNameOnScroll';
+import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
 import ScrollBar from './modules/Scrollbar';
 import TranslateXFrontalHeadlinesOnScroll from './modules/TranslateXFrontalHeadlinesOnScroll';
 import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
@@ -32,5 +32,5 @@ if (window.innerWidth >= 1024) {
   new TranslateXProjectsOnScroll();
   new ChangeAdOnTiming();
   new ImageHoverEffect();
-  new TranslateMyNameOnScroll();
+  new AnimateMyNameOnScroll();
 }

@@ -1,6 +1,6 @@
 import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
-class TranslateMyNameOnScroll extends SetupParallaxEnviroment {
+class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
   constructor() {
     super('.greeting__my-name', { start: 200, end: 0 });
     this.limits = { start: -300, end: 0 };
@@ -11,4 +11,4 @@ class TranslateMyNameOnScroll extends SetupParallaxEnviroment {
   }
 }
 
-export default TranslateMyNameOnScroll;
+export default AnimateMyNameOnScroll;
