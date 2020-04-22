@@ -14,7 +14,7 @@ class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
   revealMileStoneText({ offset: { y } }) {
     this.elements.forEach(element => {
       if (element.style.transform === 'translateX(0%)') {
-        element.nextElementSibling.classList.add = 'milestone__description--is-visible';
+        element.nextElementSibling.classList.add('milestone__description--is-visible');
       }
     });
   }

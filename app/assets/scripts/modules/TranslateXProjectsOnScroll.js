@@ -13,11 +13,8 @@ class TranslateXProjectsOnScroll extends SetupParallaxEnviroment {
   setTransformObjects() {
     this.elements.forEach((element, i) => {
       const relativeLimits = i % 2 === 0 ? this.limits[0] : this.limits[1];
-      new Transform(element, this.relativeScrollInputs[i], relativeLimits, this.transformFunction);
+      new Transform(element, this.relativeScrollInputs[i], relativeLimits);
     });
-  }
-  transformFunction() {
-    this.element.style.transform = `translateX(${this.getCurrentValue()}px)`;
   }
 }
 

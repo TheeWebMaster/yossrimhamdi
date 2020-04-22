@@ -16,11 +16,8 @@ class TranslateXFrontalHeadlinesOnScroll {
   }
   setTransformObject() {
     this.headlines.forEach((headline, i) => {
-      new Transform(headline, this.scrollInput, this.transitionXLimits[i], this.transformFunction);
+      new Transform(headline, this.scrollInput, this.transitionXLimits[i]);
     });
-  }
-  transformFunction() {
-    this.element.style.transform = `translateX(${this.getCurrentValue()}px)`;
   }
 }
 
