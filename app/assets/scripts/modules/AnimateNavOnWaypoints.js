@@ -1,4 +1,4 @@
-import scroller from './scroller';
+import scroller from './Scroller';
 
 class AnimateNavOnWaypoints {
   constructor() {
@@ -23,7 +23,7 @@ class AnimateNavOnWaypoints {
     const topBoundings = [];
     let offset = 0;
 
-    this.DOM.waypoints.forEach((element) => {
+    this.DOM.waypoints.forEach(element => {
       topBoundings.push({
         sectionID: element.id,
         top: element.getBoundingClientRect().top - window.innerHeight + 200,

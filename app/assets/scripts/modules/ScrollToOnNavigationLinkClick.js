@@ -1,4 +1,4 @@
-import scroller from './scroller';
+import scroller from './Scroller';
 
 class ScrollToOnNavigationLinkClick {
   constructor() {
@@ -9,7 +9,7 @@ class ScrollToOnNavigationLinkClick {
   }
   getBoundaries() {
     const boundaries = new Map();
-    this.milestones.forEach((milestone) => {
+    this.milestones.forEach(milestone => {
       boundaries.set(milestone.id, milestone.getBoundingClientRect().top);
     });
 
