@@ -22,4 +22,7 @@
   &--z-index-1 {
     z-index: 1;
   }
+  &--huge-bottom-space {
+    padding-bottom: 300px;
+  }
 }
