@@ -7,8 +7,9 @@ class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
     this.limits = { start: -300, end: 0 };
     this.waypoints = [300, 250, 180, 110, 40, 0];
     this.texts = ['yossri', 'here we go!', 'keep scrolling', 'almost', 'yossri'];
+
     this.setTransformObjects();
-    this.fixMyNameContainerWidth();
+    this.fixedContainerWidth();
 
     scroller.addListener(this.changeText.bind(this));
   }
@@ -29,7 +30,7 @@ class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
     return Math.abs(parseInt(this.elements[0].style.transform.slice(11, -3)));
   }
 
-  fixMyNameContainerWidth() {
+  fixedContainerWidth() {
     const container = document.querySelector('.greeting');
 
     container.style.width = `${container.clientWidth}px`;
