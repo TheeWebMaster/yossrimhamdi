@@ -444,13 +444,33 @@ body {
   }.text-animation-on-scroll > span > span {
     transition: transform 500ms;
     transform: translateY(100%);
-  }.greeting {
+  }.me {
   display: inline-block;
   transform: translateY(-12px);
   white-space: nowrap;
-}.greeting::first-letter {
-    text-transform: uppercase;
-  }.greeting__my-name {
-    transform: translateY(-300px);
+}.me span {
     display: inline-block;
+  }.me::first-letter {
+    text-transform: uppercase;
+  }.me__wrapper {
+    position: relative;
+  }.me__my-name {
+    transform: translateY(-300px);
+  }.me__my-name--stroke {
+      -webkit-text-stroke: 1px black;
+      -webkit-text-fill-color: transparent;
+    }.me__my-image {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    opacity: 0;
+    transition: opacity 500ms;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transform: translate(-50%, -60%);
   }
