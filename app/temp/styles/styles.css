@@ -447,6 +447,7 @@ body {
   }.greeting {
   display: inline-block;
   transform: translateY(-12px);
+  white-space: nowrap;
 }.greeting::first-letter {
     text-transform: uppercase;
   }.greeting__my-name {
