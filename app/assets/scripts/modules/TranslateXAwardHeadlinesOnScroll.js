@@ -2,7 +2,7 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class TranslateXAwardHeadlinesOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super('.headline--award');
+    super('.headline--award', 200);
     this.limits = { start: -60, end: 10 };
     this.setTransformObjects();
   }

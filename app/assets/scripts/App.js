@@ -24,13 +24,13 @@ new ScrollToOnNavigationLinkClick();
 new AnimateAvailabilityMessageOnScroll();
 new FixedHeaderPosition();
 new TranslateXAwardHeadlinesOnScroll();
-new TranslateYWorkHeadlineOnScroll();
-new TranslateXFrontalHeadlinesOnScroll();
+// new TranslateYWorkHeadlineOnScroll();
+// new TranslateXFrontalHeadlinesOnScroll();
 
 if (window.innerWidth >= 1024) {
-  new AnimateMileStonesOnScroll();
+  // new AnimateMileStonesOnScroll();
   new TranslateXProjectsOnScroll();
   new ChangeAdOnTiming();
   new ImageHoverEffect();
-  new AnimateMyNameOnScroll();
+  // new AnimateMyNameOnScroll();
 }

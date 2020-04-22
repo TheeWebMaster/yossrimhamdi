@@ -107,6 +107,7 @@ body {
     height: 1px;
     top: 0;
     background-color: #000;
+    transform: translateX(-50%);
   }.milestone__description {
     order: 1;
     font-size: 1.1rem;

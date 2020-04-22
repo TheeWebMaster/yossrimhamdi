@@ -3,7 +3,7 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class TranslateXProjectsOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super('.project', { start: 0, end: window.innerHeight });
+    super('.project');
     this.limits = [
       { start: 100, end: 400 },
       { start: 100, end: -400 },
