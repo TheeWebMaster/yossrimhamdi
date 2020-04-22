@@ -448,6 +448,6 @@ body {
 }.greeting::first-letter {
     text-transform: uppercase;
   }.greeting__my-name {
-    transform: translateY(-300px);
+    /* transform: translateY(-300px); */
     display: inline-block;
   }

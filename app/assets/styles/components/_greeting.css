@@ -7,7 +7,7 @@
   }
 
   &__my-name {
-    transform: translateY(-300px);
+    /* transform: translateY(-300px); */
     display: inline-block;
   }
 }
