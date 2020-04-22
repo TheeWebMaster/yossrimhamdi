@@ -3,7 +3,7 @@ import scroller from './Scroller';
 
 class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super('.milestone__top-border', -window.innerHeight + 250);
+    super('.milestone__top-border', { top: 0, bottom: -window.innerHeight + 250 });
     this.limits = { start: -50, end: 0 };
     this.setTransformObjects();
 
