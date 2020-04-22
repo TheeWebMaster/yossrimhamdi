@@ -12,15 +12,15 @@ class AnimateTextOnScroll {
     scroller.addListener(this.animateParagraphs.bind(this));
   }
   divideParagraphsTextIntoSpans() {
-    this.paragraphs.DOM.forEach((paragraph) => {
+    this.paragraphs.DOM.forEach(paragraph => {
       paragraph.innerHTML = paragraph.innerText
         .split(' ')
-        .map((word) => `<span><span class="inner-span">${word}</span></span>`)
+        .map(word => `<span><span class="inner-span">${word}</span></span>`)
         .join(' ');
     });
   }
   selectInnerParagraphDOMspans() {
-    this.paragraphs.DOM.forEach((paragraph) => {
+    this.paragraphs.DOM.forEach(paragraph => {
       this.paragraphs.innerSpans.push(paragraph.querySelectorAll('.inner-span'));
     });
   }
@@ -47,8 +47,8 @@ class AnimateTextOnScroll {
   getTopBoundings() {
     const topBoundings = [];
 
-    this.paragraphs.DOM.forEach((paragraph) => {
-      topBoundings.push(paragraph.getBoundingClientRect().top - window.innerHeight + 180);
+    this.paragraphs.DOM.forEach(paragraph => {
+      topBoundings.push(paragraph.getBoundingClientRect().top - window.innerHeight + 200);
     });
 
     return topBoundings;
