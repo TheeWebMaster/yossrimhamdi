@@ -4,7 +4,6 @@ import Transform from './Transform';
 class SetupParallaxEnviroment {
   constructor(className, offset = 0) {
     this.elements = document.querySelectorAll(className);
-    console.log(offset, className);
     this.offset = offset;
     this.topBoundings = this.getTopElementsBounding();
     this.relativeScrollInputs = this.getRelativeScrollInputs();

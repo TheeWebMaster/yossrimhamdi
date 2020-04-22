@@ -25,7 +25,7 @@ new AnimateAvailabilityMessageOnScroll();
 new FixedHeaderPosition();
 new TranslateXAwardHeadlinesOnScroll();
 // new TranslateYWorkHeadlineOnScroll();
-// new TranslateXFrontalHeadlinesOnScroll();
+new TranslateXFrontalHeadlinesOnScroll();
 
 if (window.innerWidth >= 1024) {
   // new AnimateMileStonesOnScroll();

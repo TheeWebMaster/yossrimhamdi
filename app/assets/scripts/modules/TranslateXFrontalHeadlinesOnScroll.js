@@ -1,22 +1,19 @@
 import Transform from './Transform';
 import ScrollInput from './ScrollInput';
+import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
-class TranslateXFrontalHeadlinesOnScroll {
+class TranslateXFrontalHeadlinesOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    this.headlines = document.querySelectorAll('.frontal-headline--to-translate');
-    this.scrollInput = this.getCostumScrollInput();
-    this.transitionXLimits = [
+    super('.frontal-headline--to-translate');
+    this.limits = [
       { start: 0, end: -200 },
       { start: 0, end: 200 },
     ];
-    this.setTransformObject();
+    this.setTransformObjects();
   }
-  getCostumScrollInput() {
-    return new ScrollInput({ start: 0, end: window.innerHeight });
-  }
-  setTransformObject() {
-    this.headlines.forEach((headline, i) => {
-      new Transform(headline, this.scrollInput, this.transitionXLimits[i]);
+  setTransformObjects() {
+    this.elements.forEach((element, i) => {
+      new Transform(element, new ScrollInput({ start: 0, end: window.innerHeight }), this.limits[i]);
     });
   }
 }
