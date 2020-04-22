@@ -1,24 +1,23 @@
-import Transform from './Transform';
 import SetupParallaxEnviroment from './SetupParallaxEnviroment';
+import scroller from './Scroller';
 
 class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super('.milestone', { start: 0, end: 80 - window.innerHeight });
+    super('.milestone__top-border', { start: 0, end: 200 });
     this.limits = { start: -50, end: 0 };
     this.setTransformObjects();
-  }
-  setTransformObjects() {
-    this.elements.forEach((element, i) => {
-      const topBorder = element.querySelector('.milestone__top-border');
-      new Transform(topBorder, this.relativeScrollInputs[i], this.limits, this.transformFunction);
-    });
+    scroller.addListener(this.revealMileStoneText.bind(this));
   }
   transformFunction() {
     this.element.style.transform = `translateX(${this.getCurrentValue()}%)`;
   }
-  /*  callback() {
-    this.querySelector('.milestone__description').classList.add('milestone__description--is-visible');
-  } */
+  revealMileStoneText({ offset: { y } }) {
+    this.elements.forEach(element => {
+      if (element.style.transform === 'translateX(0%)') {
+        element.nextElementSibling.classList.add = 'milestone__description--is-visible';
+      }
+    });
+  }
 }
 
 export default AnimateMileStonesOnScroll;
