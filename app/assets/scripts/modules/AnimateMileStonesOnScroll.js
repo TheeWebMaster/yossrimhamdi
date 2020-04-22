@@ -9,9 +9,11 @@ class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
 
     scroller.addListener(this.revealMileStoneTextWhenDone.bind(this));
   }
+
   transformFunction() {
     this.element.style.transform = `translateX(${this.getCurrentValue()}%)`;
   }
+
   revealMileStoneTextWhenDone({ offset: { y } }) {
     this.elements.forEach(element => {
       if (element.style.transform === 'translateX(0%)') {
