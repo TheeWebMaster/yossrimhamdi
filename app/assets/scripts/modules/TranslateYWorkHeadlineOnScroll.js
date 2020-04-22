@@ -2,7 +2,7 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class TranslateYWorkHeadlineOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super('.headline--work', document.querySelector('.headline--work').clientWidth);
+    super('.headline--work', 400);
     this.limits = { start: 0, end: -200 };
     this.setTransformObjects();
   }
