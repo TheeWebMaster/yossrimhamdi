@@ -55,6 +55,7 @@
   background-color: #faf5f1;
   text-transform: uppercase;
   counter-reset: milestone-num;
+  cursor: none;
 }html,
 body {
   overflow-x: hidden;
@@ -482,4 +483,19 @@ body {
   }.me__my-image--is-visible {
       opacity: 1;
       transform: translate(-50%, -60%) scale(1);
-    }
+    }.cursor {
+  z-index: 2;
+  position: absolute;
+  display: inline-block;
+}.cursor * {
+    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }.cursor__outer {
+    width: 65px;
+  }.cursor__inner {
+    width: 8px;
+  }

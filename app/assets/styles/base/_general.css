@@ -9,7 +9,9 @@ body {
   background-color: $skiny;
   text-transform: uppercase;
   counter-reset: milestone-num;
+  cursor: none;
 }
+
 html,
 body {
   overflow-x: hidden;

@@ -1,3 +1,4 @@
+import Cursor from './modules/Cursor';
 import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
 import ScrollBar from './modules/Scrollbar';
 import TranslateXFrontalHeadlinesOnScroll from './modules/TranslateXFrontalHeadlinesOnScroll';
@@ -34,3 +35,5 @@ if (window.innerWidth >= 1024) {
   new ImageHoverEffect();
   new AnimateMyNameOnScroll();
 }
+
+new Cursor();
