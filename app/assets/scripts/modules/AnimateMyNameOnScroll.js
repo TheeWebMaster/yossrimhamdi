@@ -3,14 +3,14 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super('.me__my-name', { top: document.querySelector('.me__my-name').clientHeight, bottom: -240 });
+    super('.me__my-name', { top: document.querySelector('.me__my-name').clientHeight / 2, bottom: -240 });
     this.myImage = document.querySelector('.me__my-image');
     this.limits = { start: -300, end: 0 };
     this.waypoints = [300, 250, 160, 50];
     this.texts = ['hello!', "keep scrolling, don't stop", 'almost', 'yossri'];
 
     this.setTransformObjects();
-    this.fixedContainerWidth();
+    this.fixedContainersWidth();
 
     scroller.addListener(this.changeText.bind(this));
   }
@@ -21,6 +21,7 @@ class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
 
   changeText() {
     const yValue = this.getYValue();
+
     this.texts.forEach((text, i) => {
       if (yValue <= this.waypoints[i]) {
         this.elements[0].innerText = text;
@@ -44,9 +45,10 @@ class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
     return Math.abs(parseInt(this.elements[0].style.transform.slice(11, -3)));
   }
 
-  fixedContainerWidth() {
+  fixedContainersWidth() {
     const container = document.querySelector('.me');
     const wrapper = document.querySelector('.me__wrapper');
+
     container.style.width = `${container.clientWidth}px`;
     wrapper.style.width = `${wrapper.clientWidth}px`;
   }
