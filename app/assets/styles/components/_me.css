@@ -1,7 +1,10 @@
 .me {
   display: inline-block;
-  transform: translateY(-12px);
   white-space: nowrap;
+
+  @mixin atLarge {
+    transform: translateY(-12px);
+  }
 
   span {
     display: inline-block;
@@ -15,7 +18,9 @@
   }
 
   &__my-name {
-    transform: translateY(-300px);
+    @mixin atLarge {
+      transform: translateY(-300px);
+    }
 
     &--stroke {
       -webkit-text-stroke: 1px black;

@@ -25,7 +25,10 @@
     height: 1px;
     top: 0;
     background-color: $mainBlack;
-    transform: translateX(-50%);
+
+    @mixin atLarge {
+      transform: translateX(-50%);
+    }
   }
   &__description {
     order: 1;

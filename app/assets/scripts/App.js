@@ -18,7 +18,6 @@ import ImageHoverEffect from './modules/ImageHoverEffect';
 new ScrollBar();
 new GenerateProjects();
 new GenerateCostumHTMLLinksDOM();
-new AnimateTextOnScroll();
 new AnimateNavOnWaypoints();
 new ScrollToOnNavigationLinkClick();
 new AnimateAvailabilityMessageOnScroll();
@@ -28,6 +27,7 @@ new TranslateYWorkHeadlineOnScroll();
 new TranslateXFrontalHeadlinesOnScroll();
 
 if (window.innerWidth >= 1024) {
+  new AnimateTextOnScroll();
   new AnimateMileStonesOnScroll();
   new TranslateXProjectsOnScroll();
   new ChangeAdOnTiming();
