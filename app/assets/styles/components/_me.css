@@ -27,10 +27,15 @@
     width: 260px;
     height: 260px;
     border-radius: 50%;
-    object-fit: cover;
     opacity: 0;
-    transition: opacity 500ms;
+    object-fit: cover;
+    transition: all 500ms;
     @mixin xy-centered;
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -60%) scale(0.86);
+
+    &--is-visible {
+      opacity: 1;
+      transform: translate(-50%, -60%) scale(1);
+    }
   }
 }
