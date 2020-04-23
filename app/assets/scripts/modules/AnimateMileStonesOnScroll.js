@@ -3,9 +3,11 @@ import scroller from './Scroller';
 
 class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super('.milestone__top-border', { top: 0, bottom: -window.innerHeight + 250 });
-    this.limits = { start: -50, end: 0 };
-    this.setTransformObjects();
+    super(
+      '.milestone__top-border',
+      { top: 0, bottom: -window.innerHeight + 250 },
+      { start: -50, end: 0 }
+    );
 
     scroller.addListener(this.revealMileStoneTextWhenDone.bind(this));
   }
@@ -17,7 +19,9 @@ class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
   revealMileStoneTextWhenDone({ offset: { y } }) {
     this.elements.forEach(element => {
       if (element.style.transform === 'translateX(0%)') {
-        element.nextElementSibling.classList.add('milestone__description--is-visible');
+        element.nextElementSibling.classList.add(
+          'milestone__description--is-visible'
+        );
       }
     });
   }

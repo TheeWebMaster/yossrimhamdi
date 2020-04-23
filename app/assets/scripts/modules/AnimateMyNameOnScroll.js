@@ -3,21 +3,23 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super('.me__my-name', {
-      top: document.querySelector('.me__my-name').clientHeight / 2,
-      bottom: -240,
-    });
+    super(
+      '.me__my-name',
+      {
+        top: document.querySelector('.me__my-name').clientHeight / 2,
+        bottom: -240,
+      },
+      { start: -300, end: 0 }
+    );
     this.DOM = {
       myName: this.elements[0],
       myImage: document.querySelector('.me__my-image'),
       container: document.querySelector('.me'),
       wrapper: document.querySelector('.me__wrapper'),
     };
-    this.limits = { start: -300, end: 0 };
     this.waypoints = [300, 250, 160, 65];
     this.texts = ['hello!', "keep scrolling, don't stop", 'almost', 'yossri'];
 
-    this.setTransformObjects();
     this.fixedContainersWidth();
 
     scroller.addListener(this.animate.bind(this));
