@@ -2,7 +2,7 @@ import ScrollInput from './ScrollInput';
 import Transform from './Transform';
 
 class SetupParallaxEnviroment {
-  constructor(className, offset = 0) {
+  constructor(className, offset = { top: 0, bottom: 0 }) {
     this.elements = document.querySelectorAll(className);
     this.offset = offset;
     this.topBoundings = this.getTopElementsBounding();
@@ -15,8 +15,8 @@ class SetupParallaxEnviroment {
       const topBounding = element.getBoundingClientRect().top;
 
       topBoundings.push({
-        start: topBounding - window.innerHeight,
-        end: topBounding + element.clientHeight + this.offset,
+        start: topBounding - window.innerHeight + this.offset.top,
+        end: topBounding + element.clientHeight + this.offset.bottom,
       });
     });
 

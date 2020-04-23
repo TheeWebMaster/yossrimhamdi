@@ -1,0 +1,36 @@
+.me {
+  display: inline-block;
+  transform: translateY(-12px);
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+  }
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__my-name {
+    transform: translateY(-300px);
+
+    &--stroke {
+      -webkit-text-stroke: 1px black;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__my-image {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 500ms;
+    @mixin xy-centered;
+    transform: translate(-50%, -60%);
+  }
+}

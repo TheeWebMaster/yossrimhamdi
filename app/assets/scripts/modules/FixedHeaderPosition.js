@@ -1,4 +1,4 @@
-import scroller from './scroller';
+import scroller from './Scroller';
 
 class FixedHeaderPosition {
   constructor() {
