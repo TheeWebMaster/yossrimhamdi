@@ -39,12 +39,7 @@ class SetupParallaxEnviroment {
 
   setTransformObjects() {
     this.elements.forEach((element, i) => {
-      new Transform(
-        element,
-        this.relativeScrollInputs[i],
-        this.limits,
-        this.transformFunction
-      );
+      new Transform(element, this.relativeScrollInputs[i], this.limits, this.transformFunction);
     });
   }
 }
