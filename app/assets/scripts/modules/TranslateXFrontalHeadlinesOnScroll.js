@@ -12,7 +12,8 @@ class TranslateXFrontalHeadlinesOnScroll extends SetupParallaxEnviroment {
 
     this.animate();
   }
-  setTransformObjects() {
+
+  animate() {
     const costumScrollInput = new ScrollInput({
       start: 0,
       end: window.innerHeight,
