@@ -89,7 +89,6 @@
   }
   &__nav-link {
     position: relative;
-    cursor: pointer;
     padding-left: 1.2em;
 
     @mixin atLarge {
