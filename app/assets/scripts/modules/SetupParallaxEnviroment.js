@@ -2,14 +2,11 @@ import ScrollInput from './ScrollInput';
 import Transform from './Transform';
 
 class SetupParallaxEnviroment {
-  constructor(selector, offset = { top: 0, bottom: 0 }, limits) {
+  constructor(selector, offset = { top: 0, bottom: 0 }) {
     this.elements = document.querySelectorAll(selector);
-    this.limits = limits;
     this.offset = offset;
     this.topBoundings = this.getTopElementsBounding();
     this.relativeScrollInputs = this.getRelativeScrollInputs();
-
-    this.setTransformObjects();
   }
 
   getTopElementsBounding() {
@@ -37,7 +34,7 @@ class SetupParallaxEnviroment {
     return relativeScrollInputs;
   }
 
-  setTransformObjects() {
+  animate() {
     this.elements.forEach((element, i) => {
       new Transform(element, this.relativeScrollInputs[i], this.limits, this.transformFunction);
     });

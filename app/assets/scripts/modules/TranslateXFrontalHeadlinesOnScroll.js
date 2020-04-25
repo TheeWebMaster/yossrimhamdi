@@ -4,10 +4,13 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class TranslateXFrontalHeadlinesOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super('.frontal-headline--to-translate', undefined, [
+    super('.frontal-headline--to-translate');
+    this.limits = [
       { start: 0, end: -200 },
       { start: 0, end: 200 },
-    ]);
+    ];
+
+    this.animate();
   }
   setTransformObjects() {
     const costumScrollInput = new ScrollInput({
