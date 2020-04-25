@@ -3,14 +3,12 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
   constructor() {
-    super(
-      '.me__my-name',
-      {
-        top: document.querySelector('.me__my-name').clientHeight / 2,
-        bottom: -240,
-      },
-      { start: -300, end: 0 }
-    );
+    super('.me__my-name', {
+      top: document.querySelector('.me__my-name').clientHeight / 2,
+      bottom: document.querySelector('.me__my-name').clientHeight + 300 - window.innerHeight,
+    });
+
+    this.limits = { start: -300, end: 0 };
     this.DOM = {
       myName: this.elements[0],
       myImage: document.querySelector('.me__my-image'),
@@ -20,16 +18,17 @@ class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
     this.waypoints = [300, 250, 160, 65];
     this.texts = ['hello!', "keep scrolling, don't stop", 'almost', 'yossri'];
 
+    this.animate();
     this.fixedContainersWidth();
 
-    scroller.addListener(this.animate.bind(this));
+    scroller.addListener(this.changeText.bind(this));
   }
 
   transformFunction() {
     this.element.style.transform = `translateY(${this.getCurrentValue()}px)`;
   }
 
-  animate() {
+  changeText() {
     const yValue = this.getYValue();
 
     this.texts.forEach((text, i) => {
