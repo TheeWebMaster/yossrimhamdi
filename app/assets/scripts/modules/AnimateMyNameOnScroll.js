@@ -3,9 +3,10 @@ import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 
 class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
   constructor() {
+    console.log(window.innerHeight);
     super('.me__my-name', {
       top: document.querySelector('.me__my-name').clientHeight / 2,
-      bottom: -240,
+      bottom: document.querySelector('.me__my-name').clientHeight + 300 - window.innerHeight,
     });
 
     this.limits = { start: -300, end: 0 };
