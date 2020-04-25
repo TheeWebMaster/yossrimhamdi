@@ -28,7 +28,7 @@ class Cursor {
             this.cursor[part].style.top = `${e.clientY}px`;
             this.cursor[part].style.left = `${e.clientX}px`;
           },
-          part === 'inner' ? 0 : 60
+          part === 'inner' ? 0 : 100
         );
       }
     }
