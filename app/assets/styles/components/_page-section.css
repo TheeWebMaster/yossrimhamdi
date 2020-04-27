@@ -19,6 +19,11 @@
   &--no-top-padding {
     padding-top: 0;
   }
+
+  &--z-index-1 {
+    z-index: 1;
+  }
+
   &--huge-bottom-space-on-large {
     @mixin atLarge {
       padding-bottom: 300px;

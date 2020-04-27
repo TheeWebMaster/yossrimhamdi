@@ -1,7 +1,7 @@
 .header {
   position: relative;
   font-weight: 300;
-  z-index: 1;
+  z-index: 2;
 
   * {
     transform: translateZ(0);
@@ -89,7 +89,6 @@
   }
   &__nav-link {
     position: relative;
-    cursor: pointer;
     padding-left: 1.2em;
 
     @mixin atLarge {
