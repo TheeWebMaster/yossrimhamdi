@@ -9,10 +9,25 @@
   }
 
   &__outer {
-    width: 65px;
+    width: 70px;
+    transition: opacity 300ms;
   }
 
   &__inner {
     width: 8px;
+    transition: width 200ms;
+
+    &--large {
+      width: 15px;
+    }
+  }
+
+  &--on-focus {
+    .cursor__inner {
+      width: 15px;
+    }
+    .cursor__outer {
+      opacity: 0;
+    }
   }
 }

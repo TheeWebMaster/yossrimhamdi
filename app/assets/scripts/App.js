@@ -1,3 +1,4 @@
+import CursorInteractions from './modules/CursorInteractions';
 import Cursor from './modules/Cursor';
 import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
 import ScrollBar from './modules/Scrollbar';
@@ -37,3 +38,4 @@ if (window.innerWidth >= 1024) {
 }
 
 new Cursor();
+new CursorInteractions();
