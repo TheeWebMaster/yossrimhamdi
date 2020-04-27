@@ -141,7 +141,7 @@ body {
   }.header {
   position: relative;
   font-weight: 300;
-  z-index: 3;
+  z-index: 2;
 }.header * {
     transform: translateZ(0);
   }@media only screen and (min-width: 1024px) {.header {
@@ -280,8 +280,8 @@ body {
   }
   }.page-section--no-top-padding {
     padding-top: 0;
-  }.page-section--z-index {
-    z-index: 2;
+  }.page-section--z-index-1 {
+    z-index: 1;
   }@media only screen and (min-width: 1024px) {.page-section--huge-bottom-space-on-large {
       padding-bottom: 300px
   }
