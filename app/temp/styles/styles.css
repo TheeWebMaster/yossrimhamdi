@@ -509,8 +509,7 @@ body {
     height: 78px;
     width: 78px;
   }.cursor__outer-circle {
-    -webkit-animation: rotate 1000ms linear infinite;
-            animation: rotate 1000ms linear infinite;
+    /* animation: rotate 1000ms linear infinite; */
     transform-origin: center;
     fill: transparent;
     stroke: #ff0d00;
@@ -518,7 +517,7 @@ body {
     r: 45%;
     cx: 50%;
     cy: 50%;
-    stroke-dasharray: 190;
+    /* stroke-dasharray: 190; */
     /* stroke-dashoffset: 1000; */
   }.cursor__inner {
     width: 8px;

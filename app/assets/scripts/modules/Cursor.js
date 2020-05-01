@@ -10,7 +10,7 @@ class Cursor {
     this.centralizeCursor();
 
     scroller.addListener(this.makeCursorVisible.bind(this));
-    // this.setMouseEvent();
+    this.setMouseEvent();
   }
 
   centralizeCursor() {

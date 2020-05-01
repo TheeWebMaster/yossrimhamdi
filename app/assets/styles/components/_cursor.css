@@ -15,7 +15,7 @@
   }
 
   &__outer-circle {
-    animation: rotate 1000ms linear infinite;
+    /* animation: rotate 1000ms linear infinite; */
     transform-origin: center;
     fill: transparent;
     stroke: $mainRed;
@@ -23,7 +23,7 @@
     r: 45%;
     cx: 50%;
     cy: 50%;
-    stroke-dasharray: 190;
+    /* stroke-dasharray: 190; */
     /* stroke-dashoffset: 1000; */
   }
 
