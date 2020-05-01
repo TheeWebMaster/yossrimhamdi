@@ -508,6 +508,7 @@ body {
   }.cursor__outer-circle-container {
     height: 78px;
     width: 78px;
+    transition: opacity 200ms;
   }.cursor__outer-circle {
     /* animation: rotate 1000ms linear infinite; */
     transform-origin: center;
@@ -530,6 +531,7 @@ body {
       height: 12px;
     }.cursor--on-focus .cursor__inner {
       width: 12px;
-    }.cursor--on-focus .cursor__outer {
+      height: 12px;
+    }.cursor--on-focus .cursor__outer-circle-container {
       opacity: 0;
     }

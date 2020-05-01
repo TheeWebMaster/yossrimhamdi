@@ -12,6 +12,7 @@
   &__outer-circle-container {
     height: 78px;
     width: 78px;
+    transition: opacity 200ms;
   }
 
   &__outer-circle {
@@ -43,8 +44,9 @@
   &--on-focus {
     .cursor__inner {
       width: 12px;
+      height: 12px;
     }
-    .cursor__outer {
+    .cursor__outer-circle-container {
       opacity: 0;
     }
   }
