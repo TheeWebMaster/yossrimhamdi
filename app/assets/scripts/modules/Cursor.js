@@ -4,13 +4,13 @@ class Cursor {
   constructor() {
     this.cursor = {
       wrapper: document.querySelector('.cursor'),
-      outer: document.querySelector('.cursor__outer'),
+      outer: document.querySelector('.cursor__outer-circle-container'),
       inner: document.querySelector('.cursor__inner'),
     };
     this.centralizeCursor();
 
     scroller.addListener(this.makeCursorVisible.bind(this));
-    // this.setMouseEvent();
+    this.setMouseEvent();
   }
 
   centralizeCursor() {

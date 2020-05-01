@@ -4,14 +4,26 @@
   display: inline-block;
   top: 0;
 
-  * {
+  *:not(circle) {
     position: relative;
     @mixin xy-centered;
   }
 
-  &__outer {
-    width: 70px;
-    transition: opacity 300ms;
+  &__outer-circle-container {
+    animation: rotate 1000ms linear infinite;
+    height: 74px;
+    width: 74px;
+  }
+
+  &__outer-circle {
+    fill: transparent;
+    stroke: $mainRed;
+    stroke-width: 2;
+    r: 35px;
+    cx: 37px;
+    cy: 37px;
+    stroke-dasharray: 190;
+    /* stroke-dashoffset: 1000; */
   }
 
   &__inner {
