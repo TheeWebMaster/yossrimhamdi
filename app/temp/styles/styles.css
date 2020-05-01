@@ -69,7 +69,7 @@
   background-color: #faf5f1;
   text-transform: uppercase;
   counter-reset: milestone-num;
-  /* cursor: none; */
+  cursor: none;
 }html,
 body {
   overflow-x: hidden;
