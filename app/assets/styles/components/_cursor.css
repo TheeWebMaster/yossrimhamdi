@@ -1,11 +1,9 @@
 .cursor {
   z-index: 1;
   position: absolute;
-  display: inline-block;
   top: 0;
 
-  *:not(circle) {
-    position: relative;
+  *:not(.cursor__outer-circle) {
     @mixin xy-centered;
   }
 
@@ -34,6 +32,7 @@
     background-color: $mainRed;
     border-radius: 50%;
     transition: width 200ms, height 200ms;
+    z-index: 4;
 
     &--large {
       width: 12px;

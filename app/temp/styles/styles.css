@@ -501,10 +501,8 @@ body {
     }.cursor {
   z-index: 1;
   position: absolute;
-  display: inline-block;
   top: 0;
-}.cursor *:not(circle) {
-    position: relative;
+}.cursor *:not(.cursor__outer-circle) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -531,6 +529,7 @@ body {
     background-color: #ff0d00;
     border-radius: 50%;
     transition: width 200ms, height 200ms;
+    z-index: 4;
   }.cursor__inner--large {
       width: 12px;
       height: 12px;
@@ -539,4 +538,6 @@ body {
       height: 12px;
     }.cursor--on-focus .cursor__outer-circle-container {
       opacity: 0;
-    }
+    }.website-content {
+  position: relative;
+}
