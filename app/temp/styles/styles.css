@@ -506,8 +506,8 @@ body {
     transform: translate(-50%, -50%);
     z-index: -1;
   }.cursor__outer-circle-container {
-    height: 85px;
-    width: 85px;
+    height: 78px;
+    width: 78px;
   }.cursor__outer-circle {
     -webkit-animation: rotate 1000ms linear infinite;
             animation: rotate 1000ms linear infinite;
@@ -527,10 +527,10 @@ body {
     border-radius: 50%;
     transition: width 200ms, height 200ms;
   }.cursor__inner--large {
-      width: 15px;
-      height: 15px;
+      width: 12px;
+      height: 12px;
     }.cursor--on-focus .cursor__inner {
-      width: 15px;
+      width: 12px;
     }.cursor--on-focus .cursor__outer {
       opacity: 0;
     }
