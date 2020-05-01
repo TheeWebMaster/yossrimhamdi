@@ -141,7 +141,7 @@ body {
   }.header {
   position: relative;
   font-weight: 300;
-  z-index: 1;
+  z-index: 2;
 }.header * {
     transform: translateZ(0);
   }@media only screen and (min-width: 1024px) {.header {
@@ -480,6 +480,7 @@ body {
       opacity: 1;
       transform: translate(-50%, -60%) scale(1);
     }.cursor {
+  z-index: 1;
   position: absolute;
   display: inline-block;
   top: 0;
