@@ -7,9 +7,19 @@ class Cursor {
       outer: document.querySelector('.cursor__outer'),
       inner: document.querySelector('.cursor__inner'),
     };
+    this.centralizeCursor();
 
     scroller.addListener(this.makeCursorVisible.bind(this));
-    this.setMouseEvent();
+    // this.setMouseEvent();
+  }
+
+  centralizeCursor() {
+    for (const part in this.cursor) {
+      if (part !== 'wrapper') {
+        this.cursor[part].style.top = `${window.innerHeight / 2}px`;
+        this.cursor[part].style.left = `${window.innerWidth / 2}px`;
+      }
+    }
   }
 
   setMouseEvent() {

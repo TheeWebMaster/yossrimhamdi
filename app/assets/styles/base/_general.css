@@ -9,7 +9,7 @@ body {
   background-color: $skiny;
   text-transform: uppercase;
   counter-reset: milestone-num;
-  cursor: none;
+  /* cursor: none; */
 }
 
 html,
