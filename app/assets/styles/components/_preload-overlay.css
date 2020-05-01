@@ -1,0 +1,14 @@
+.preload-overlay {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: $skiny;
+  position: absolute;
+  top: 0;
+
+  &__state {
+    font-weight: 300;
+    @mixin xy-centered;
+    margin-top: 4.2em;
+  }
+}
