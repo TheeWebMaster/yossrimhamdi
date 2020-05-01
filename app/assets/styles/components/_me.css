@@ -37,6 +37,7 @@
     transition: all 500ms;
     @mixin xy-centered;
     transform: translate(-50%, -60%) scale(0.86);
+    filter: blur(4px);
 
     &--is-visible {
       opacity: 1;
