@@ -521,9 +521,13 @@ body {
     /* stroke-dashoffset: 1000; */
   }.cursor__inner {
     width: 8px;
-    transition: width 200ms;
+    height: 8px;
+    background-color: #ff0d00;
+    border-radius: 50%;
+    transition: width 200ms, height 200ms;
   }.cursor__inner--large {
       width: 15px;
+      height: 15px;
     }.cursor--on-focus .cursor__inner {
       width: 15px;
     }.cursor--on-focus .cursor__outer {

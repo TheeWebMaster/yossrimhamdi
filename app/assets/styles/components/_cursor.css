@@ -28,10 +28,14 @@
 
   &__inner {
     width: 8px;
-    transition: width 200ms;
+    height: 8px;
+    background-color: $mainRed;
+    border-radius: 50%;
+    transition: width 200ms, height 200ms;
 
     &--large {
       width: 15px;
+      height: 15px;
     }
   }
 
