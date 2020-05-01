@@ -28,17 +28,17 @@
   }
 }@-webkit-keyframes rotate {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }@keyframes rotate {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }#content-wrapper {
   position: fixed;
@@ -506,17 +506,18 @@ body {
     transform: translate(-50%, -50%);
     z-index: -1;
   }.cursor__outer-circle-container {
+    height: 85px;
+    width: 85px;
+  }.cursor__outer-circle {
     -webkit-animation: rotate 1000ms linear infinite;
             animation: rotate 1000ms linear infinite;
-    height: 74px;
-    width: 74px;
-  }.cursor__outer-circle {
+    transform-origin: center;
     fill: transparent;
     stroke: #ff0d00;
     stroke-width: 2;
-    r: 35px;
-    cx: 37px;
-    cy: 37px;
+    r: 45%;
+    cx: 50%;
+    cy: 50%;
     stroke-dasharray: 190;
     /* stroke-dashoffset: 1000; */
   }.cursor__inner {
