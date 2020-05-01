@@ -543,8 +543,8 @@ body {
 }.preload-overlay {
   z-index: 1;
   width: 100vw;
-  height: 100vh;
-  background-color: #faf5f1;
+  height: 60vh;
+  background-color: lightblue;
   position: absolute;
   top: 0;
 }.preload-overlay__state {
