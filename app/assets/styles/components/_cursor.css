@@ -1,6 +1,7 @@
 .cursor {
   z-index: 1;
   position: absolute;
+  pointer-events: none;
   top: 0;
 
   *:not(.cursor__outer-circle) {

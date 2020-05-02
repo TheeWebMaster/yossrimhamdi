@@ -11,12 +11,7 @@ class CursorInteractions {
     this.setEvents();
   }
 
-  removeDragGhost(e) {
-    e.preventDefault();
-  }
-
   setEvents() {
-    this.DOM.cursor.container.addEventListener('dragstart', this.removeDragGhost);
     window.addEventListener('mousedown', this.increaseInnerCursorWidth.bind(this));
     window.addEventListener('mouseup', this.decreaseInnerCursorWidth.bind(this));
 
