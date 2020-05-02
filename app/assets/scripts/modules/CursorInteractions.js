@@ -6,6 +6,7 @@ class CursorInteractions {
         container: document.querySelector('.cursor'),
         inner: document.querySelector('.cursor__inner'),
       },
+      canvases: document.querySelectorAll('canvas'),
     };
 
     this.setEvents();
@@ -17,6 +18,11 @@ class CursorInteractions {
 
     this.DOM.headerNav.addEventListener('mouseenter', this.onFocus.bind(this));
     this.DOM.headerNav.addEventListener('mouseleave', this.offFocus.bind(this));
+
+    this.DOM.canvases.forEach(canvas => {
+      canvas.addEventListener('mouseenter', this.onFocus.bind(this));
+      canvas.addEventListener('mouseleave', this.offFocus.bind(this));
+    });
   }
 
   onFocus() {
