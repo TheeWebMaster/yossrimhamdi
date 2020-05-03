@@ -35,7 +35,6 @@ if (window.innerWidth >= 1024) {
   new ChangeAdOnTiming();
   new ImageHoverEffect();
   new AnimateMyNameOnScroll();
+  new Cursor();
+  new CursorInteractions();
 }
-
-new Cursor();
-new CursorInteractions();
