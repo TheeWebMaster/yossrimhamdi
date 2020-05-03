@@ -510,7 +510,11 @@ body {
   position: absolute;
   pointer-events: none;
   top: 0;
-}.cursor *:not(.cursor__outer-circle) {
+  display: none;
+}@media only screen and (min-width: 1024px) {.cursor {
+    display: block
+}
+  }.cursor *:not(.cursor__outer-circle) {
     position: absolute;
     top: 50%;
     left: 50%;

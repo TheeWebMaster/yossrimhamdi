@@ -3,6 +3,11 @@
   position: absolute;
   pointer-events: none;
   top: 0;
+  display: none;
+
+  @mixin atLarge {
+    display: block;
+  }
 
   *:not(.cursor__outer-circle) {
     @mixin xy-centered;
