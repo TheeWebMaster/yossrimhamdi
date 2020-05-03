@@ -25,4 +25,8 @@
   &--rotated {
     transform: translateX(39%) rotate(-90deg);
   }
+
+  &--no-pointer-events {
+    pointer-events: none;
+  }
 }

@@ -22,6 +22,7 @@
   &__container {
     display: inline-block;
     position: relative;
+    pointer-events: all;
   }
   &__wrapper {
     display: inline-block;
