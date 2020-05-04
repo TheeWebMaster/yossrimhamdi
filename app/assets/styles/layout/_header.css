@@ -1,15 +1,25 @@
 .header {
   position: relative;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
   font-weight: 300;
   z-index: 1;
+
+  @mixin atLarge {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 1.2rem;
+  }
+
+  @mixin atHuge {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
 
   * {
     transform: translateZ(0);
   }
 
-  @mixin atLarge {
-    font-size: 1.2rem;
-  }
   &__my-name {
     font-size: 1.3rem;
 
