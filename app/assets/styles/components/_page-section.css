@@ -12,6 +12,11 @@
     padding-bottom: 0.8em;
 
     @mixin atLarge {
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+
+    @mixin atHuge {
       padding-top: 3em;
       padding-bottom: 3em;
     }
