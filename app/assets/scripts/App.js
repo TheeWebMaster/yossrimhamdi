@@ -38,5 +38,5 @@ if (window.innerWidth >= 1024) {
   new AnimateMyNameOnScroll();
 }
 
-const cursor = new Cursor();
-new Preload(cursor);
+// const cursor = new Cursor();
+// new Preload(cursor);

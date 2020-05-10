@@ -6,12 +6,12 @@
   position: absolute;
   top: 0;
 
-  &__state {
-    font-weight: 300;
-  }
-
   &__wrapper {
     @mixin xy-centered;
+  }
+
+  &__state {
+    font-weight: 300;
   }
 
   &--loaded {

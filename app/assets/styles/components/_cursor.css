@@ -1,16 +1,15 @@
 .cursor {
   z-index: 2;
   position: absolute;
-  cursor: pointer;
   top: 0;
 
   * {
     @mixin xy-centered;
+    border-radius: 50%;
   }
 
   &__outer {
     border: 2px solid $mainRed;
-    border-radius: 50%;
     height: 70px;
     width: 70px;
     transition: opacity 200ms;
@@ -20,7 +19,6 @@
     width: 7px;
     height: 7px;
     background-color: $mainRed;
-    border-radius: 50%;
     transition: width 200ms, height 200ms;
 
     &--large {
