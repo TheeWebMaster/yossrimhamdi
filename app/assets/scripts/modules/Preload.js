@@ -25,6 +25,7 @@ class Preload {
 
   setMousePressEvents() {
     this.DOM.loader.addEventListener('mousedown', this.setTimer.bind(this));
+    this.DOM.loader.addEventListener('mouseup', this.clearTimer.bind(this));
   }
 
   handleReadyState(e) {
@@ -58,10 +59,14 @@ class Preload {
     }, 100);
   }
 
+  clearTimer() {
+    clearInterval(this.timer.interval);
+  }
+
   calcElapsedTime() {
     if (Date.now() - this.timer.start >= 700) {
       this.letUserInteract();
-      clearInterval(this.timer.interval);
+      this.clearTimer();
     }
   }
 
