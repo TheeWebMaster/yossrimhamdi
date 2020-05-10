@@ -37,8 +37,5 @@ if (window.innerWidth >= 1024) {
   new ImageHoverEffect();
   new AnimateMyNameOnScroll();
   new Cursor();
-  new CursorInteractions();
+  new Preload();
 }
-
-new Cursor();
-new Preload();

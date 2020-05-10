@@ -25,7 +25,7 @@ class Preload {
 
   setMousePressEvents() {
     this.DOM.loader.addEventListener('mousedown', this.setTimer.bind(this));
-    this.DOM.loader.addEventListener('mouseup', this.clearTimer.bind(this));
+    document.body.addEventListener('mouseup', this.letUserInteract.bind(this));
   }
 
   handleReadyState(e) {
@@ -55,28 +55,43 @@ class Preload {
   setTimer() {
     this.timer.start = Date.now();
     this.timer.interval = setInterval(() => {
-      this.calcElapsedTime();
+      this.checkTimer();
+      this.showPageContentIfDone();
     }, 100);
   }
 
-  clearTimer() {
+  clearInterval() {
     clearInterval(this.timer.interval);
   }
 
-  calcElapsedTime() {
-    if (Date.now() - this.timer.start >= 700) {
-      this.letUserInteract();
-      this.clearTimer();
+  enableMouseInteractions() {
+    this.enableScrolling();
+    new CursorInteractions();
+  }
+
+  checkTimer() {
+    this.timer.isAllowed = Date.now() - this.timer.start >= 700;
+  }
+
+  showPageContentIfDone() {
+    if (this.timer.isAllowed) {
+      this.showPageContent();
+      this.clearInterval();
     }
   }
 
-  letUserInteract() {
+  showPageContent() {
     this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
     this.DOM.cursor.classList.add('cursor--is-visible');
     document.body.style.cursor = 'none';
+  }
 
-    this.enableScrolling();
-    new CursorInteractions();
+  letUserInteract() {
+    this.clearInterval();
+
+    if (this.timer.isAllowed) {
+      this.enableMouseInteractions();
+    }
   }
 }
 
