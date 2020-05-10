@@ -8,6 +8,7 @@ class Cursor {
       inner: document.querySelector('.cursor__inner'),
     };
     this.centralizeCursor();
+    this.setMouseEvent();
 
     scroller.addListener(this.makeCursorVisible.bind(this));
   }

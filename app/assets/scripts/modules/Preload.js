@@ -2,13 +2,11 @@ import scroller from './Scroller';
 import CursorInteractions from './CursorInteractions';
 
 class Preload {
-  constructor(cursor) {
+  constructor() {
     this.DOM = {
       preloadOverlay: document.querySelector('.preload-overlay'),
       preloadState: document.querySelector('.preload-overlay__state'),
-      cursor: document.querySelector('.cursor'),
     };
-    this.cursor = cursor;
     this.timerStart = 0;
     this.isDisabled = true;
 
@@ -58,11 +56,9 @@ class Preload {
 
   letUserInteract() {
     this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
-    this.DOM.cursor.classList.add('cursor--hide-default-cursor');
     document.body.style.cursor = 'none';
 
     this.enableScrolling();
-    this.cursor.setMouseEvent();
     new CursorInteractions();
   }
 }
