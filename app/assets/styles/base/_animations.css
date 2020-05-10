@@ -24,3 +24,10 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes load {
+  to {
+    stroke-dasharray: 226;
+    transform: rotate(190deg);
+  }
+}

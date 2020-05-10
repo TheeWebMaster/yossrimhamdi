@@ -49,7 +49,7 @@ class Preload {
   }
 
   calcElapsedTime() {
-    if (Date.now() - this.timerStart >= 700) {
+    if (Date.now() - this.timerStart >= 8000) {
       this.letUserInteract();
     }
   }
