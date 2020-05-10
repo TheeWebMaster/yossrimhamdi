@@ -12,11 +12,11 @@ class Preload {
     this.timerStart = 0;
     this.isDisabled = true;
 
-    this.setEvents();
+    this.setMainEvent();
     scroller.addListener(this.disableScrolling.bind(this));
   }
 
-  setEvents() {
+  setMainEvent() {
     document.addEventListener('readystatechange', this.setupCanvas.bind(this));
   }
 
@@ -51,7 +51,7 @@ class Preload {
   }
 
   calcElapsedTime() {
-    if ((Date.now() - this.timerStart) / 1000 >= 0.7) {
+    if (Date.now() - this.timerStart >= 700) {
       this.letUserInteract();
     }
   }
