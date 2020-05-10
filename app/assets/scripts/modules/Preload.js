@@ -25,7 +25,7 @@ class Preload {
   }
 
   setMousePressEvents() {
-    document.body.addEventListener('mousedown', this.setTimer.bind(this));
+    this.DOM.loader.addEventListener('mousedown', this.setTimer.bind(this));
   }
 
   handleReadyState(e) {
