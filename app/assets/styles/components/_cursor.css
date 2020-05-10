@@ -32,7 +32,6 @@
     background-color: $mainRed;
     border-radius: 50%;
     transition: width 200ms, height 200ms;
-    z-index: 4;
 
     &--large {
       width: 12px;

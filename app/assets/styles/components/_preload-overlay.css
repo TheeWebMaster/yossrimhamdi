@@ -8,10 +8,11 @@
 
   &__state {
     font-weight: 300;
-    @mixin xy-centered;
-    margin-top: 3.8em;
   }
 
+  &__wrapper {
+    @mixin xy-centered;
+  }
   &--loaded {
     display: none;
   }
