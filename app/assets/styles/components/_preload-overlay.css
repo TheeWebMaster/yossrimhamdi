@@ -13,6 +13,7 @@
   &__wrapper {
     @mixin xy-centered;
   }
+
   &--loaded {
     display: none;
   }

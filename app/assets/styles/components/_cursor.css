@@ -4,26 +4,16 @@
   cursor: pointer;
   top: 0;
 
-  *:not(.cursor__outer-circle) {
+  * {
     @mixin xy-centered;
   }
 
-  &__outer-circle-container {
-    height: 78px;
-    width: 78px;
+  &__outer {
+    border: 2px solid $mainRed;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
     transition: opacity 200ms;
-  }
-
-  &__outer-circle {
-    transform-origin: center;
-    fill: transparent;
-    stroke: $mainRed;
-    stroke-width: 2;
-    r: 37%;
-    cx: 50%;
-    cy: 50%;
-    /* stroke-dasharray: 308; */
-    /* stroke-dashoffset: 1000; */
   }
 
   &__inner {
@@ -44,7 +34,7 @@
       width: 12px;
       height: 12px;
     }
-    .cursor__outer-circle-container {
+    .cursor__outer {
       opacity: 0;
     }
   }

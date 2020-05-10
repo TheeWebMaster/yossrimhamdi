@@ -502,26 +502,18 @@ body {
   position: absolute;
   cursor: pointer;
   top: 0;
-}.cursor *:not(.cursor__outer-circle) {
+}.cursor * {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
-  }.cursor__outer-circle-container {
-    height: 78px;
-    width: 78px;
+  }.cursor__outer {
+    border: 2px solid #ff0d00;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
     transition: opacity 200ms;
-  }.cursor__outer-circle {
-    transform-origin: center;
-    fill: transparent;
-    stroke: #ff0d00;
-    stroke-width: 2;
-    r: 37%;
-    cx: 50%;
-    cy: 50%;
-    /* stroke-dasharray: 308; */
-    /* stroke-dashoffset: 1000; */
   }.cursor__inner {
     width: 7px;
     height: 7px;
@@ -534,7 +526,7 @@ body {
     }.cursor--on-focus .cursor__inner {
       width: 12px;
       height: 12px;
-    }.cursor--on-focus .cursor__outer-circle-container {
+    }.cursor--on-focus .cursor__outer {
       opacity: 0;
     }.cursor--hide-default-cursor {
     cursor: none;
