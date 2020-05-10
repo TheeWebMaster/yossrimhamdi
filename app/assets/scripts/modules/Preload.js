@@ -14,7 +14,6 @@ class Preload {
       start: 0,
       interval: null,
     };
-    this.isDisabled = true;
 
     this.setReadyStateEvent();
     scroller.addListener(this.disableScrolling);
