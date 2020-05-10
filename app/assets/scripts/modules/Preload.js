@@ -8,6 +8,7 @@ class Preload {
       preloadState: document.querySelector('.preload-overlay__state'),
       loader: document.querySelector('.loader'),
       loaderCircle: document.querySelector('.loader__circle'),
+      cursor: document.querySelector('.cursor'),
     };
     this.timer = {
       start: 0,
@@ -67,6 +68,7 @@ class Preload {
 
   letUserInteract() {
     this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
+    this.DOM.cursor.classList.add('cursor--is-visible');
     document.body.style.cursor = 'none';
 
     this.enableScrolling();

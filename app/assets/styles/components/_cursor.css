@@ -1,9 +1,10 @@
 .cursor {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   pointer-events: none;
-  top: 0;
   display: none;
+  opacity: 0;
+  top: 0;
 
   @mixin atLarge {
     display: block;
@@ -45,5 +46,9 @@
 
   &--hide-default-cursor {
     cursor: none;
+  }
+
+  &--is-visible {
+    opacity: 1;
   }
 }
