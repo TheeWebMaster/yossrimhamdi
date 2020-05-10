@@ -25,9 +25,19 @@
   }
 }
 
-@keyframes load {
+@keyframes loading {
   to {
     stroke-dasharray: 226;
     transform: rotate(190deg);
+  }
+}
+@keyframes loaded {
+  from {
+    stroke-dasharray: 226;
+    transform: rotate(190deg);
+  }
+  to {
+    stroke-dasharray: 235;
+    transform: rotate(360deg);
   }
 }

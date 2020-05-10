@@ -6,38 +6,45 @@ class Preload {
     this.DOM = {
       preloadOverlay: document.querySelector('.preload-overlay'),
       preloadState: document.querySelector('.preload-overlay__state'),
+      loader: document.querySelector('.loader'),
+      loaderCircle: document.querySelector('.loader__circle'),
     };
-    this.timerStart = 0;
+    this.timer = {
+      start: 0,
+      interval: null,
+    };
     this.isDisabled = true;
 
-    this.setMainEvent();
-    scroller.addListener(this.disableScrolling.bind(this));
+    this.setReadyStateEvent();
+    scroller.addListener(this.disableScrolling);
   }
 
-  setMainEvent() {
-    document.addEventListener('readystatechange', this.setupCanvas.bind(this));
+  setReadyStateEvent() {
+    document.addEventListener('readystatechange', this.handleReadyState.bind(this));
   }
 
   setMousePressEvents() {
     document.body.addEventListener('mousedown', this.setTimer.bind(this));
-    document.body.addEventListener('mouseup', this.calcElapsedTime.bind(this));
   }
 
-  setupCanvas(e) {
+  handleReadyState(e) {
     if (e.target.readyState === 'complete') {
-      this.informUserToInteract();
-      this.setMousePressEvents();
+      this.DOM.loaderCircle.style.animation = 'loaded 2000ms forwards';
+
+      setTimeout(() => {
+        this.informUserToInteract();
+        this.setMousePressEvents();
+        this.DOM.loader.classList.add('loader--interactive');
+      }, 2000);
     }
   }
 
   disableScrolling() {
-    if (this.isDisabled) {
-      scroller.scrollTo(0, 0, 0);
-    }
+    scroller.scrollTo(0, 0, 0);
   }
 
   enableScrolling() {
-    this.isDisabled = false;
+    scroller.removeListener(this.disableScrolling);
   }
 
   informUserToInteract() {
@@ -45,12 +52,16 @@ class Preload {
   }
 
   setTimer() {
-    this.timerStart = Date.now();
+    this.timer.start = Date.now();
+    this.timer.interval = setInterval(() => {
+      this.calcElapsedTime();
+    }, 100);
   }
 
   calcElapsedTime() {
-    if (Date.now() - this.timerStart >= 8000) {
+    if (Date.now() - this.timer.start >= 700) {
       this.letUserInteract();
+      clearInterval(this.timer.interval);
     }
   }
 
