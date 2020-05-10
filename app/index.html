@@ -170,10 +170,20 @@
           <h5>print</h5>
         </footer>
         <div class="cursor">
-          <svg class="cursor__outer-circle-container">
-            <circle class="cursor__outer-circle" />
-          </svg>
+          <div class="cursor__outer"></div>
           <div class="cursor__inner"></div>
+        </div>
+        <div class="preload-overlay">
+          <div class="preload-overlay__wrapper">
+            <div class="loader">
+              <svg class="loader__svg">
+                <circle class="loader__circle" />
+              </svg>
+              <div class="loader__fadeOut"></div>
+              <div class="loader__inner"></div>
+            </div>
+            <div class="preload-overlay__state">please wait...</div>
+          </div>
         </div>
       </div>
     </div>

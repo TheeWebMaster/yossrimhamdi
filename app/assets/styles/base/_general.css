@@ -9,7 +9,6 @@ body {
   background-color: $skiny;
   text-transform: uppercase;
   counter-reset: milestone-num;
-  cursor: none;
   -webkit-touch-callout: none;
   user-select: none;
 }

@@ -1,3 +1,4 @@
+import Preload from './modules/Preload';
 import CursorInteractions from './modules/CursorInteractions';
 import Cursor from './modules/Cursor';
 import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
@@ -38,3 +39,6 @@ if (window.innerWidth >= 1024) {
   new Cursor();
   new CursorInteractions();
 }
+
+new Cursor();
+new Preload();

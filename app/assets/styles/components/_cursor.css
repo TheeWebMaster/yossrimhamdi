@@ -9,36 +9,23 @@
     display: block;
   }
 
-  *:not(.cursor__outer-circle) {
+  * {
     @mixin xy-centered;
+    border-radius: 50%;
   }
 
-  &__outer-circle-container {
-    height: 78px;
-    width: 78px;
+  &__outer {
+    border: 2px solid $mainRed;
+    height: 70px;
+    width: 70px;
     transition: opacity 200ms;
   }
 
-  &__outer-circle {
-    /* animation: rotate 1000ms linear infinite; */
-    transform-origin: center;
-    fill: transparent;
-    stroke: $mainRed;
-    stroke-width: 2;
-    r: 45%;
-    cx: 50%;
-    cy: 50%;
-    /* stroke-dasharray: 190; */
-    /* stroke-dashoffset: 1000; */
-  }
-
   &__inner {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     background-color: $mainRed;
-    border-radius: 50%;
     transition: width 200ms, height 200ms;
-    z-index: 4;
 
     &--large {
       width: 12px;
@@ -51,8 +38,12 @@
       width: 12px;
       height: 12px;
     }
-    .cursor__outer-circle-container {
+    .cursor__outer {
       opacity: 0;
     }
+  }
+
+  &--hide-default-cursor {
+    cursor: none;
   }
 }

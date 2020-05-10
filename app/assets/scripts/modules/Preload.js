@@ -1,0 +1,77 @@
+import scroller from './Scroller';
+import CursorInteractions from './CursorInteractions';
+
+class Preload {
+  constructor() {
+    this.DOM = {
+      preloadOverlay: document.querySelector('.preload-overlay'),
+      preloadState: document.querySelector('.preload-overlay__state'),
+      loader: document.querySelector('.loader'),
+      loaderCircle: document.querySelector('.loader__circle'),
+    };
+    this.timer = {
+      start: 0,
+      interval: null,
+    };
+    this.isDisabled = true;
+
+    this.setReadyStateEvent();
+    scroller.addListener(this.disableScrolling);
+  }
+
+  setReadyStateEvent() {
+    document.addEventListener('readystatechange', this.handleReadyState.bind(this));
+  }
+
+  setMousePressEvents() {
+    document.body.addEventListener('mousedown', this.setTimer.bind(this));
+  }
+
+  handleReadyState(e) {
+    if (e.target.readyState === 'complete') {
+      this.DOM.loaderCircle.style.animation = 'loaded 2000ms forwards';
+
+      setTimeout(() => {
+        this.informUserToInteract();
+        this.setMousePressEvents();
+        this.DOM.loader.classList.add('loader--interactive');
+      }, 2000);
+    }
+  }
+
+  disableScrolling() {
+    scroller.scrollTo(0, 0, 0);
+  }
+
+  enableScrolling() {
+    scroller.removeListener(this.disableScrolling);
+  }
+
+  informUserToInteract() {
+    this.DOM.preloadState.innerHTML = 'click &amp; hold';
+  }
+
+  setTimer() {
+    this.timer.start = Date.now();
+    this.timer.interval = setInterval(() => {
+      this.calcElapsedTime();
+    }, 100);
+  }
+
+  calcElapsedTime() {
+    if (Date.now() - this.timer.start >= 700) {
+      this.letUserInteract();
+      clearInterval(this.timer.interval);
+    }
+  }
+
+  letUserInteract() {
+    this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
+    document.body.style.cursor = 'none';
+
+    this.enableScrolling();
+    new CursorInteractions();
+  }
+}
+
+export default Preload;
