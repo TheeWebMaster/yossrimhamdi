@@ -613,7 +613,6 @@ body {
     fill: transparent;
     stroke-dasharray: 200;
     stroke-dashoffset: 1000;
-    transition: stroke-dasharray 1000ms;
     -webkit-animation: loading 2000ms 1000ms forwards;
             animation: loading 2000ms 1000ms forwards;
   }.loader__circle--loaded {

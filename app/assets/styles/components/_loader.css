@@ -25,7 +25,6 @@
     fill: transparent;
     stroke-dasharray: 200;
     stroke-dashoffset: 1000;
-    transition: stroke-dasharray 1000ms;
     animation: loading 2000ms 1000ms forwards;
 
     &--loaded {
