@@ -80,7 +80,9 @@ class Preload {
       this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
       this.DOM.cursor.classList.add('cursor--is-visible');
       this.DOM.frontal.classList.add('frontal--animated');
-      this.DOM.nav.classList.add('header__nav--visible');
+      setTimeout(() => {
+        this.DOM.nav.classList.add('header__nav--visible');
+      }, 800);
       document.body.style.cursor = 'none';
 
       this.clearInterval();
@@ -111,10 +113,10 @@ class Preload {
       if (this.timer.done) {
         setTimeout(() => {
           messageAnimationObjects.forEach(object => object.triggerAnimation());
-        }, 400);
+        }, 700);
         clearInterval(interval);
       }
-    }, 100);
+    }, 40);
   }
 }
 

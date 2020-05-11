@@ -1,3 +1,5 @@
+$timing: 700ms;
+
 .frontal {
   position: relative;
 
@@ -21,7 +23,7 @@
       @mixin atLarge {
         left: 30vw;
         left: 100vw;
-        transition: left 700ms;
+        transition: left $timing;
       }
     }
     &--to-the-left {
@@ -30,7 +32,7 @@
 
       @mixin atLarge {
         right: 100vw;
-        transition: right 700ms;
+        transition: right $timing;
       }
     }
   }
