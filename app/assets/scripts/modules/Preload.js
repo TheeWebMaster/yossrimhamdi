@@ -26,7 +26,7 @@ class Preload {
 
   setMousePressEvents() {
     this.DOM.loader.addEventListener('mousedown', this.setTimer.bind(this));
-    document.body.addEventListener('mouseup', this.letUserInteract.bind(this));
+    document.body.addEventListener('mouseup', this.enableMouseInteractions.bind(this));
   }
 
   handleReadyState(e) {
@@ -43,7 +43,7 @@ class Preload {
 
   setTimer() {
     this.timer.start = Date.now();
-    this.timer.interval = setInterval(this.checkTimer.bind(this), 100);
+    this.timer.interval = setInterval(this.showPageContent.bind(this), 100);
   }
 
   clearInterval() {
@@ -62,31 +62,24 @@ class Preload {
     this.DOM.preloadState.innerHTML = 'click &amp; hold';
   }
 
-  checkTimer() {
+  showPageContent() {
     if (Date.now() - this.timer.start >= 700) {
-      this.showPageContent();
+      this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
+      this.DOM.cursor.classList.add('cursor--is-visible');
+      this.DOM.frontal.classList.add('frontal--animated');
+      document.body.style.cursor = 'none';
+
       this.clearInterval();
     }
   }
 
-  showPageContent() {
-    this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
-    this.DOM.cursor.classList.add('cursor--is-visible');
-    this.DOM.frontal.classList.add('frontal--animated');
-    document.body.style.cursor = 'none';
-  }
-
-  letUserInteract() {
+  enableMouseInteractions() {
     this.clearInterval();
 
     if (Date.now() - this.timer.start >= 700) {
-      this.enableMouseInteractions();
+      this.enableScrolling();
+      new CursorInteractions();
     }
-  }
-
-  enableMouseInteractions() {
-    this.enableScrolling();
-    new CursorInteractions();
   }
 }
 
