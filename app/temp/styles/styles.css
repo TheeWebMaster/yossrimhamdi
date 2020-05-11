@@ -615,9 +615,7 @@ body {
     stroke-dashoffset: 1000;
     -webkit-animation: loading 2000ms 1000ms forwards;
             animation: loading 2000ms 1000ms forwards;
-  }.loader__circle--loaded {
-      stroke-dasharray: 235 !important;
-    }.loader__inner {
+  }.loader__inner {
     width: 7px;
     height: 7px;
     background-color: #ff0d00;

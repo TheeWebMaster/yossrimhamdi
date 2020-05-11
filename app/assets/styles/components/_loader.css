@@ -26,10 +26,6 @@
     stroke-dasharray: 200;
     stroke-dashoffset: 1000;
     animation: loading 2000ms 1000ms forwards;
-
-    &--loaded {
-      stroke-dasharray: 235 !important;
-    }
   }
 
   &__inner {
