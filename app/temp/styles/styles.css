@@ -111,6 +111,7 @@ body {
     font-size: 5.5rem;
     font-weight: 900;
     line-height: 0.82;
+    opacity: 0;
   }@media only screen and (min-width: 1024px) {.frontal__headline {
       font-size: 16rem
   }
@@ -121,15 +122,24 @@ body {
       position: relative;
       left: 10vw;
     }@media only screen and (min-width: 1024px) {.frontal__headline--to-the-right {
-        left: 30vw
+        left: 30vw;
+        left: 100vw;
+        transition: left 700ms
     }
   }.frontal__headline--to-the-left {
       position: absolute;
       right: 0;
     }@media only screen and (min-width: 1024px) {.frontal__headline--to-the-left {
-        right: 20vw
+        right: 100vw;
+        transition: right 700ms
     }
-  }.list {
+  }.frontal--animated .frontal__headline {
+      opacity: 1;
+    }.frontal--animated .frontal__headline--to-the-right {
+      left: 30vw;
+    }.frontal--animated .frontal__headline--to-the-left {
+      right: 20vw;
+    }.list {
   list-style-type: none;
 }.milestone {
   position: relative;

@@ -5,6 +5,7 @@
     font-size: 5.5rem;
     font-weight: 900;
     line-height: 0.82;
+    opacity: 0;
 
     @mixin atLarge {
       font-size: 16rem;
@@ -19,6 +20,8 @@
 
       @mixin atLarge {
         left: 30vw;
+        left: 100vw;
+        transition: left 700ms;
       }
     }
     &--to-the-left {
@@ -26,8 +29,21 @@
       right: 0;
 
       @mixin atLarge {
-        right: 20vw;
+        right: 100vw;
+        transition: right 700ms;
       }
+    }
+  }
+
+  &--animated {
+    .frontal__headline {
+      opacity: 1;
+    }
+    .frontal__headline--to-the-right {
+      left: 30vw;
+    }
+    .frontal__headline--to-the-left {
+      right: 20vw;
     }
   }
 }
