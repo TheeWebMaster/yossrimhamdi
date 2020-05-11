@@ -615,10 +615,11 @@ body {
     z-index: -1;
   }.preload-overlay__state {
     font-weight: 300;
+    opacity: 0;
   }.preload-overlay--loaded {
     display: none;
   }.loader {
-  margin: 0 auto 1.2em auto;
+  margin: 0 auto 0.7em auto;
   width: 60px;
   height: 60px;
   position: relative;

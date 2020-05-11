@@ -15,6 +15,7 @@ class Preload {
       headerAdLIs: Array.from(document.querySelectorAll('.header__ad-list li')),
       nav: document.querySelector('.header__nav'),
       messageLIs: Array.from(document.querySelectorAll('.header__availability-message li')),
+      preloadOverlayState: document.querySelector('.preload-overlay__state'),
     };
     this.timer = {
       start: 0,
@@ -65,7 +66,8 @@ class Preload {
   }
 
   informUserToInteract() {
-    this.DOM.preloadState.innerHTML = 'click &amp; hold';
+    this.DOM.preloadOverlayState.style.height = `${this.DOM.preloadOverlayState.clientHeight}px`;
+    new TextLineAnimation(this.DOM.preloadOverlayState, 'bottom', true);
   }
 
   checkTimer() {
@@ -107,7 +109,6 @@ class Preload {
       headerAdAnimationObjects.forEach(object => object.triggerAnimation());
     }, 1500);
     const interval = setInterval(() => {
-      console.log('hello');
       if (this.timer.done) {
         setTimeout(() => {
           messageAnimationObjects.forEach(object => object.triggerAnimation());

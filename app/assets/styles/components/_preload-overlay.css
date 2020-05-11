@@ -17,6 +17,7 @@
 
   &__state {
     font-weight: 300;
+    opacity: 0;
   }
 
   &--loaded {
