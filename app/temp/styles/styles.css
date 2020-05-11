@@ -623,8 +623,8 @@ body {
     fill: transparent;
     stroke-dasharray: 200;
     stroke-dashoffset: 1000;
-    -webkit-animation: loading 3000ms infinite;
-            animation: loading 3000ms infinite;
+    -webkit-animation: loading 3000ms 1000ms infinite;
+            animation: loading 3000ms 1000ms infinite;
   }.loader__inner,
   .loader::after {
     width: 7px;
