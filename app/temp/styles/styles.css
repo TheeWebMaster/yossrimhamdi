@@ -246,7 +246,10 @@ body {
     text-align: right;
     counter-reset: nav-counter;
   }@media only screen and (min-width: 1024px) {.header__nav {
-      line-height: 150%
+      line-height: 150%;
+      position: relative;
+      left: 100%;
+      transition: left 1000ms
   }
   }.header__nav:hover .header__nav-list-wrapper {
         max-height: 156px !important;
@@ -260,7 +263,9 @@ body {
         transform: translate(0.5em, -50%);
       }.header__nav:hover .header__nav-link--active .header__nav-link-bottom-portion {
         transform: translateX(3px);
-      }.header__nav-list-wrapper {
+      }.header__nav--visible {
+      left: 0;
+    }.header__nav-list-wrapper {
     padding-right: 1em;
     transition: max-height 400ms;
     overflow: hidden;

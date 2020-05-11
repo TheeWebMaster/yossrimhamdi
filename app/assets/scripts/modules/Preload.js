@@ -13,6 +13,7 @@ class Preload {
       frontal: document.querySelector('.frontal'),
       headerMyName: document.querySelector('.header__my-name'),
       headerAdLIs: Array.from(document.querySelectorAll('.header__ad-list li')),
+      nav: document.querySelector('.header__nav'),
       messageLIs: Array.from(document.querySelectorAll('.header__availability-message li')),
     };
     this.timer = {
@@ -72,6 +73,7 @@ class Preload {
       this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
       this.DOM.cursor.classList.add('cursor--is-visible');
       this.DOM.frontal.classList.add('frontal--animated');
+      this.DOM.nav.classList.add('header__nav--visible');
       document.body.style.cursor = 'none';
 
       this.clearInterval();

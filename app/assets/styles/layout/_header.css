@@ -70,6 +70,9 @@
 
     @mixin atLarge {
       line-height: 150%;
+      position: relative;
+      left: 100%;
+      transition: left 1000ms;
     }
 
     &:hover {
@@ -90,6 +93,10 @@
       .header__nav-link--active .header__nav-link-bottom-portion {
         transform: translateX(3px);
       }
+    }
+
+    &--visible {
+      left: 0;
     }
   }
   &__nav-list-wrapper {
