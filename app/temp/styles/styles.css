@@ -581,7 +581,11 @@ body {
   background-color: #faf5f1;
   position: absolute;
   top: 0;
-}.preload-overlay__wrapper {
+  display: none;
+}@media only screen and (min-width: 1024px) {.preload-overlay {
+    display: block
+}
+  }.preload-overlay__wrapper {
     position: absolute;
     top: 50%;
     left: 50%;

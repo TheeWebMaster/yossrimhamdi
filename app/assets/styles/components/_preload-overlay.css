@@ -5,6 +5,11 @@
   background-color: $skiny;
   position: absolute;
   top: 0;
+  display: none;
+
+  @mixin atLarge {
+    display: block;
+  }
 
   &__wrapper {
     @mixin xy-centered;
