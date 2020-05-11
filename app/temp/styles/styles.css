@@ -657,7 +657,7 @@ body {
   }.loader::after {
     content: '';
   }.loader--interactive:active .loader__svg {
-        transform: scale(1.3);
+        transform: scale(1.22);
       }.loader--interactive:active .loader__inner {
         width: 100%;
         height: 100%;
