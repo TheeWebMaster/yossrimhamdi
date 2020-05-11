@@ -1,6 +1,6 @@
 .line-animation {
   span {
-    display: inline-block;
+    display: block;
   }
 
   &--animated {

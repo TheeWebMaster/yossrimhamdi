@@ -66,7 +66,6 @@ class Preload {
   }
 
   informUserToInteract() {
-    this.DOM.preloadOverlayState.style.height = `${this.DOM.preloadOverlayState.clientHeight}px`;
     new TextLineAnimation(this.DOM.preloadOverlayState, 'bottom', true);
   }
 
