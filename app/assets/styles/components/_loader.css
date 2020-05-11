@@ -28,7 +28,11 @@
     animation: loading 2000ms 1000ms forwards;
   }
 
-  &__inner {
+  &__inner,
+  &::after {
+    content: '';
+    dispaly: block;
+    border-radius: 50%;
     width: 7px;
     height: 7px;
     background-color: $mainRed;
@@ -46,6 +50,11 @@
         width: 100%;
         height: 100%;
         background-color: transparent;
+      }
+
+      .loader::after {
+        width: 11px;
+        height: 11px;
       }
     }
   }
