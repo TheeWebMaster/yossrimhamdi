@@ -9,6 +9,7 @@ class Preload {
       loader: document.querySelector('.loader'),
       loaderCircle: document.querySelector('.loader__circle'),
       cursor: document.querySelector('.cursor'),
+      frontal: document.querySelector('.frontal'),
     };
     this.timer = {
       start: 0,
@@ -40,6 +41,15 @@ class Preload {
     }
   }
 
+  setTimer() {
+    this.timer.start = Date.now();
+    this.timer.interval = setInterval(this.checkTimer.bind(this), 100);
+  }
+
+  clearInterval() {
+    clearInterval(this.timer.interval);
+  }
+
   disableScrolling() {
     scroller.scrollTo(0, 0, 0);
   }
@@ -52,29 +62,8 @@ class Preload {
     this.DOM.preloadState.innerHTML = 'click &amp; hold';
   }
 
-  setTimer() {
-    this.timer.start = Date.now();
-    this.timer.interval = setInterval(() => {
-      this.checkTimer();
-      this.showPageContentIfDone();
-    }, 100);
-  }
-
-  clearInterval() {
-    clearInterval(this.timer.interval);
-  }
-
-  enableMouseInteractions() {
-    this.enableScrolling();
-    new CursorInteractions();
-  }
-
   checkTimer() {
-    this.timer.isAllowed = Date.now() - this.timer.start >= 700;
-  }
-
-  showPageContentIfDone() {
-    if (this.timer.isAllowed) {
+    if (Date.now() - this.timer.start >= 700) {
       this.showPageContent();
       this.clearInterval();
     }
@@ -83,15 +72,21 @@ class Preload {
   showPageContent() {
     this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
     this.DOM.cursor.classList.add('cursor--is-visible');
+    this.DOM.frontal.classList.add('frontal--animated');
     document.body.style.cursor = 'none';
   }
 
   letUserInteract() {
     this.clearInterval();
 
-    if (this.timer.isAllowed) {
+    if (Date.now() - this.timer.start >= 700) {
       this.enableMouseInteractions();
     }
+  }
+
+  enableMouseInteractions() {
+    this.enableScrolling();
+    new CursorInteractions();
   }
 }
 
