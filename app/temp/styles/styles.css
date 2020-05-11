@@ -372,7 +372,6 @@ body {
     display: inline-block;
     position: relative;
     overflow: hidden;
-    backface-visibilty: hidden;
   }.project__title {
     font-weight: 500;
     font-size: 3rem;

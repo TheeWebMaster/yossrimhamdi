@@ -28,7 +28,6 @@
     display: inline-block;
     position: relative;
     overflow: hidden;
-    backface-visibilty: hidden;
   }
   &__title {
     font-weight: 500;
