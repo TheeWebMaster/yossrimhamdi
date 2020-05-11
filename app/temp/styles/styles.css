@@ -41,32 +41,28 @@
     transform: rotate(360deg);
   }
 }@-webkit-keyframes loading {
-  to {
-    stroke-dasharray: 226;
-    transform: rotate(190deg);
+  50% {
+    stroke-dasharray: 235;
+  }
+
+  100% {
+    stroke-dasharray: 294;
   }
 }@keyframes loading {
-  to {
-    stroke-dasharray: 226;
-    transform: rotate(190deg);
+  50% {
+    stroke-dasharray: 235;
+  }
+
+  100% {
+    stroke-dasharray: 294;
   }
 }@-webkit-keyframes loaded {
-  from {
-    stroke-dasharray: 226;
-    transform: rotate(190deg);
-  }
   to {
     stroke-dasharray: 235;
-    transform: rotate(360deg);
   }
 }@keyframes loaded {
-  from {
-    stroke-dasharray: 226;
-    transform: rotate(190deg);
-  }
   to {
     stroke-dasharray: 235;
-    transform: rotate(360deg);
   }
 }#content-wrapper {
   position: fixed;
@@ -627,8 +623,8 @@ body {
     fill: transparent;
     stroke-dasharray: 200;
     stroke-dashoffset: 1000;
-    -webkit-animation: loading 2000ms 1000ms forwards;
-            animation: loading 2000ms 1000ms forwards;
+    -webkit-animation: loading 3000ms infinite;
+            animation: loading 3000ms infinite;
   }.loader__inner,
   .loader::after {
     width: 7px;

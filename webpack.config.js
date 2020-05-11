@@ -3,5 +3,5 @@ module.exports = {
   output: {
     filename: 'App.js',
   },
-  mode: 'production',
+  mode: 'development',
 };
