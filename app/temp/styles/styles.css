@@ -209,9 +209,9 @@ body {
     transform: translateZ(0);
   }.header__my-name {
     font-size: 1.3rem;
-    opacity: 0;
   }@media only screen and (min-width: 1024px) {.header__my-name {
-      font-size: 1.8rem
+      font-size: 1.8rem;
+      opacity: 0
   }
   }.header__add {
     height: 31px;
@@ -223,9 +223,11 @@ body {
   }
   }.header__ad-list {
     transition: transform 500ms;
-  }.header__ad-list li {
-      opacity: 0;
-    }.header__availability-message {
+  }@media only screen and (min-width: 1024px) {
+      .header__ad-list li {
+        opacity: 0;
+      }
+  }.header__availability-message {
     position: absolute;
     bottom: 1em;
     line-height: 1.15em;
@@ -235,9 +237,11 @@ body {
       left: 30vw;
       transform: translate(-100%, 50%)
   }
-  }.header__availability-message li {
-      opacity: 0;
-    }.header__nav {
+
+      .header__availability-message li {
+        opacity: 0;
+      }
+  }.header__nav {
     line-height: 2.3em;
     text-align: right;
     counter-reset: nav-counter;
