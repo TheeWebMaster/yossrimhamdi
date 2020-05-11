@@ -252,7 +252,7 @@ body {
       line-height: 150%;
       position: relative;
       left: 100%;
-      transition: left 1000ms
+      transition: left 1200ms
   }
   }.header__nav:hover .header__nav-list-wrapper {
         max-height: 156px !important;
