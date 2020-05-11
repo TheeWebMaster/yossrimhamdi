@@ -644,4 +644,16 @@ body {
         width: 100%;
         height: 100%;
         background-color: transparent;
-      }
+      }.line-animation span {
+    display: inline-block;
+  }.line-animation--animated .inner-span {
+      transform: translateY(0);
+    }.outer-span {
+  overflow: hidden;
+}.inner-span {
+  transition: transform 300ms;
+}.bottom {
+  transform: translateY(100%);
+}.top {
+  transform: translateY(-100%);
+}

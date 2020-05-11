@@ -1,0 +1,27 @@
+.line-animation {
+  span {
+    display: inline-block;
+  }
+
+  &--animated {
+    .inner-span {
+      transform: translateY(0);
+    }
+  }
+}
+
+.outer-span {
+  overflow: hidden;
+}
+
+.inner-span {
+  transition: transform 300ms;
+}
+
+.bottom {
+  transform: translateY(100%);
+}
+
+.top {
+  transform: translateY(-100%);
+}
