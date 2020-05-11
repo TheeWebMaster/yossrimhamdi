@@ -1,9 +1,7 @@
 class TextLineAnimation {
-  constructor(selector, position) {
+  constructor(element, position) {
     this.position = position;
-    this.element = document.querySelector(selector);
-
-    setTimeout(this.triggerAnimation.bind(this), 3000);
+    this.element = element;
 
     this.constructElementDOM();
     this.addAnimationClasses();

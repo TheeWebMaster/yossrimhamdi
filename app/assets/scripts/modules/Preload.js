@@ -1,3 +1,4 @@
+import TextLineAnimation from './TextLineAnimation';
 import scroller from './Scroller';
 import CursorInteractions from './CursorInteractions';
 
@@ -10,6 +11,9 @@ class Preload {
       loaderCircle: document.querySelector('.loader__circle'),
       cursor: document.querySelector('.cursor'),
       frontal: document.querySelector('.frontal'),
+      headerMyName: document.querySelector('.header__my-name'),
+      headerAdLIs: Array.from(document.querySelectorAll('.header__ad-list li')),
+      messageLIs: Array.from(document.querySelectorAll('.header__availability-message li')),
     };
     this.timer = {
       start: 0,
@@ -17,6 +21,7 @@ class Preload {
     };
 
     this.setReadyStateEvent();
+    this.animateHeaderTexts();
     scroller.addListener(this.disableScrolling);
   }
 
@@ -80,6 +85,22 @@ class Preload {
       this.enableScrolling();
       new CursorInteractions();
     }
+  }
+
+  animateHeaderTexts() {
+    const myNameAnimatioObject = new TextLineAnimation(this.DOM.headerMyName, 'top');
+    const messageAnimationObjects = this.DOM.messageLIs.map(li => new TextLineAnimation(li, 'bottom'));
+    const headerAdAnimationObjects = this.DOM.headerAdLIs.map(li => new TextLineAnimation(li, 'top'));
+
+    setTimeout(() => {
+      myNameAnimatioObject.triggerAnimation();
+    }, 500);
+    setTimeout(() => {
+      headerAdAnimationObjects.forEach(object => object.triggerAnimation());
+    }, 1500);
+    setTimeout(() => {
+      messageAnimationObjects.forEach(object => object.triggerAnimation());
+    }, 2000);
   }
 }
 

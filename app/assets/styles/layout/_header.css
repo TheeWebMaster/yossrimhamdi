@@ -46,7 +46,7 @@
     line-height: 1.15em;
 
     @mixin atLarge {
-      line-height: 150%;
+      line-height: 115%;
       bottom: 0;
       left: 30vw;
       transform: translate(-100%, 50%);

@@ -227,7 +227,7 @@ body {
     bottom: 1em;
     line-height: 1.15em;
   }@media only screen and (min-width: 1024px) {.header__availability-message {
-      line-height: 150%;
+      line-height: 115%;
       bottom: 0;
       left: 30vw;
       transform: translate(-100%, 50%)
@@ -651,7 +651,7 @@ body {
     }.outer-span {
   overflow: hidden;
 }.inner-span {
-  transition: transform 300ms;
+  transition: transform 800ms;
 }.bottom {
   transform: translateY(100%);
 }.top {
