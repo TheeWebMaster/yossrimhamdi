@@ -42,6 +42,8 @@
     transition: transform 500ms;
 
     @mixin atLarge {
+      transform: translateY(10px);
+
       li {
         opacity: 0;
       }

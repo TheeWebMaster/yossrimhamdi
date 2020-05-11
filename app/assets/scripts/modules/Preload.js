@@ -68,8 +68,14 @@ class Preload {
     this.DOM.preloadState.innerHTML = 'click &amp; hold';
   }
 
+  checkTimer() {
+    this.timer.done = Date.now() - this.timer.start >= 700;
+  }
+
   showPageContent() {
-    if (Date.now() - this.timer.start >= 700) {
+    this.checkTimer();
+
+    if (this.timer.done) {
       this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
       this.DOM.cursor.classList.add('cursor--is-visible');
       this.DOM.frontal.classList.add('frontal--animated');
@@ -83,7 +89,7 @@ class Preload {
   enableMouseInteractions() {
     this.clearInterval();
 
-    if (Date.now() - this.timer.start >= 700) {
+    if (this.timer.done) {
       this.enableScrolling();
       new CursorInteractions();
     }
@@ -100,9 +106,15 @@ class Preload {
     setTimeout(() => {
       headerAdAnimationObjects.forEach(object => object.triggerAnimation());
     }, 1500);
-    setTimeout(() => {
-      messageAnimationObjects.forEach(object => object.triggerAnimation());
-    }, 2000);
+    const interval = setInterval(() => {
+      console.log('hello');
+      if (this.timer.done) {
+        setTimeout(() => {
+          messageAnimationObjects.forEach(object => object.triggerAnimation());
+        }, 400);
+        clearInterval(interval);
+      }
+    }, 100);
   }
 }
 
