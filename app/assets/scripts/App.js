@@ -1,5 +1,4 @@
 import Preload from './modules/Preload';
-import CursorInteractions from './modules/CursorInteractions';
 import Cursor from './modules/Cursor';
 import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
 import ScrollBar from './modules/Scrollbar';
