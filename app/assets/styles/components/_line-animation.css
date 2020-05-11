@@ -4,6 +4,8 @@
   }
 
   &--animated {
+    opacity: 1 !important;
+
     .inner-span {
       transform: translateY(0);
     }

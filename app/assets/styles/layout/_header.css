@@ -22,6 +22,7 @@
 
   &__my-name {
     font-size: 1.3rem;
+    opacity: 0;
 
     @mixin atLarge {
       font-size: 1.8rem;
@@ -39,6 +40,10 @@
   }
   &__ad-list {
     transition: transform 500ms;
+
+    li {
+      opacity: 0;
+    }
   }
   &__availability-message {
     position: absolute;
@@ -50,6 +55,10 @@
       bottom: 0;
       left: 30vw;
       transform: translate(-100%, 50%);
+    }
+
+    li {
+      opacity: 0;
     }
   }
   &__nav {
