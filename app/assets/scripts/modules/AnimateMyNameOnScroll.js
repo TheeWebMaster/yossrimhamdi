@@ -18,8 +18,8 @@ class AnimateMyNameOnScroll extends SetupParallaxEnviroment {
     this.waypoints = [300, 250, 160, 65];
     this.texts = ['hello!', "keep scrolling, don't stop", 'almost', 'yossri'];
 
-    this.animate();
     this.fixedContainersWidth();
+    this.animate();
 
     scroller.addListener(this.changeText.bind(this));
   }
