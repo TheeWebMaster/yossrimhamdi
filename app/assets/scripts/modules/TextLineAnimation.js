@@ -10,7 +10,7 @@ class TextLineAnimation {
   }
 
   constructElementDOM() {
-    const spans = `<span class="outer-span"><span class="inner-span ${this.position}">%A%</span></span>`;
+    const spans = `<span class="line-animation__outer-span"><span class="line-animation__inner-span ${this.position}">%A%</span></span>`;
     this.element.innerHTML = spans.replace('%A%', this.element.textContent);
   }
 

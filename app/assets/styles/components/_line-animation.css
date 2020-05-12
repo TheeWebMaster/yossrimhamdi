@@ -3,27 +3,27 @@
     display: block;
   }
 
+  &__outer-span {
+    overflow: hidden;
+  }
+
+  &__inner-span {
+    transition: transform 800ms;
+  }
+
   &--animated {
     opacity: 1 !important;
 
-    .inner-span {
+    .line-animation__inner-span {
       transform: translateY(0);
     }
   }
 }
 
-.outer-span {
-  overflow: hidden;
-}
-
-.inner-span {
-  transition: transform 800ms;
-}
-
-.bottom {
+.from-bottom {
   transform: translateY(100%);
 }
 
-.top {
+.from-top {
   transform: translateY(-100%);
 }

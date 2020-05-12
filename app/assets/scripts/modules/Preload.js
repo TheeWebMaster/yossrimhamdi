@@ -63,7 +63,7 @@ class Preload {
   }
 
   informUserToInteract() {
-    new TextLineAnimation(this.DOM.preload.state, 'bottom', true);
+    new TextLineAnimation(this.DOM.preload.state, 'from-bottom', true);
   }
 
   handleReadyState(e) {
@@ -104,9 +104,9 @@ class Preload {
   }
 
   animateHeaderTexts() {
-    const myNameAnimatioObject = new TextLineAnimation(this.DOM.header.myName, 'top');
-    const messageAnimationObjects = this.DOM.header.messageList.map(li => new TextLineAnimation(li, 'bottom'));
-    const headerAdAnimationObjects = this.DOM.header.adList.map(li => new TextLineAnimation(li, 'top'));
+    const myNameAnimatioObject = new TextLineAnimation(this.DOM.header.myName, 'from-top');
+    const messageAnimationObjects = this.DOM.header.messageList.map(li => new TextLineAnimation(li, 'from-bottom'));
+    const headerAdAnimationObjects = this.DOM.header.adList.map(li => new TextLineAnimation(li, 'from-top'));
 
     setTimeout(() => {
       myNameAnimatioObject.triggerAnimation();

@@ -664,16 +664,16 @@ body {
         background-color: transparent;
       }.line-animation span {
     display: block;
+  }.line-animation__outer-span {
+    overflow: hidden;
+  }.line-animation__inner-span {
+    transition: transform 800ms;
   }.line-animation--animated {
     opacity: 1 !important;
-  }.line-animation--animated .inner-span {
+  }.line-animation--animated .line-animation__inner-span {
       transform: translateY(0);
-    }.outer-span {
-  overflow: hidden;
-}.inner-span {
-  transition: transform 800ms;
-}.bottom {
+    }.from-bottom {
   transform: translateY(100%);
-}.top {
+}.from-top {
   transform: translateY(-100%);
 }
