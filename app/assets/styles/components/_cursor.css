@@ -44,10 +44,6 @@
     }
   }
 
-  &--hide-default-cursor {
-    cursor: none;
-  }
-
   &--is-visible {
     opacity: 1;
   }

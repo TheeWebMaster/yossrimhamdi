@@ -1,6 +1,7 @@
 import TextLineAnimation from './TextLineAnimation';
 import scroller from './Scroller';
 import CursorInteractions from './CursorInteractions';
+import Cursor from './Cursor';
 
 class Preload {
   constructor() {
@@ -22,6 +23,7 @@ class Preload {
       cursor: document.querySelector('.cursor'),
       frontal: document.querySelector('.frontal'),
     };
+    this.cursor = new Cursor();
     this.timer = {
       start: 0,
       interval: null,
@@ -100,6 +102,7 @@ class Preload {
     if (this.timer.done) {
       this.enableScrolling();
       new CursorInteractions();
+      this.cursor.setMouseEvent();
     }
   }
 
