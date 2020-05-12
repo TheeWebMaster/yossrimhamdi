@@ -33,8 +33,6 @@ if (window.innerWidth >= 1024) {
   new TranslateXProjectsOnScroll();
   new ChangeAdOnTiming();
   new ImageHoverEffect();
-  setTimeout(() => {
-    new AnimateMyNameOnScroll();
-  }, 100);
+  new AnimateMyNameOnScroll();
   new Preload();
 }
