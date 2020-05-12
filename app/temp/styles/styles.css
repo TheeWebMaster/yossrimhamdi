@@ -144,7 +144,7 @@ body {
   font-weight: 300;
   overflow: hidden;
 }@media only screen and (min-width: 1024px) {.milestone {
-    flex-basis: 50vw
+    flex-basis: 40vw
 }
   }.milestone::before {
     counter-increment: milestone-num;
@@ -357,7 +357,7 @@ body {
       padding-bottom: 300px
   }
   }.paragraph {
-  text-transform: lowercase;
+  text-transform: initial;
   font-size: 1.5rem;
   line-height: 120%;
   font-weight: 500;
@@ -369,8 +369,6 @@ body {
   }@media only screen and (min-width: 1500px) {.paragraph {
     font-size: 3.5rem
 }
-  }.paragraph::first-letter {
-    text-transform: uppercase;
   }.paragraph--margin-b {
     margin-bottom: 2.5em;
   }.project {
@@ -527,8 +525,6 @@ body {
 }
   }.me span {
     display: inline-block;
-  }.me::first-letter {
-    text-transform: uppercase;
   }.me__wrapper {
     position: relative;
   }@media only screen and (min-width: 1024px) {.me__my-name {

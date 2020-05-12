@@ -1,5 +1,5 @@
 .paragraph {
-  text-transform: lowercase;
+  text-transform: initial;
   font-size: 1.5rem;
   line-height: 120%;
   font-weight: 500;
@@ -13,9 +13,6 @@
     font-size: 3.5rem;
   }
 
-  &::first-letter {
-    text-transform: uppercase;
-  }
   &--margin-b {
     margin-bottom: 2.5em;
   }
