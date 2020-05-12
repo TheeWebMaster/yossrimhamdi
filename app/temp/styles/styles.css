@@ -571,18 +571,16 @@ body {
     border: 2px solid #ff0d00;
     height: 70px;
     width: 70px;
-    transition: opacity 200ms;
+    transition: opacity 300ms;
   }.cursor__inner {
     width: 7px;
     height: 7px;
     background-color: #ff0d00;
-    transition: width 200ms, height 200ms;
+    transition: transform 200ms;
   }.cursor__inner--large {
-      width: 12px;
-      height: 12px;
+      transform: scale(1.5);
     }.cursor--on-focus .cursor__inner {
-      width: 12px;
-      height: 12px;
+      transform: scale(1.5);
     }.cursor--on-focus .cursor__outer {
       opacity: 0;
     }.cursor--is-visible {
