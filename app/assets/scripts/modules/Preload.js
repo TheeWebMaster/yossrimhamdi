@@ -5,17 +5,22 @@ import CursorInteractions from './CursorInteractions';
 class Preload {
   constructor() {
     this.DOM = {
-      preloadOverlay: document.querySelector('.preload-overlay'),
-      preloadState: document.querySelector('.preload-overlay__state'),
-      loader: document.querySelector('.loader'),
-      loaderCircle: document.querySelector('.loader__circle'),
+      preload: {
+        wrapper: document.querySelector('.preload-overlay'),
+        state: document.querySelector('.preload-overlay__state'),
+      },
+      loader: {
+        wrapper: document.querySelector('.loader'),
+        circle: document.querySelector('.loader__circle'),
+      },
+      header: {
+        myName: document.querySelector('.header__my-name'),
+        adList: Array.from(document.querySelectorAll('.header__ad-list li')),
+        nav: document.querySelector('.header__nav'),
+        messageList: Array.from(document.querySelectorAll('.header__availability-message li')),
+      },
       cursor: document.querySelector('.cursor'),
       frontal: document.querySelector('.frontal'),
-      headerMyName: document.querySelector('.header__my-name'),
-      headerAdLIs: Array.from(document.querySelectorAll('.header__ad-list li')),
-      nav: document.querySelector('.header__nav'),
-      messageLIs: Array.from(document.querySelectorAll('.header__availability-message li')),
-      preloadOverlayState: document.querySelector('.preload-overlay__state'),
     };
     this.timer = {
       start: 0,
@@ -32,20 +37,8 @@ class Preload {
   }
 
   setMousePressEvents() {
-    this.DOM.loader.addEventListener('mousedown', this.setTimer.bind(this));
+    this.DOM.loader.wrapper.addEventListener('mousedown', this.setTimer.bind(this));
     document.body.addEventListener('mouseup', this.enableMouseInteractions.bind(this));
-  }
-
-  handleReadyState(e) {
-    if (e.target.readyState === 'complete') {
-      this.DOM.loaderCircle.style.animation = 'loaded 2000ms forwards';
-
-      setTimeout(() => {
-        this.informUserToInteract();
-        this.setMousePressEvents();
-        this.DOM.loader.classList.add('loader--interactive');
-      }, 2000);
-    }
   }
 
   setTimer() {
@@ -65,23 +58,35 @@ class Preload {
     scroller.removeListener(this.disableScrolling);
   }
 
-  informUserToInteract() {
-    new TextLineAnimation(this.DOM.preloadOverlayState, 'bottom', true);
-  }
-
   checkTimer() {
     this.timer.done = Date.now() - this.timer.start >= 700;
+  }
+
+  informUserToInteract() {
+    new TextLineAnimation(this.DOM.preload.state, 'bottom', true);
+  }
+
+  handleReadyState(e) {
+    if (e.target.readyState === 'complete') {
+      this.DOM.loader.circle.style.animation = 'loaded 2000ms forwards';
+
+      setTimeout(() => {
+        this.informUserToInteract();
+        this.setMousePressEvents();
+        this.DOM.loader.wrapper.classList.add('loader--interactive');
+      }, 2000);
+    }
   }
 
   showPageContent() {
     this.checkTimer();
 
     if (this.timer.done) {
-      this.DOM.preloadOverlay.classList.add('preload-overlay--loaded');
+      this.DOM.preload.wrapper.classList.add('preload-overlay--loaded');
       this.DOM.cursor.classList.add('cursor--is-visible');
       this.DOM.frontal.classList.add('frontal--animated');
       setTimeout(() => {
-        this.DOM.nav.classList.add('header__nav--visible');
+        this.DOM.header.nav.classList.add('header__nav--visible');
       }, 800);
       document.body.style.cursor = 'none';
 
@@ -99,9 +104,9 @@ class Preload {
   }
 
   animateHeaderTexts() {
-    const myNameAnimatioObject = new TextLineAnimation(this.DOM.headerMyName, 'top');
-    const messageAnimationObjects = this.DOM.messageLIs.map(li => new TextLineAnimation(li, 'bottom'));
-    const headerAdAnimationObjects = this.DOM.headerAdLIs.map(li => new TextLineAnimation(li, 'top'));
+    const myNameAnimatioObject = new TextLineAnimation(this.DOM.header.myName, 'top');
+    const messageAnimationObjects = this.DOM.header.messageList.map(li => new TextLineAnimation(li, 'bottom'));
+    const headerAdAnimationObjects = this.DOM.header.adList.map(li => new TextLineAnimation(li, 'top'));
 
     setTimeout(() => {
       myNameAnimatioObject.triggerAnimation();
