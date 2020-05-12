@@ -69,12 +69,10 @@
     line-height: 2.3em;
     text-align: right;
     counter-reset: nav-counter;
+    overflow: hidden;
 
     @mixin atLarge {
       line-height: 150%;
-      position: relative;
-      left: 100%;
-      transition: left 1200ms;
     }
 
     &:hover {
@@ -96,15 +94,12 @@
         transform: translateX(3px);
       }
     }
-
-    &--visible {
-      left: 0;
-    }
   }
   &__nav-list-wrapper {
     padding-right: 1em;
-    transition: max-height 400ms;
+    transition: max-height 400ms, transform 800ms;
     overflow: hidden;
+    transform: translateX(100%);
 
     &--is-fully-visible .header__nav-link--active::before {
       width: 100%;
@@ -112,6 +107,10 @@
     }
     &--is-fully-visible .header__nav-link--active .header__nav-link-bottom-portion {
       transform: translateX(3px);
+    }
+
+    &--visible {
+      transform: translateX(0);
     }
   }
   &__nav-list {

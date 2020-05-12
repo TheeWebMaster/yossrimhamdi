@@ -15,15 +15,19 @@
     opacity: 1 !important;
 
     .line-animation__inner-span {
-      transform: translateY(0);
+      transform: translate(0);
     }
   }
 }
 
 .from-bottom {
-  transform: translateY(100%);
+  transform: translate(0, 100%);
 }
 
 .from-top {
-  transform: translateY(-100%);
+  transform: translate(0, -100%);
+}
+
+.from-right {
+  transform: translate(100%, 0);
 }

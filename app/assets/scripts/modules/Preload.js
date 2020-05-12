@@ -17,7 +17,7 @@ class Preload {
       header: {
         myName: document.querySelector('.header__my-name'),
         adList: Array.from(document.querySelectorAll('.header__ad-list li')),
-        nav: document.querySelector('.header__nav'),
+        navListWrapper: document.querySelector('.header__nav-list-wrapper'),
         messageList: Array.from(document.querySelectorAll('.header__availability-message li')),
       },
       cursor: document.querySelector('.cursor'),
@@ -88,8 +88,8 @@ class Preload {
       this.DOM.cursor.classList.add('cursor--is-visible');
       this.DOM.frontal.classList.add('frontal--animated');
       setTimeout(() => {
-        this.DOM.header.nav.classList.add('header__nav--visible');
-      }, 800);
+        this.DOM.header.navListWrapper.classList.add('header__nav-list-wrapper--visible');
+      }, 1100);
       document.body.style.cursor = 'none';
 
       this.clearInterval();

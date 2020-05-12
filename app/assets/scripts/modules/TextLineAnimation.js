@@ -11,7 +11,7 @@ class TextLineAnimation {
 
   constructElementDOM() {
     const spans = `<span class="line-animation__outer-span"><span class="line-animation__inner-span ${this.position}">%A%</span></span>`;
-    this.element.innerHTML = spans.replace('%A%', this.element.textContent);
+    this.element.innerHTML = spans.replace('%A%', this.element.innerHTML);
   }
 
   addAnimationClasses() {
