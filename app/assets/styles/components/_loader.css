@@ -26,6 +26,7 @@
     stroke-dasharray: 200;
     stroke-dashoffset: 1000;
     animation: loading 3000ms 1000ms infinite;
+    transition: all 1000ms;
   }
 
   &__inner,
@@ -47,9 +48,13 @@
         transform: scale(1.22);
       }
 
+      .loader__circle {
+        stroke-width: 1.55;
+      }
+
       .loader__inner {
-        width: 100%;
-        height: 100%;
+        width: 70px;
+        height: 70px;
         background-color: transparent;
       }
     }
