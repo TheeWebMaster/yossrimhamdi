@@ -9,16 +9,20 @@ class AnimateNavOnWaypoints {
       navList: document.querySelector('.header__nav ul'),
     };
     this.LIsHeight = this.getLIsHeight();
-    this.setNavHeight();
     this.topBoundings = this.getTopBoundings();
+    this.setNavHeight();
+
     scroller.addListener(this.animate.bind(this));
   }
+
   getLIsHeight() {
     return document.querySelector('.header__nav li').clientHeight;
   }
+
   setNavHeight() {
     this.DOM.nav.style.height = `${this.LIsHeight * 4}px`;
   }
+
   getTopBoundings() {
     const topBoundings = [];
     let offset = 0;
@@ -33,10 +37,13 @@ class AnimateNavOnWaypoints {
     });
     return topBoundings.reverse();
   }
+
   animate({ offset: { y } }) {
-    this.highlightCurrentSectionLink(this.translateYNavLinksWrapper(y));
+    const currentSectionID = this.translateYNavLinksWrapper(y);
+    this.highlightCurrentSectionLink(currentSectionID);
     this.showFullNav(y);
   }
+
   translateYNavLinksWrapper(y) {
     for (let topBounding of this.topBoundings) {
       if (y > topBounding.top) {
@@ -45,6 +52,7 @@ class AnimateNavOnWaypoints {
       }
     }
   }
+
   showFullNav(y) {
     if (y < 100) {
       this.DOM.navListWrapper.style.maxHeight = `${this.LIsHeight * 4}px`;
@@ -54,6 +62,7 @@ class AnimateNavOnWaypoints {
       this.DOM.navListWrapper.classList.remove('header__nav-list-wrapper--is-fully-visible');
     }
   }
+
   highlightCurrentSectionLink(sectionID) {
     this.DOM.navList.querySelector('.header__nav-link--active').classList.remove('header__nav-link--active');
     this.DOM.navList.querySelector(`.${sectionID}`).classList.add('header__nav-link--active');
