@@ -34,11 +34,11 @@ class CursorInteractions {
   }
 
   increaseInnerCursorWidth() {
-    this.DOM.cursor.inner.classList.add('cursor__inner--large');
+    this.DOM.cursor.inner.classList.add('cursor__inner--active');
   }
 
   decreaseInnerCursorWidth() {
-    this.DOM.cursor.inner.classList.remove('cursor__inner--large');
+    this.DOM.cursor.inner.classList.remove('cursor__inner--active');
   }
 }
 

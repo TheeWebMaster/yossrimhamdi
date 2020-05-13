@@ -576,11 +576,14 @@ body {
     width: 7px;
     height: 7px;
     background-color: #ff0d00;
-    transition: transform 200ms;
-  }.cursor__inner--large {
-      transform: scale(1.5);
+    transform-origin: center center;
+    transition: width 200ms, height 200ms;
+  }.cursor__inner--active {
+      width: 10px;
+      height: 10px;
     }.cursor--on-focus .cursor__inner {
-      transform: scale(1.5);
+      width: 10px;
+      height: 10px;
     }.cursor--on-focus .cursor__outer {
       opacity: 0;
     }.cursor--is-visible {

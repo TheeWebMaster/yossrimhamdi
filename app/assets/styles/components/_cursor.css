@@ -26,16 +26,19 @@
     width: 7px;
     height: 7px;
     background-color: $mainRed;
-    transition: transform 200ms;
+    transform-origin: center center;
+    transition: width 200ms, height 200ms;
 
-    &--large {
-      transform: scale(1.5);
+    &--active {
+      width: 10px;
+      height: 10px;
     }
   }
 
   &--on-focus {
     .cursor__inner {
-      transform: scale(1.5);
+      width: 10px;
+      height: 10px;
     }
     .cursor__outer {
       opacity: 0;
