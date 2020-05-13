@@ -11,7 +11,7 @@ class AnimateNavOnWaypoints {
     this.LIsHeight = this.getLIsHeight();
     this.topBoundings = this.getTopBoundings();
     this.setNavHeight();
-
+    this.isEnabled = true;
     scroller.addListener(this.animate.bind(this));
   }
 
@@ -40,7 +40,9 @@ class AnimateNavOnWaypoints {
 
   animate({ offset: { y } }) {
     const currentSectionID = this.translateYNavLinksWrapper(y);
-    this.highlightCurrentSectionLink(currentSectionID);
+    if (this.isEnabled) {
+      this.highlightCurrentSectionLink(currentSectionID);
+    }
     this.showFullNav(y);
   }
 

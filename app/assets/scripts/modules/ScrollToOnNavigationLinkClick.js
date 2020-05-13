@@ -1,10 +1,12 @@
 import scroller from './Scroller';
 
 class ScrollToOnNavigationLinkClick {
-  constructor() {
+  constructor(animateNavOnWaypoints) {
     this.milestones = document.querySelectorAll('.milestone--target');
     this.nav = document.querySelector('.header__nav');
     this.boundaries = this.getBoundaries();
+    this.animateNavOnWaypoints = animateNavOnWaypoints;
+
     this.setClickEvent();
   }
   getBoundaries() {
@@ -19,7 +21,12 @@ class ScrollToOnNavigationLinkClick {
     this.nav.addEventListener('click', this.handleClickEvent.bind(this));
   }
   handleClickEvent(e) {
+    this.animateNavOnWaypoints.isEnabled = false;
+    this.animateNavOnWaypoints.highlightCurrentSectionLink(e.target.textContent);
     scroller.scrollTo(0, this.boundaries.get(e.target.textContent), 600);
+    setTimeout(() => {
+      this.animateNavOnWaypoints.isEnabled = true;
+    }, 600);
   }
 }
 
