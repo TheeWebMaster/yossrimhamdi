@@ -22,7 +22,9 @@ class ScrollToOnNavigationLinkClick {
   }
   handleClickEvent(e) {
     this.animateNavOnWaypoints.isEnabled = false;
-    this.animateNavOnWaypoints.highlightCurrentSectionLink(e.target.textContent);
+    if (e.target.textContent.length <= 8) {
+      this.animateNavOnWaypoints.highlightCurrentSectionLink(e.target.textContent);
+    }
     scroller.scrollTo(0, this.boundaries.get(e.target.textContent), 600);
     setTimeout(() => {
       this.animateNavOnWaypoints.isEnabled = true;
