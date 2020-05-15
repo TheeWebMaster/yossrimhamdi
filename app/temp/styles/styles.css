@@ -144,7 +144,7 @@ body {
   font-weight: 300;
   overflow: hidden;
 }@media only screen and (min-width: 1024px) {.milestone {
-    flex-basis: 40vw
+    flex-basis: 50vw
 }
   }.milestone::before {
     counter-increment: milestone-num;

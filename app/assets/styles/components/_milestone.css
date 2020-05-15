@@ -6,7 +6,7 @@
   overflow: hidden;
 
   @mixin atLarge {
-    flex-basis: 40vw;
+    flex-basis: 50vw;
   }
 
   &::before {
