@@ -1,6 +1,6 @@
 import scroller from './Scroller';
 
-class AnimateTextProgressevelyOnScroll {
+class AnimateTextProgressivelyOnScroll {
   constructor() {
     this.paragraphs = {
       DOM: document.querySelectorAll('.text-animation-on-scroll'),
