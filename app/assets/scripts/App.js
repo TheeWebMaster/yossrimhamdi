@@ -1,3 +1,4 @@
+import AnimateContactMeLinksOnWaypoint from './modules/AnimateContactMeLinksOnWaypoint';
 import AnimateAwardsOnWaypoint from './modules/AnimateAwardsOnWaypoint';
 import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
 import Preload from './modules/Preload';
@@ -31,7 +32,6 @@ new TranslateXFrontalHeadlinesOnScroll();
 if (window.innerWidth >= 1024) {
   new progressinveTextAnimationOnScroll('.text-to-animate', 200);
   new progressinveTextAnimationOnScroll('.text-to-animate--1', 200);
-  new progressinveTextAnimationOnScroll('.contact-me__message', 100);
   new AnimateMileStonesOnScroll();
   new TranslateXProjectsOnScroll();
   new ChangeAdOnTiming();
@@ -41,3 +41,4 @@ if (window.innerWidth >= 1024) {
 }
 
 new AnimateAwardsOnWaypoint();
+new AnimateContactMeLinksOnWaypoint();

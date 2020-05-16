@@ -1,4 +1,6 @@
 .line-animation {
+  opacity: 0;
+
   span {
     display: block;
   }

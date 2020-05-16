@@ -11,7 +11,7 @@
       margin-right: 300px;
     }
   }
-  &__list {
+  &__links {
     font-weight: 500;
     text-decoration: underline;
     @mixin atLarge {

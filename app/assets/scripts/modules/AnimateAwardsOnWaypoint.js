@@ -5,19 +5,22 @@ class AnimateAwardsOnWaypoint {
   constructor() {
     this.awards = document.querySelectorAll('.award__list > li');
 
+    this.hideAwards();
     this.setWaypoints();
   }
 
   setWaypoints() {
     this.awards.forEach(award => {
-      new Waypoint(
-        award,
-        () => {
-          new TextLineAnimation(award, 'from-bottom', true);
-        },
-        award.clientHeight
-      );
+      new Waypoint(award, this.handler.bind(this, award), award.clientHeight);
     });
+  }
+
+  handler(award) {
+    new TextLineAnimation(award, 'from-bottom', true);
+  }
+
+  hideAwards() {
+    this.awards.forEach(award => (award.style.opacity = 0));
   }
 }
 

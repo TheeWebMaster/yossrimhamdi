@@ -25,7 +25,6 @@
 
     @mixin atLarge {
       font-size: 1.8rem;
-      opacity: 0;
     }
   }
   &__add {
@@ -43,10 +42,6 @@
 
     @mixin atLarge {
       transform: translateY(10px);
-
-      li {
-        opacity: 0;
-      }
     }
   }
   &__availability-message {
@@ -59,10 +54,6 @@
       bottom: 0;
       left: 30vw;
       transform: translate(-100%, 50%);
-
-      li {
-        opacity: 0;
-      }
     }
   }
   &__nav {

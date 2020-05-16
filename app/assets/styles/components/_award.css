@@ -21,9 +21,5 @@
     @mixin atLarge {
       font-size: 1.2rem;
     }
-
-    li {
-      opacity: 0;
-    }
   }
 }
