@@ -1,5 +1,6 @@
-import Preload from './modules/Preload';
+import AnimateAwardsOnWaypoint from './modules/AnimateAwardsOnWaypoint';
 import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
+import Preload from './modules/Preload';
 import ScrollBar from './modules/Scrollbar';
 import TranslateXFrontalHeadlinesOnScroll from './modules/TranslateXFrontalHeadlinesOnScroll';
 import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
@@ -36,3 +37,5 @@ if (window.innerWidth >= 1024) {
   new AnimateMyNameOnScroll();
   new Preload();
 }
+
+new AnimateAwardsOnWaypoint();

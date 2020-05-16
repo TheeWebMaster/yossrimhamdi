@@ -4,4 +4,16 @@ module.exports = {
     filename: 'App.js',
   },
   mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          plugins: ['transform-class-properties'],
+        },
+      },
+    ],
+  },
 };

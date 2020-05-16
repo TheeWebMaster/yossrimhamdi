@@ -472,7 +472,9 @@ body {
   }@media only screen and (min-width: 1024px) {.award__list {
       font-size: 1.2rem
   }
-  }.contact-me__message {
+  }.award__list li {
+      opacity: 0;
+    }.contact-me__message {
     margin-bottom: 0.5em;
   }@media only screen and (min-width: 1024px) {.contact-me__message {
       margin-bottom: 0;
