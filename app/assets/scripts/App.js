@@ -10,7 +10,7 @@ import FixedHeaderPosition from './modules/FixedHeaderPosition';
 import AnimateAvailabilityMessageOnScroll from './modules/AnimateAvailabilityMessageOnScroll';
 import ScrollToOnNavigationLinkClick from './modules/ScrollToOnNavigationLinkClick';
 import AnimateNavOnWaypoints from './modules/AnimateNavOnWaypoints';
-import AnimateTextOnScroll from './modules/AnimateTextOnScroll';
+import AnimateTextProgressivelyOnScroll from './modules/AnimateTextProgressivelyOnScroll';
 import ChangeAdOnTiming from './modules/ChangeAdOnTiming';
 import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM';
 import GenerateProjects from './modules/GenerateProjects';
@@ -28,7 +28,7 @@ new TranslateYWorkHeadlineOnScroll();
 new TranslateXFrontalHeadlinesOnScroll();
 
 if (window.innerWidth >= 1024) {
-  new AnimateTextOnScroll();
+  new AnimateTextProgressivelyOnScroll();
   new AnimateMileStonesOnScroll();
   new TranslateXProjectsOnScroll();
   new ChangeAdOnTiming();
