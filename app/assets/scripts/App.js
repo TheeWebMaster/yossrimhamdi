@@ -11,7 +11,7 @@ import FixedHeaderPosition from './modules/FixedHeaderPosition';
 import AnimateAvailabilityMessageOnScroll from './modules/AnimateAvailabilityMessageOnScroll';
 import ScrollToOnNavigationLinkClick from './modules/ScrollToOnNavigationLinkClick';
 import AnimateNavOnWaypoints from './modules/AnimateNavOnWaypoints';
-import AnimateTextProgressivelyOnScroll from './modules/AnimateTextProgressivelyOnScroll';
+import progressinveTextAnimationOnScroll from './modules/progressinveTextAnimationOnScroll';
 import ChangeAdOnTiming from './modules/ChangeAdOnTiming';
 import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM';
 import GenerateProjects from './modules/GenerateProjects';
@@ -29,7 +29,9 @@ new TranslateYWorkHeadlineOnScroll();
 new TranslateXFrontalHeadlinesOnScroll();
 
 if (window.innerWidth >= 1024) {
-  new AnimateTextProgressivelyOnScroll();
+  new progressinveTextAnimationOnScroll('.text-to-animate', 200);
+  new progressinveTextAnimationOnScroll('.text-to-animate--1', 200);
+  new progressinveTextAnimationOnScroll('.contact-me__message', 100);
   new AnimateMileStonesOnScroll();
   new TranslateXProjectsOnScroll();
   new ChangeAdOnTiming();
