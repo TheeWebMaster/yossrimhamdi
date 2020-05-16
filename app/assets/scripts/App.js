@@ -1,5 +1,6 @@
-import Preload from './modules/Preload';
+import './modules/Waypoint';
 import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
+import Preload from './modules/Preload';
 import ScrollBar from './modules/Scrollbar';
 import TranslateXFrontalHeadlinesOnScroll from './modules/TranslateXFrontalHeadlinesOnScroll';
 import AnimateMileStonesOnScroll from './modules/AnimateMileStonesOnScroll';
