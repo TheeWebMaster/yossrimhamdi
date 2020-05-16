@@ -1,3 +1,4 @@
+import TextLineAnimation from './TextLineAnimation';
 import SetupParallaxEnviroment from './SetupParallaxEnviroment';
 import scroller from './Scroller';
 
@@ -7,19 +8,26 @@ class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
     this.limits = { start: -50, end: 0 };
 
     this.animate();
-    scroller.addListener(this.revealMileStoneTextWhenDone.bind(this));
+    scroller.addListener(this.animatinoDescription.bind(this));
   }
 
   transformFunction() {
     this.element.style.transform = `translateX(${this.getCurrentValue()}%)`;
   }
 
-  revealMileStoneTextWhenDone({ offset: { y } }) {
+  animatinoDescription() {
     this.elements.forEach(element => {
-      if (element.style.transform === 'translateX(0%)') {
-        element.nextElementSibling.classList.add('milestone__description--is-visible');
+      if (
+        this.isBorderHalfWayVisible(element.style.transform) &&
+        !element.nextElementSibling.classList.contains('line-animation--animated')
+      ) {
+        new TextLineAnimation(element.nextElementSibling, 'from-right', true);
       }
     });
+  }
+
+  isBorderHalfWayVisible(translateX) {
+    return parseFloat(translateX.slice(11, -2)) > -20;
   }
 }
 
