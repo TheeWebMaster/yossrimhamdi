@@ -27,26 +27,28 @@ class Preload {
     this.timer = {
       start: 0,
       interval: null,
+      limit: 700,
     };
 
     this.setReadyStateEvent();
-    this.animateHeaderTexts();
+    this.animateMyNameAndAdListIntoView();
+
     scroller.addListener(this.disableScrolling);
   }
 
   setReadyStateEvent() {
-    document.addEventListener('readystatechange', this.handleReadyState.bind(this));
+    document.addEventListener('readystatechange', this.handleReadyState);
   }
 
   setMousePressEvents() {
-    this.DOM.loader.wrapper.addEventListener('mousedown', this.setTimer.bind(this));
-    document.body.addEventListener('mouseup', this.enableMouseInteractions.bind(this));
+    this.DOM.loader.wrapper.addEventListener('mousedown', this.setTimer);
+    document.body.addEventListener('mouseup', this.enableMouseInteractions);
   }
 
-  setTimer() {
+  setTimer = () => {
     this.timer.start = Date.now();
-    this.timer.interval = setInterval(this.showPageContent.bind(this), 100);
-  }
+    this.timer.interval = setInterval(this.showPageContent, 100);
+  };
 
   clearInterval() {
     clearInterval(this.timer.interval);
@@ -60,75 +62,83 @@ class Preload {
     scroller.removeListener(this.disableScrolling);
   }
 
-  checkTimer() {
-    this.timer.done = Date.now() - this.timer.start >= 700;
+  reachedTimeLimit() {
+    return Date.now() - this.timer.start >= this.timer.limit;
   }
 
   informUserToInteract() {
     new TextLineAnimation(this.DOM.preload.state, 'from-bottom', true);
   }
 
-  handleReadyState(e) {
+  handleReadyState = e => {
+    const { circle, wrapper } = this.DOM.loader;
+
     if (e.target.readyState === 'complete') {
-      this.DOM.loader.circle.style.animation = 'loaded 2000ms forwards';
+      circle.style.animation = 'loaded 2000ms forwards';
 
       setTimeout(() => {
         this.informUserToInteract();
         this.setMousePressEvents();
-        this.DOM.loader.wrapper.classList.add('loader--interactive');
+        wrapper.classList.add('loader--interactive');
       }, 2000);
     }
-  }
+  };
 
-  showPageContent() {
-    this.checkTimer();
+  showPageContent = () => {
+    const { preload, cursor, frontal } = this.DOM;
 
-    if (this.timer.done) {
-      this.DOM.preload.wrapper.classList.add('preload-overlay--loaded');
-      this.DOM.cursor.classList.add('cursor--is-visible');
-      this.DOM.frontal.classList.add('frontal--animated');
-      setTimeout(() => {
-        this.DOM.header.navListWrapper.classList.add('header__nav-list-wrapper--visible');
-      }, 1100);
-      document.body.style.cursor = 'none';
+    if (this.reachedTimeLimit()) {
+      preload.wrapper.classList.add('preload-overlay--loaded');
+      cursor.classList.add('cursor--is-visible');
+      frontal.classList.add('frontal--animated');
 
+      this.animateNavAndAvailabilityMessage();
       this.clearInterval();
     }
-  }
+  };
 
-  enableMouseInteractions() {
+  enableMouseInteractions = () => {
     this.clearInterval();
 
-    if (this.timer.done) {
+    if (this.reachedTimeLimit()) {
       this.enableScrolling();
-      new CursorInteractions();
       this.cursor.setMouseEvent();
+      new CursorInteractions();
     }
+  };
+
+  animateMyNameAndAdListIntoView() {
+    const { myName, adList } = this.DOM.header;
+    const adAnimations = this.getAnimations(adList, 'from-top');
+
+    setTimeout(() => new TextLineAnimation(myName, 'from-top', 500));
+    this.runAnimations(adAnimations, 1500);
   }
 
-  animateHeaderTexts() {
-    const myNameAnimatioObject = new TextLineAnimation(this.DOM.header.myName, 'from-top');
-    const messageAnimationObjects = Array.from(this.DOM.header.messageList).map(li => new TextLineAnimation(li, 'from-bottom'));
-    const headerAdAnimationObjects = Array.from(this.DOM.header.adList).map(li => new TextLineAnimation(li, 'from-top'));
+  getAnimations(elements, position) {
+    return Array.from(elements).map(element => new TextLineAnimation(element, position));
+  }
+
+  runAnimations(animations, animationDelay = 0, timeBetween = 0) {
+    setTimeout(() => {
+      animations.forEach((animation, i) => {
+        setTimeout(() => {
+          animation.triggerAnimation();
+        }, i * timeBetween);
+      });
+    }, animationDelay);
+  }
+
+  animateNavAndAvailabilityMessage() {
+    const { navListWrapper, messageList } = this.DOM.header;
 
     setTimeout(() => {
-      myNameAnimatioObject.triggerAnimation();
+      const messageAnimations = this.getAnimations(messageList, 'from-bottom');
+      this.runAnimations(messageAnimations, 0, 120);
     }, 500);
     setTimeout(() => {
-      headerAdAnimationObjects.forEach(object => object.triggerAnimation());
-    }, 1500);
-    const interval = setInterval(() => {
-      if (this.timer.done) {
-        setTimeout(() => {
-          messageAnimationObjects.forEach((object, i) => {
-            setTimeout(() => {
-              object.triggerAnimation();
-            }, i * 100);
-          });
-        }, 300);
-        clearInterval(interval);
-      }
-    }, 10);
+      navListWrapper.classList.add('header__nav-list-wrapper--visible');
+    }, 1100);
   }
 }
 

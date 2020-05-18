@@ -98,6 +98,7 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  cursor: none;
 }html,
 body {
   overflow-x: hidden;
@@ -582,12 +583,13 @@ body {
   }.website-content {
   position: relative;
 }.preload-overlay {
+  position: absolute;
+  top: 0;
   z-index: 1;
   width: 100vw;
   height: 100vh;
   background-color: #faf5f1;
-  position: absolute;
-  top: 0;
+  cursor: initial;
   display: none;
 }@media only screen and (min-width: 1024px) {.preload-overlay {
     display: block
