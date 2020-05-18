@@ -107,9 +107,9 @@ body {
     font-size: 5.5rem;
     font-weight: 900;
     line-height: 0.82;
-    opacity: 0;
   }@media only screen and (min-width: 1024px) {.frontal__headline {
-      font-size: 16rem
+      font-size: 16rem;
+      transition: left 700ms ease-out, right 700ms ease-out
   }
   }@media only screen and (min-width: 1500px) {.frontal__headline {
       font-size: 24rem
@@ -118,20 +118,15 @@ body {
       position: relative;
       left: 10vw;
     }@media only screen and (min-width: 1024px) {.frontal__headline--to-the-right {
-        left: 30vw;
-        left: 100vw;
-        transition: left 700ms
+        left: 50vw
     }
   }.frontal__headline--to-the-left {
       position: absolute;
       right: 0;
     }@media only screen and (min-width: 1024px) {.frontal__headline--to-the-left {
-        right: 100vw;
-        transition: right 700ms
+        right: 50vw
     }
-  }.frontal--animated .frontal__headline {
-      opacity: 1;
-    }.frontal--animated .frontal__headline--to-the-right {
+  }.frontal--animated .frontal__headline--to-the-right {
       left: 30vw;
     }.frontal--animated .frontal__headline--to-the-left {
       right: 20vw;

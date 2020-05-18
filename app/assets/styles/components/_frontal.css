@@ -7,10 +7,10 @@ $timing: 700ms;
     font-size: 5.5rem;
     font-weight: 900;
     line-height: 0.82;
-    opacity: 0;
 
     @mixin atLarge {
       font-size: 16rem;
+      transition: left $timing ease-out, right $timing ease-out;
     }
     @mixin atHuge {
       font-size: 24rem;
@@ -21,9 +21,7 @@ $timing: 700ms;
       left: 10vw;
 
       @mixin atLarge {
-        left: 30vw;
-        left: 100vw;
-        transition: left $timing;
+        left: 50vw;
       }
     }
     &--to-the-left {
@@ -31,16 +29,12 @@ $timing: 700ms;
       right: 0;
 
       @mixin atLarge {
-        right: 100vw;
-        transition: right $timing;
+        right: 50vw;
       }
     }
   }
 
   &--animated {
-    .frontal__headline {
-      opacity: 1;
-    }
     .frontal__headline--to-the-right {
       left: 30vw;
     }
