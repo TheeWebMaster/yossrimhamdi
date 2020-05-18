@@ -17,8 +17,8 @@ class Preload {
       header: {
         myName: document.querySelector('.header__my-name'),
         navListWrapper: document.querySelector('.header__nav-list-wrapper'),
-        adList: Array.from(document.querySelectorAll('.header__ad-list li')),
-        messageList: Array.from(document.querySelectorAll('.header__availability-message li')),
+        adList: document.querySelectorAll('.header__ad-list li'),
+        messageList: document.querySelectorAll('.header__availability-message li'),
       },
       cursor: document.querySelector('.cursor'),
       frontal: document.querySelector('.frontal'),
@@ -108,8 +108,8 @@ class Preload {
 
   animateHeaderTexts() {
     const myNameAnimatioObject = new TextLineAnimation(this.DOM.header.myName, 'from-top');
-    const messageAnimationObjects = this.DOM.header.messageList.map(li => new TextLineAnimation(li, 'from-bottom'));
-    const headerAdAnimationObjects = this.DOM.header.adList.map(li => new TextLineAnimation(li, 'from-top'));
+    const messageAnimationObjects = Array.from(this.DOM.header.messageList).map(li => new TextLineAnimation(li, 'from-bottom'));
+    const headerAdAnimationObjects = Array.from(this.DOM.header.adList).map(li => new TextLineAnimation(li, 'from-top'));
 
     setTimeout(() => {
       myNameAnimatioObject.triggerAnimation();
