@@ -16,8 +16,8 @@ class Preload {
       },
       header: {
         myName: document.querySelector('.header__my-name'),
-        adList: Array.from(document.querySelectorAll('.header__ad-list li')),
         navListWrapper: document.querySelector('.header__nav-list-wrapper'),
+        adList: Array.from(document.querySelectorAll('.header__ad-list li')),
         messageList: Array.from(document.querySelectorAll('.header__availability-message li')),
       },
       cursor: document.querySelector('.cursor'),
@@ -120,7 +120,11 @@ class Preload {
     const interval = setInterval(() => {
       if (this.timer.done) {
         setTimeout(() => {
-          messageAnimationObjects.forEach(object => object.triggerAnimation());
+          messageAnimationObjects.forEach((object, i) => {
+            setTimeout(() => {
+              object.triggerAnimation();
+            }, i * 100);
+          });
         }, 700);
         clearInterval(interval);
       }
