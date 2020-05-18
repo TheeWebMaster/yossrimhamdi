@@ -9,46 +9,48 @@ class AnimateMyNameOnScroll {
       container: document.querySelector('.me'),
       wrapper: document.querySelector('.me__wrapper'),
     };
-    this.waypoints = [300, 250, 160, 65];
-    this.texts = ['hello!', "keep scrolling, don't stop", 'almost', 'yossri'];
+    this.limits = {
+      transform: { start: -300, end: 0 },
+      bounding: {
+        top: document.querySelector('.me__my-name').clientHeight / 2,
+        bottom: document.querySelector('.me__my-name').clientHeight + 300 - window.innerHeight,
+      },
+    };
+    this.waypoints = [
+      { offset: 300, text: 'hello!' },
+      { offset: 150, text: 'who am I?' },
+      { offset: 40, text: 'yossri' },
+    ];
 
     this.setupParallax();
     this.fixedContainersWidth();
 
-    scroller.addListener(this.changeText.bind(this));
+    scroller.addListener(this.changeText);
   }
 
   setupParallax() {
-    new Parallax(
-      this.DOM.myName,
-      { start: -300, end: 0 },
-      {
-        top: document.querySelector('.me__my-name').clientHeight / 2,
-        bottom: document.querySelector('.me__my-name').clientHeight + 300 - window.innerHeight,
-      },
-      this.transformFunction
-    );
+    new Parallax(this.DOM.myName, this.limits.transform, this.limits.bounding, this.transformFunction);
   }
 
   transformFunction() {
     this.element.style.transform = `translateY(${this.getCurrentValue()}px)`;
   }
 
-  changeText() {
+  changeText = () => {
     const yValue = this.getYValue();
 
-    this.texts.forEach((text, i) => {
-      if (yValue <= this.waypoints[i]) {
+    this.waypoints.forEach(({ offset, text }, i) => {
+      if (yValue <= offset) {
         this.DOM.myName.innerText = text;
         this.toggleStrokeClass(i, yValue);
       }
     });
 
     this.showImage(yValue);
-  }
+  };
 
   toggleStrokeClass(i, yValue) {
-    if (i === 1 || yValue === 0) {
+    if (i % 2 !== 0 || yValue === 0) {
       this.DOM.myName.classList.add('me__my-name--stroke');
     } else {
       this.DOM.myName.classList.remove('me__my-name--stroke');
