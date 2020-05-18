@@ -13,7 +13,6 @@ class AnimateMyNameOnScroll {
     this.texts = ['hello!', "keep scrolling, don't stop", 'almost', 'yossri'];
 
     this.setupParallax();
-    this.fixedContainersWidth();
 
     scroller.addListener(this.changeText.bind(this));
   }
@@ -65,11 +64,6 @@ class AnimateMyNameOnScroll {
 
   getYValue() {
     return Math.abs(parseInt(this.DOM.myName.style.transform.slice(11, -3)));
-  }
-
-  fixedContainersWidth() {
-    this.DOM.container.style.width = `${this.DOM.container.clientWidth}px`;
-    this.DOM.wrapper.style.width = `${this.DOM.wrapper.clientWidth}px`;
   }
 }
 
