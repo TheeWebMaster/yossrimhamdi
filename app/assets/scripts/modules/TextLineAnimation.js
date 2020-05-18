@@ -1,5 +1,5 @@
 class TextLineAnimation {
-  constructor(element, position, autoTrigger) {
+  constructor(element, position, autoTrigger = false) {
     this.position = position;
     this.element = element;
     this.autoTrigger = autoTrigger;
@@ -19,7 +19,9 @@ class TextLineAnimation {
   }
 
   triggerAnimation() {
-    this.element.classList.add('line-animation--animated');
+    setTimeout(() => {
+      this.element.classList.add('line-animation--animated');
+    }, 1);
   }
 
   tryAutoTrigger() {

@@ -11,6 +11,7 @@ body {
   counter-reset: milestone-num;
   -webkit-touch-callout: none;
   user-select: none;
+  cursor: none;
 }
 
 html,
