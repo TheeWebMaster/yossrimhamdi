@@ -1,29 +1,35 @@
 import TextLineAnimation from './TextLineAnimation';
-import SetupParallaxEnviroment from './SetupParallaxEnviroment';
+import Parallax from './Parallax';
 import scroller from './Scroller';
 
-class AnimateMileStonesOnScroll extends SetupParallaxEnviroment {
+class AnimateMileStonesOnScroll {
   constructor() {
-    super('.milestone__top-border', { top: 0, bottom: -window.innerHeight + 250 });
-    this.limits = { start: -50, end: 0 };
+    this.topBorders = document.querySelectorAll('.milestone__top-border');
 
-    this.animate();
-    scroller.addListener(this.animatinoDescription.bind(this));
+    this.setupParallaxObject();
+    scroller.addListener(this.animateDescription);
   }
+
+  setupParallaxObject() {
+    this.topBorders.forEach(topBorder => {
+      new Parallax(topBorder, { start: -50, end: 0 }, { top: 0, bottom: -window.innerHeight + 250 }, this.transformFunction);
+    });
+  }
+
+  animateDescription = () => {
+    this.topBorders.forEach(topBorder => {
+      if (this.isBorderHalfWayVisible(topBorder.style.transform) && this.isNotAnimated(topBorder)) {
+        new TextLineAnimation(topBorder.nextElementSibling, 'from-right', true);
+      }
+    });
+  };
 
   transformFunction() {
     this.element.style.transform = `translateX(${this.getCurrentValue()}%)`;
   }
 
-  animatinoDescription() {
-    this.elements.forEach(element => {
-      if (
-        this.isBorderHalfWayVisible(element.style.transform) &&
-        !element.nextElementSibling.classList.contains('line-animation--animated')
-      ) {
-        new TextLineAnimation(element.nextElementSibling, 'from-right', true);
-      }
-    });
+  isNotAnimated(topBorder) {
+    return !topBorder.nextElementSibling.classList.contains('line-animation--animated');
   }
 
   isBorderHalfWayVisible(translateX) {

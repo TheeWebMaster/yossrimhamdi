@@ -25,9 +25,9 @@ const animateNavOnWaypoints = new AnimateNavOnWaypoints();
 new ScrollToOnNavigationLinkClick(animateNavOnWaypoints);
 new AnimateAvailabilityMessageOnScroll();
 new FixedHeaderPosition();
-new TranslateXAwardHeadlinesOnScroll();
-new TranslateYWorkHeadlineOnScroll();
 new TranslateXFrontalHeadlinesOnScroll();
+new TranslateYWorkHeadlineOnScroll();
+new TranslateXAwardHeadlinesOnScroll();
 
 if (window.innerWidth >= 1024) {
   new progressinveTextAnimationOnScroll('.text-to-animate', 200);
