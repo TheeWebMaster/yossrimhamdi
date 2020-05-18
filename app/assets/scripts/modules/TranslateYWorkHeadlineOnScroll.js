@@ -1,12 +1,20 @@
-import SetupParallaxEnviroment from './SetupParallaxEnviroment';
+import Parallax from './Parallax';
 
-class TranslateYWorkHeadlineOnScroll extends SetupParallaxEnviroment {
+class TranslateYWorkHeadlineOnScroll {
   constructor() {
-    super('.headline--work', { top: 0, bottom: 400 });
-    this.limits = { start: 0, end: -200 };
+    this.workHeadline = document.querySelector('.headline--work');
+    this.limit = {
+      transform: { start: 0, end: -200 },
+      bounding: { top: 0, bottom: 400 },
+    };
 
-    this.animate();
+    this.setupParallax();
   }
+
+  setupParallax() {
+    new Parallax(this.workHeadline, this.limit.transform, this.limit.bounding, this.transformFunction);
+  }
+
   transformFunction() {
     this.element.style.transform = `translate(39%, ${this.getCurrentValue()}px) rotate(-90deg)`;
   }

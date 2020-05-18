@@ -1,12 +1,11 @@
-import Transform from './Transform';
-import SetupParallaxEnviroment from './SetupParallaxEnviroment';
+import Parallax from './Parallax';
 
-class TranslateXProjectsOnScroll extends SetupParallaxEnviroment {
+class TranslateXProjectsOnScroll {
   constructor() {
-    super('.project');
+    this.projects = document.querySelectorAll('.project');
     this.limits = this.getLimits();
 
-    this.animate();
+    this.setupParallax();
   }
 
   getLimits() {
@@ -23,11 +22,8 @@ class TranslateXProjectsOnScroll extends SetupParallaxEnviroment {
     }
   }
 
-  animate() {
-    this.elements.forEach((element, i) => {
-      const relativeLimit = i % 2 === 0 ? this.limits[0] : this.limits[1];
-      new Transform(element, this.relativeScrollInputs[i], relativeLimit);
-    });
+  setupParallax() {
+    this.projects.forEach((project, i) => new Parallax(project, i % 2 === 0 ? this.limits[0] : this.limits[1]));
   }
 }
 

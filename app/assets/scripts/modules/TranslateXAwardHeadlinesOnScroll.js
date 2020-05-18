@@ -1,12 +1,20 @@
-import SetupParallaxEnviroment from './SetupParallaxEnviroment';
+import Parallax from './Parallax';
 
-class TranslateXAwardHeadlinesOnScroll extends SetupParallaxEnviroment {
+class TranslateXAwardHeadlinesOnScroll {
   constructor() {
-    super('.headline--award', { top: 0, bottom: 200 });
-    this.limits = { start: -60, end: 10 };
+    this.awardHeadline = document.querySelector('.headline--award');
+    this.limit = {
+      transform: { start: -60, end: 10 },
+      bounding: { top: 0, bottom: 200 },
+    };
 
-    this.animate();
+    this.setupParallax();
   }
+
+  setupParallax() {
+    new Parallax(this.awardHeadline, this.limit.transform, this.limit.bounding, this.transformFunction);
+  }
+
   transformFunction() {
     this.element.style.transform = `translate(${this.getCurrentValue()}px, -60%)`;
   }

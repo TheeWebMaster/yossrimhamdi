@@ -1,11 +1,11 @@
 import scroller from './Scroller';
 
 class ScrollInput {
-  constructor(topBounding) {
+  constructor(topBoundings) {
     this.scrollY = {
-      start: topBounding.start,
-      end: topBounding.end,
-      range: topBounding.end - topBounding.start,
+      start: topBoundings.start,
+      end: topBoundings.end,
+      range: topBoundings.end - topBoundings.start,
     };
 
     scroller.addListener(this.calcFraction.bind(this));
