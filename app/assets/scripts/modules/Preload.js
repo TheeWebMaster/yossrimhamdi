@@ -125,10 +125,10 @@ class Preload {
               object.triggerAnimation();
             }, i * 100);
           });
-        }, 700);
+        }, 300);
         clearInterval(interval);
       }
-    }, 40);
+    }, 10);
   }
 }
 
