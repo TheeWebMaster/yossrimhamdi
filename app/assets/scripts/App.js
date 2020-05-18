@@ -18,27 +18,29 @@ import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM';
 import GenerateProjects from './modules/GenerateProjects';
 import ImageHoverEffect from './modules/ImageHoverEffect';
 
-new ScrollBar();
-new GenerateProjects();
-new GenerateCostumHTMLLinksDOM();
-const animateNavOnWaypoints = new AnimateNavOnWaypoints();
-new ScrollToOnNavigationLinkClick(animateNavOnWaypoints);
-new AnimateAvailabilityMessageOnScroll();
-new FixedHeaderPosition();
-new TranslateXFrontalHeadlinesOnScroll();
-new TranslateYWorkHeadlineOnScroll();
-new TranslateXAwardHeadlinesOnScroll();
+setTimeout(() => {
+  new ScrollBar();
+  new GenerateProjects();
+  new GenerateCostumHTMLLinksDOM();
+  const animateNavOnWaypoints = new AnimateNavOnWaypoints();
+  new ScrollToOnNavigationLinkClick(animateNavOnWaypoints);
+  new AnimateAvailabilityMessageOnScroll();
+  new FixedHeaderPosition();
+  new TranslateXFrontalHeadlinesOnScroll();
+  new TranslateYWorkHeadlineOnScroll();
+  new TranslateXAwardHeadlinesOnScroll();
 
-if (window.innerWidth >= 1024) {
-  new progressinveTextAnimationOnScroll('.text-to-animate', 200);
-  new progressinveTextAnimationOnScroll('.text-to-animate--1', 200);
-  new AnimateMileStonesOnScroll();
-  new TranslateXProjectsOnScroll();
-  new ChangeAdOnTiming();
-  new ImageHoverEffect();
-  new AnimateMyNameOnScroll();
-  new Preload();
-}
+  if (window.innerWidth >= 1024) {
+    new progressinveTextAnimationOnScroll('.text-to-animate', 200);
+    new progressinveTextAnimationOnScroll('.text-to-animate--1', 200);
+    new AnimateMileStonesOnScroll();
+    new TranslateXProjectsOnScroll();
+    new ChangeAdOnTiming();
+    new ImageHoverEffect();
+    new AnimateMyNameOnScroll();
+    new AnimateAwardsOnWaypoint();
+    new AnimateContactMeLinksOnWaypoint();
+  }
+}, 1000);
 
-new AnimateAwardsOnWaypoint();
-new AnimateContactMeLinksOnWaypoint();
+new Preload();
