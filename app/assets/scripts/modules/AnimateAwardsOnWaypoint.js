@@ -11,7 +11,7 @@ class AnimateAwardsOnWaypoint {
 
   setWaypoints() {
     this.awards.forEach(award => {
-      new Waypoint(award, this.handler.bind(this, award), award.clientHeight);
+      new Waypoint(award, this.handler.bind(this, award), award.clientHeight + 15);
     });
   }
 
