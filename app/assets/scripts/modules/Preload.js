@@ -41,33 +41,8 @@ class Preload {
   }
 
   setMousePressEvents() {
-    this.DOM.loader.wrapper.addEventListener('mousedown', this.setTimer);
+    this.DOM.loader.wrapper.addEventListener('mousedown', this.showPageContentIfReachedTimeLimit);
     document.body.addEventListener('mouseup', this.enableMouseInteractions);
-  }
-
-  setTimer = () => {
-    this.timer.start = Date.now();
-    this.timer.interval = setInterval(this.showPageContent, 100);
-  };
-
-  clearInterval() {
-    clearInterval(this.timer.interval);
-  }
-
-  disableScrolling() {
-    scroller.scrollTo(0, 0, 0);
-  }
-
-  enableScrolling() {
-    scroller.removeListener(this.disableScrolling);
-  }
-
-  reachedTimeLimit() {
-    return Date.now() - this.timer.start >= this.timer.limit;
-  }
-
-  informUserToInteract() {
-    new TextLineAnimation(this.DOM.preload.state, 'from-bottom', true);
   }
 
   handleReadyState = e => {
@@ -82,6 +57,11 @@ class Preload {
         wrapper.classList.add('loader--interactive');
       }, 2000);
     }
+  };
+
+  showPageContentIfReachedTimeLimit = () => {
+    this.timer.start = Date.now();
+    this.timer.interval = setInterval(this.showPageContent, 100);
   };
 
   showPageContent = () => {
@@ -106,6 +86,26 @@ class Preload {
       new CursorInteractions();
     }
   };
+
+  clearInterval() {
+    clearInterval(this.timer.interval);
+  }
+
+  disableScrolling() {
+    scroller.scrollTo(0, 0, 0);
+  }
+
+  enableScrolling() {
+    scroller.removeListener(this.disableScrolling);
+  }
+
+  reachedTimeLimit() {
+    return Date.now() - this.timer.start >= this.timer.limit;
+  }
+
+  informUserToInteract() {
+    new TextLineAnimation(this.DOM.preload.state, 'from-bottom', true);
+  }
 
   animateMyNameAndAdListIntoView() {
     const { myName, adList } = this.DOM.header;
