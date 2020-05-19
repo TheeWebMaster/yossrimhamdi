@@ -1,3 +1,4 @@
+import MoveLoaderOnMouseMove from './modules/MoveLoaderOnMouseMove';
 import AnimateContactMeLinksOnWaypoint from './modules/AnimateContactMeLinksOnWaypoint';
 import AnimateAwardsOnWaypoint from './modules/AnimateAwardsOnWaypoint';
 import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
@@ -44,3 +45,4 @@ setTimeout(() => {
 }, 1000);
 
 new Preload();
+new MoveLoaderOnMouseMove({ min: 10, max: 10 }, { min: -10, max: 10 });

@@ -6,8 +6,7 @@ $timing: 300ms;
   position: relative;
   cursor: pointer;
 
-  *,
-  &::after {
+  * {
     border-radius: 50%;
   }
 
@@ -28,20 +27,17 @@ $timing: 300ms;
     stroke-dasharray: 200;
     stroke-dashoffset: 1000;
     animation: loading 3000ms 1000ms infinite;
-    transition: all 1000ms;
+    transition: stroke-width 1000ms;
   }
 
-  &__inner,
-  &::after {
+  &__inner-wrapper {
+    @mixin xy-centered;
+  }
+
+  &__inner {
     width: 7px;
     height: 7px;
     background-color: $mainRed;
-    @mixin xy-centered;
-    transition: all $timing;
-  }
-
-  &::after {
-    content: '';
   }
 
   &--interactive {
@@ -52,12 +48,6 @@ $timing: 300ms;
 
       .loader__circle {
         stroke-width: 1.55;
-      }
-
-      .loader__inner {
-        width: 70px;
-        height: 70px;
-        background-color: transparent;
       }
     }
   }
