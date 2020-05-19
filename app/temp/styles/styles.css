@@ -261,7 +261,6 @@ body {
         transform: translateX(3px);
       }.header__nav-list-wrapper {
     padding-right: 1em;
-    transition: max-height 400ms;
     overflow: hidden;
     transform: translateX(100%);
   }.header__nav-list-wrapper--is-fully-visible .header__nav-link--active::before {

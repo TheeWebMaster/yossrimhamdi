@@ -97,7 +97,6 @@
   }
   &__nav-list-wrapper {
     padding-right: 1em;
-    transition: max-height 400ms;
     overflow: hidden;
     transform: translateX(100%);
 
