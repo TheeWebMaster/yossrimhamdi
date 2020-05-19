@@ -20,14 +20,17 @@ class Preload {
         adList: document.querySelectorAll('.header__ad-list li'),
         messageList: document.querySelectorAll('.header__availability-message li'),
       },
+      frontal: {
+        wrapper: document.querySelector('.frontal'),
+        headlines: document.querySelectorAll('.frontal__headline:not(:last-child)'),
+      },
       cursor: document.querySelector('.cursor'),
-      frontal: document.querySelector('.frontal'),
     };
     this.cursor = new Cursor();
     this.timer = {
       start: 0,
       interval: null,
-      limit: 700,
+      limit: 300,
     };
 
     this.setReadyStateEvent();
@@ -52,7 +55,7 @@ class Preload {
       circle.style.animation = 'loaded 2000ms forwards';
 
       setTimeout(() => {
-        this.howClickAndHoldMessage();
+        this.showClickAndHoldMessage();
         this.setMousePressEvents();
         wrapper.classList.add('loader--interactive');
       }, 1900);
@@ -65,15 +68,14 @@ class Preload {
   };
 
   showPageContent = () => {
-    const { preload, cursor, frontal } = this.DOM;
-
     if (this.reachedTimeLimit()) {
-      preload.wrapper.classList.add('preload-overlay--loaded');
-      cursor.classList.add('cursor--is-visible');
-      frontal.classList.add('frontal--animated');
-
-      this.animateNavAndAvailabilityMessage();
       this.clearInterval();
+      this.hideClickAndHoldMessage();
+      this.animateNavAndAvailabilityMessage();
+      this.disableDefaultCursor();
+      this.animateFrontalHeadlines();
+      this.hideLoader();
+      this.showCursor();
     }
   };
 
@@ -103,8 +105,32 @@ class Preload {
     return Date.now() - this.timer.start >= this.timer.limit;
   }
 
-  howClickAndHoldMessage() {
+  showClickAndHoldMessage() {
     new TextLineAnimation(this.DOM.preload.state, 'from-bottom', true);
+  }
+
+  hideClickAndHoldMessage() {
+    this.DOM.preload.state.classList.add('line-animation--hidden-to-bottom');
+  }
+
+  disableDefaultCursor() {
+    document.body.style.cursor = 'none';
+  }
+
+  hideLoader() {
+    this.DOM.loader.wrapper.classList.add('loader--hidden');
+  }
+
+  showCursor() {
+    this.DOM.cursor.classList.add('cursor--is-visible');
+  }
+
+  animateFrontalHeadlines() {
+    this.DOM.frontal.headlines.forEach((headline, i) => {
+      setTimeout(() => {
+        headline.classList.add(`frontal__headline--${i}`);
+      }, 120 * i);
+    });
   }
 
   animateMyNameAndAdListIntoView() {
@@ -131,14 +157,15 @@ class Preload {
 
   animateNavAndAvailabilityMessage() {
     const { navListWrapper, messageList } = this.DOM.header;
+    const messageAnimations = this.getAnimations(messageList, 'from-bottom');
 
     setTimeout(() => {
-      const messageAnimations = this.getAnimations(messageList, 'from-bottom');
       this.runAnimations(messageAnimations, 0, 120);
-    }, 500);
-    setTimeout(() => {
-      navListWrapper.classList.add('header__nav-list-wrapper--visible');
-    }, 1100);
+
+      setTimeout(() => {
+        navListWrapper.classList.add('header__nav-list-wrapper--visible');
+      }, 100);
+    }, 400);
   }
 }
 

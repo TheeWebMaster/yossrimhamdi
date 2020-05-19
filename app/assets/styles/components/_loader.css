@@ -1,3 +1,5 @@
+$timing: 300ms;
+
 .loader {
   width: 60px;
   height: 60px;
@@ -12,7 +14,7 @@
   &__svg {
     width: 100%;
     height: 100%;
-    transition: transform 700ms;
+    transition: transform $timing ease-out;
   }
 
   &__circle {
@@ -35,7 +37,7 @@
     height: 7px;
     background-color: $mainRed;
     @mixin xy-centered;
-    transition: all 700ms;
+    transition: all $timing;
   }
 
   &::after {
@@ -58,5 +60,10 @@
         background-color: transparent;
       }
     }
+  }
+
+  &--hidden {
+    opacity: 0;
+    cursor: none;
   }
 }
