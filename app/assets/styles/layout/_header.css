@@ -97,7 +97,7 @@
   }
   &__nav-list-wrapper {
     padding-right: 1em;
-    transition: max-height 400ms, transform 800ms;
+    transition: max-height 400ms;
     overflow: hidden;
     transform: translateX(100%);
 
@@ -110,6 +110,7 @@
     }
 
     &--visible {
+      transition: max-height 400ms, transform 800ms;
       transform: translateX(0);
     }
   }
