@@ -5,6 +5,10 @@ import scroller from './Scroller';
 class AnimateMileStonesOnScroll {
   constructor() {
     this.topBorders = document.querySelectorAll('.milestone__top-border');
+    this.limits = {
+      transform: { start: -50, end: 0 },
+      bounding: { top: 0, bottom: -window.innerHeight + 210 },
+    };
 
     this.setupParallaxObject();
     scroller.addListener(this.animateDescription);
@@ -12,7 +16,7 @@ class AnimateMileStonesOnScroll {
 
   setupParallaxObject() {
     this.topBorders.forEach(topBorder => {
-      new Parallax(topBorder, { start: -50, end: 0 }, { top: 0, bottom: -window.innerHeight + 250 }, this.transformFunction);
+      new Parallax(topBorder, this.limits.transform, this.limits.bounding, this.transformFunction);
     });
   }
 
