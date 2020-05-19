@@ -348,8 +348,11 @@ body {
     z-index: 2;
   }.page-section--no-pointer-events {
     pointer-events: none;
-  }@media only screen and (min-width: 1024px) {.page-section--huge-bottom-space-on-large {
+  }@media only screen and (min-width: 1024px) {.page-section--huge-bottom-padding-on-large {
       padding-bottom: 300px
+  }
+  }@media only screen and (min-width: 1024px) {.page-section--medium-bottom-padding-on-large {
+      padding-bottom: 8em
   }
   }.paragraph {
   text-transform: initial;

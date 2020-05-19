@@ -19,9 +19,15 @@
     pointer-events: none;
   }
 
-  &--huge-bottom-space-on-large {
+  &--huge-bottom-padding-on-large {
     @mixin atLarge {
       padding-bottom: 300px;
+    }
+  }
+
+  &--medium-bottom-padding-on-large {
+    @mixin atLarge {
+      padding-bottom: 8em;
     }
   }
 }
