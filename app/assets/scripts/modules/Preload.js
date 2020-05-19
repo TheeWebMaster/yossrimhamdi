@@ -52,10 +52,10 @@ class Preload {
       circle.style.animation = 'loaded 2000ms forwards';
 
       setTimeout(() => {
-        this.informUserToInteract();
+        this.howClickAndHoldMessage();
         this.setMousePressEvents();
         wrapper.classList.add('loader--interactive');
-      }, 2000);
+      }, 1900);
     }
   };
 
@@ -103,7 +103,7 @@ class Preload {
     return Date.now() - this.timer.start >= this.timer.limit;
   }
 
-  informUserToInteract() {
+  howClickAndHoldMessage() {
     new TextLineAnimation(this.DOM.preload.state, 'from-bottom', true);
   }
 
