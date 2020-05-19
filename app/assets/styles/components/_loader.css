@@ -6,7 +6,8 @@ $timing: 300ms;
   position: relative;
   cursor: pointer;
 
-  * {
+  *,
+  &__inner-wrapper::after {
     border-radius: 50%;
   }
 
@@ -30,7 +31,8 @@ $timing: 300ms;
     transition: stroke-width 1000ms;
   }
 
-  &__inner-wrapper {
+  &__inner-wrapper,
+  &__inner-wrapper::after {
     @mixin xy-centered;
   }
 
@@ -38,6 +40,14 @@ $timing: 300ms;
     width: 7px;
     height: 7px;
     background-color: $mainRed;
+  }
+
+  &__inner-wrapper::after {
+    content: '';
+    width: 0;
+    height: 0;
+    background-color: $mainRed;
+    transition: all $timing;
   }
 
   &--interactive {
@@ -48,6 +58,11 @@ $timing: 300ms;
 
       .loader__circle {
         stroke-width: 1.55;
+      }
+      .loader__inner-wrapper::after {
+        width: 70px;
+        height: 70px;
+        background-color: transparent;
       }
     }
   }

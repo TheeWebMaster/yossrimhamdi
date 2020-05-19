@@ -617,7 +617,8 @@ body {
   height: 60px;
   position: relative;
   cursor: pointer;
-}.loader * {
+}.loader *,
+  .loader__inner-wrapper::after {
     border-radius: 50%;
   }.loader__svg {
     width: 100%;
@@ -636,7 +637,8 @@ body {
     -webkit-animation: loading 3000ms 1000ms infinite;
             animation: loading 3000ms 1000ms infinite;
     transition: stroke-width 1000ms;
-  }.loader__inner-wrapper {
+  }.loader__inner-wrapper,
+  .loader__inner-wrapper::after {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -646,10 +648,20 @@ body {
     width: 7px;
     height: 7px;
     background-color: #ff0d00;
+  }.loader__inner-wrapper::after {
+    content: '';
+    width: 0;
+    height: 0;
+    background-color: #ff0d00;
+    transition: all 300ms;
   }.loader--interactive:active .loader__svg {
         transform: scale(1.22);
       }.loader--interactive:active .loader__circle {
         stroke-width: 1.55;
+      }.loader--interactive:active .loader__inner-wrapper::after {
+        width: 70px;
+        height: 70px;
+        background-color: transparent;
       }.loader--hidden {
     opacity: 0;
     cursor: none;
