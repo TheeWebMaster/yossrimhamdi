@@ -322,7 +322,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Scr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smooth-scrollbar */ \"./node_modules/smooth-scrollbar/index.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init(document.querySelector('#content-wrapper'), {\n  damping: 0.05\n}));\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Scroller.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smooth-scrollbar */ \"./node_modules/smooth-scrollbar/index.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init(document.querySelector('#content-wrapper'), {\n  damping: 0.045\n}));\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Scroller.js?");
 
 /***/ }),
 
@@ -430,7 +430,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Scr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smooth-scrollbar */ \"./node_modules/smooth-scrollbar/index.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init(document.querySelector('#content-wrapper'), {\n  damping: 0.05\n}));\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/scroller.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! smooth-scrollbar */ \"./node_modules/smooth-scrollbar/index.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (smooth_scrollbar__WEBPACK_IMPORTED_MODULE_0__[\"default\"].init(document.querySelector('#content-wrapper'), {\n  damping: 0.045\n}));\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/scroller.js?");
 
 /***/ }),
 
