@@ -1,17 +1,18 @@
-.link-animation {
+.link-hover-animation {
   position: relative;
 
   &__lower {
     text-transform: lowercase;
     transition: color 400ms;
+    border: 1px solid green;
   }
 
   &__capital {
     position: absolute;
-    top: 0;
     left: 0;
+    border: 1px solid red;
 
-    .link-animation__letter {
+    .link-hover-animation__letter {
       transform: translateX(-100%);
     }
   }
@@ -27,13 +28,13 @@
   }
 
   &:hover {
-    .link-animation__capital .link-animation__letter {
+    .link-hover-animation__capital .link-hover-animation__letter {
       transform: translateX(0);
     }
-    .link-animation__lower .link-animation__letter {
+    .link-hover-animation__lower .link-hover-animation__letter {
       transform: translateX(100%);
     }
-    .link-animation__lower {
+    .link-hover-animation__lower {
       color: $mainRed;
     }
   }

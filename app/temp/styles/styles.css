@@ -695,27 +695,28 @@ body {
   transform: translate(0, -100%);
 }.from-right {
   transform: translate(100%, 0);
-}.link-animation {
+}.link-hover-animation {
   position: relative;
-}.link-animation__lower {
+}.link-hover-animation__lower {
     text-transform: lowercase;
     transition: color 400ms;
-  }.link-animation__capital {
+    border: 1px solid green;
+  }.link-hover-animation__capital {
     position: absolute;
-    top: 0;
     left: 0;
-  }.link-animation__capital .link-animation__letter {
+    border: 1px solid red;
+  }.link-hover-animation__capital .link-hover-animation__letter {
       transform: translateX(-100%);
-    }.link-animation__letter-wrapper {
+    }.link-hover-animation__letter-wrapper {
     overflow: hidden;
     display: inline-block;
-  }.link-animation__letter {
+  }.link-hover-animation__letter {
     transition: transform 1100ms cubic-bezier(0.81, 0.69, 0.03, 0.93);
     display: inline-block;
-  }.link-animation:hover .link-animation__capital .link-animation__letter {
+  }.link-hover-animation:hover .link-hover-animation__capital .link-hover-animation__letter {
       transform: translateX(0);
-    }.link-animation:hover .link-animation__lower .link-animation__letter {
+    }.link-hover-animation:hover .link-hover-animation__lower .link-hover-animation__letter {
       transform: translateX(100%);
-    }.link-animation:hover .link-animation__lower {
+    }.link-hover-animation:hover .link-hover-animation__lower {
       color: #ff0d00;
     }
