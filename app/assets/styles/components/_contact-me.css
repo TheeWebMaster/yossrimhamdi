@@ -11,9 +11,11 @@
       margin-right: 300px;
     }
   }
+
   &__links {
     font-weight: 500;
     text-decoration: underline;
+
     @mixin atLarge {
       font-size: 2rem;
     }

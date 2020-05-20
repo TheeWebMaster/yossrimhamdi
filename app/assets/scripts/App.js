@@ -1,3 +1,4 @@
+import AnimateLinksOnHover from './modules/AnimateLinksOnHover';
 import MoveLoaderOnMouseMove from './modules/MoveLoaderOnMouseMove';
 import AnimateContactMeLinksOnWaypoint from './modules/AnimateContactMeLinksOnWaypoint';
 import AnimateAwardsOnWaypoint from './modules/AnimateAwardsOnWaypoint';
@@ -42,6 +43,7 @@ setTimeout(() => {
     new AnimateAwardsOnWaypoint();
     new AnimateContactMeLinksOnWaypoint();
     new MoveLoaderOnMouseMove();
+    new AnimateLinksOnHover();
   }
 }, 1000);
 

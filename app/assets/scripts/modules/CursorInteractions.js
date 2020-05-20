@@ -1,12 +1,11 @@
 class CursorInteractions {
   constructor() {
     this.DOM = {
-      headerNav: document.querySelector('.header__nav'),
       cursor: {
         container: document.querySelector('.cursor'),
         inner: document.querySelector('.cursor__inner'),
       },
-      canvases: document.querySelectorAll('canvas'),
+      importantElements: document.querySelectorAll('canvas, .header__nav, .link'),
     };
 
     this.setEvents();
@@ -16,12 +15,9 @@ class CursorInteractions {
     window.addEventListener('mousedown', this.increaseInnerCursorWidth.bind(this));
     window.addEventListener('mouseup', this.decreaseInnerCursorWidth.bind(this));
 
-    this.DOM.headerNav.addEventListener('mouseenter', this.onFocus.bind(this));
-    this.DOM.headerNav.addEventListener('mouseleave', this.offFocus.bind(this));
-
-    this.DOM.canvases.forEach(canvas => {
-      canvas.addEventListener('mouseenter', this.onFocus.bind(this));
-      canvas.addEventListener('mouseleave', this.offFocus.bind(this));
+    this.DOM.importantElements.forEach(element => {
+      element.addEventListener('mouseenter', this.onFocus.bind(this));
+      element.addEventListener('mouseleave', this.offFocus.bind(this));
     });
   }
 
