@@ -226,7 +226,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Scr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass GenerateCostumHTMLLinksDOM {\n  constructor() {\n    this.links = document.querySelectorAll('.header__nav-link');\n    this.updateInnerHTML();\n  }\n\n  updateInnerHTML() {\n    this.links.forEach(link => {\n      link.innerHTML = this.getNewInnerHTML(link.innerHTML);\n    });\n  }\n\n  getNewInnerHTML(linkTitle) {\n    return `<span class=\"header__nav-link-top-portion\">${linkTitle}</span>\n    <span class=\"header__nav-link-bottom-portion\">${linkTitle}</span>`;\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (GenerateCostumHTMLLinksDOM);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/GenerateCostumHTMLLinksDOM.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass GenerateCostumHTMLLinksDOM {\n  constructor() {\n    this.links = document.querySelectorAll('.header__nav-link');\n    this.updateInnerHTML();\n  }\n\n  updateInnerHTML() {\n    if (this.notEdgeBrowser()) {\n      this.links.forEach(link => {\n        link.innerHTML = this.getNewInnerHTML(link.innerHTML);\n      });\n    }\n  }\n\n  getNewInnerHTML(linkTitle) {\n    return `<span class=\"header__nav-link-top-portion\">${linkTitle}</span>\n    <span class=\"header__nav-link-bottom-portion\">${linkTitle}</span>`;\n  }\n\n  notEdgeBrowser() {\n    return !window.navigator.userAgent.includes('Edge/');\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (GenerateCostumHTMLLinksDOM);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/GenerateCostumHTMLLinksDOM.js?");
 
 /***/ }),
 
