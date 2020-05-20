@@ -9,8 +9,8 @@ class MoveLoaderOnMouseMove {
     };
     this.mouseInput = new MouseInput();
     this.limits = {
-      x: { min: -6, max: 6 },
-      y: { min: -6, max: 6 },
+      x: { min: -3, max: 3 },
+      y: { min: -3, max: 3 },
     };
 
     this.setTransformObject();
