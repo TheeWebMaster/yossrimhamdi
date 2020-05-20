@@ -142,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Way
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _LinkHoverAnimation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LinkHoverAnimation */ \"./app/assets/scripts/modules/LinkHoverAnimation.js\");\n\n\nclass AnimateLinksOnHover {\n  constructor() {\n    this.links = document.querySelectorAll('.link');\n    console.log(this.links);\n    this.setAnimationObject();\n  }\n\n  setAnimationObject() {\n    this.links.forEach(link => new _LinkHoverAnimation__WEBPACK_IMPORTED_MODULE_0__[\"default\"](link));\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (AnimateLinksOnHover);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/AnimateLinksOnHover.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _LinkHoverAnimation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LinkHoverAnimation */ \"./app/assets/scripts/modules/LinkHoverAnimation.js\");\n\n\nclass AnimateLinksOnHover {\n  constructor() {\n    this.links = document.querySelectorAll('.link');\n    this.setAnimationObject();\n  }\n\n  setAnimationObject() {\n    this.links.forEach(link => new _LinkHoverAnimation__WEBPACK_IMPORTED_MODULE_0__[\"default\"](link));\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (AnimateLinksOnHover);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/AnimateLinksOnHover.js?");
 
 /***/ }),
 

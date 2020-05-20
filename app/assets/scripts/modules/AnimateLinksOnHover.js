@@ -3,7 +3,6 @@ import LinkHoverAnimation from './LinkHoverAnimation';
 class AnimateLinksOnHover {
   constructor() {
     this.links = document.querySelectorAll('.link');
-    console.log(this.links);
 
     this.setAnimationObject();
   }
