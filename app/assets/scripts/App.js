@@ -41,8 +41,8 @@ setTimeout(() => {
     new AnimateMyNameOnScroll();
     new AnimateAwardsOnWaypoint();
     new AnimateContactMeLinksOnWaypoint();
+    new MoveLoaderOnMouseMove();
   }
 }, 1000);
 
 new Preload();
-new MoveLoaderOnMouseMove({ min: 10, max: 10 }, { min: -10, max: 10 });
