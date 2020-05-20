@@ -1,4 +1,4 @@
-import './modules/LinkHoverAnimation';
+import AnimateLinksOnHover from './modules/AnimateLinksOnHover';
 import MoveLoaderOnMouseMove from './modules/MoveLoaderOnMouseMove';
 import AnimateContactMeLinksOnWaypoint from './modules/AnimateContactMeLinksOnWaypoint';
 import AnimateAwardsOnWaypoint from './modules/AnimateAwardsOnWaypoint';
@@ -47,3 +47,4 @@ setTimeout(() => {
 }, 1000);
 
 new Preload();
+new AnimateLinksOnHover();

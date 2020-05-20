@@ -31,5 +31,3 @@ class LinkHoverAnimation {
 }
 
 export default LinkHoverAnimation;
-
-new LinkHoverAnimation(document.querySelector('.link'));
