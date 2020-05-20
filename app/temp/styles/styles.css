@@ -712,6 +712,8 @@ body {
       position: absolute;
       bottom: 0.28em;
       left: 0;
+    }.link-hover-animation__lower .link-hover-animation__letter-wrapper:first-child {
+      text-transform: capitalize;
     }.link-hover-animation__capital {
     white-space: nowrap;
     position: absolute;
@@ -734,6 +736,4 @@ body {
       transform: translateX(100%);
     }.link-hover-animation:hover .link-hover-animation__lower {
       color: #ff0d00;
-    }.link {
-  text-transform: uppercase;
-}
+    }

@@ -16,6 +16,10 @@
       bottom: 0.28em;
       left: 0;
     }
+
+    & .link-hover-animation__letter-wrapper:first-child {
+      text-transform: capitalize;
+    }
   }
 
   &__capital {

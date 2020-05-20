@@ -2,7 +2,7 @@ import LinkHoverAnimation from './LinkHoverAnimation';
 
 class AnimateLinksOnHover {
   constructor() {
-    this.links = document.querySelectorAll('.link');
+    this.links = document.querySelectorAll('.link, .contact-me__links > li');
 
     this.setAnimationObject();
   }
