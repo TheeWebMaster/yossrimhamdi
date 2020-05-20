@@ -709,6 +709,7 @@ body {
       transform: translateX(-100%);
     }.link-hover-animation__letter-wrapper {
     overflow: hidden;
+    vertical-align: top;
     display: inline-block;
   }.link-hover-animation__letter {
     transition: transform 1100ms cubic-bezier(0.81, 0.69, 0.03, 0.93);

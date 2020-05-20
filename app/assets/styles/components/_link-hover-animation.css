@@ -19,6 +19,7 @@
 
   &__letter-wrapper {
     overflow: hidden;
+    vertical-align: top;
     display: inline-block;
   }
 
