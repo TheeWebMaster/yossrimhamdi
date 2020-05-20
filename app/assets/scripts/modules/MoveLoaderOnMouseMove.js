@@ -8,17 +8,17 @@ class MoveLoaderOnMouseMove {
       inner: document.querySelector('.loader__inner'),
     };
     this.mouseInput = new MouseInput();
-    this.limits = {
-      x: { min: -3, max: 3 },
-      y: { min: -3, max: 3 },
+    this.transLimit = {
+      x: { min: -3.5, max: 3.5 },
+      y: { min: -3.5, max: 3.5 },
     };
 
-    this.setTransformObject();
+    this.setTranslateObject();
   }
 
-  setTransformObject() {
+  setTranslateObject() {
     for (const part in this.loader) {
-      new TranslateOnMouseMove(this.loader[part], this.limits, this.mouseInput);
+      new TranslateOnMouseMove(this.loader[part], this.transLimit, this.mouseInput);
     }
   }
 }
