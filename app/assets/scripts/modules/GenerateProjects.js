@@ -29,7 +29,7 @@ class GenerateProjects {
         </div>
         <a class="project__link" href="${projectLink}" target="_blank">
           <div class="project__image-container" data-project-title="${projectTitle.split(' ').join('-')}"></div>
-        <a/>
+        </a>
       </div>
     </div>
     `;
