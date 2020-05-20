@@ -1,4 +1,4 @@
-import TransformOnMouseMove from './TransformOnMouseMove';
+import TranslateOnMouseMove from './TranslateOnMouseMove';
 import MouseInput from './MouseInput';
 
 class MoveLoaderOnMouseMove {
@@ -18,7 +18,7 @@ class MoveLoaderOnMouseMove {
 
   setTransformObject() {
     for (const part in this.loader) {
-      new TransformOnMouseMove(this.loader[part], this.limits, this.mouseInput);
+      new TranslateOnMouseMove(this.loader[part], this.limits, this.mouseInput);
     }
   }
 }

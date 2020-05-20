@@ -1,5 +1,5 @@
 import ScrollInput from './ScrollInput';
-import Transform from './Transform';
+import TranslateOnScroll from './TranslateOnScroll';
 
 class Parallax {
   constructor(element, transLimits, topBoundingOffsets = { top: 0, bottom: 0 }, transformFunction) {
@@ -27,7 +27,12 @@ class Parallax {
   }
 
   animate() {
-    new Transform(this.element, this.relativeScrollInput, this.transLimits, this.transformFunction);
+    new TranslateOnScroll(
+      this.element,
+      this.relativeScrollInput,
+      this.transLimits,
+      this.transformFunction
+    );
   }
 }
 

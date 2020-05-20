@@ -274,7 +274,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nclass MouseInput {\n  constru
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _TransformOnMouseMove__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TransformOnMouseMove */ \"./app/assets/scripts/modules/TransformOnMouseMove.js\");\n/* harmony import */ var _MouseInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MouseInput */ \"./app/assets/scripts/modules/MouseInput.js\");\n\n\n\nclass MoveLoaderOnMouseMove {\n  constructor() {\n    this.loader = {\n      wrapper: document.querySelector('.loader'),\n      inner: document.querySelector('.loader__inner')\n    };\n    this.mouseInput = new _MouseInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n    this.limits = {\n      x: {\n        min: -3,\n        max: 3\n      },\n      y: {\n        min: -3,\n        max: 3\n      }\n    };\n    this.setTransformObject();\n  }\n\n  setTransformObject() {\n    for (const part in this.loader) {\n      new _TransformOnMouseMove__WEBPACK_IMPORTED_MODULE_0__[\"default\"](this.loader[part], this.limits, this.mouseInput);\n    }\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (MoveLoaderOnMouseMove);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/MoveLoaderOnMouseMove.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _TranslateOnMouseMove__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TranslateOnMouseMove */ \"./app/assets/scripts/modules/TranslateOnMouseMove.js\");\n/* harmony import */ var _MouseInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MouseInput */ \"./app/assets/scripts/modules/MouseInput.js\");\n\n\n\nclass MoveLoaderOnMouseMove {\n  constructor() {\n    this.loader = {\n      wrapper: document.querySelector('.loader'),\n      inner: document.querySelector('.loader__inner')\n    };\n    this.mouseInput = new _MouseInput__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n    this.limits = {\n      x: {\n        min: -3,\n        max: 3\n      },\n      y: {\n        min: -3,\n        max: 3\n      }\n    };\n    this.setTransformObject();\n  }\n\n  setTransformObject() {\n    for (const part in this.loader) {\n      new _TranslateOnMouseMove__WEBPACK_IMPORTED_MODULE_0__[\"default\"](this.loader[part], this.limits, this.mouseInput);\n    }\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (MoveLoaderOnMouseMove);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/MoveLoaderOnMouseMove.js?");
 
 /***/ }),
 
@@ -286,7 +286,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Tra
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ScrollInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ScrollInput */ \"./app/assets/scripts/modules/ScrollInput.js\");\n/* harmony import */ var _Transform__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Transform */ \"./app/assets/scripts/modules/Transform.js\");\n\n\n\nclass Parallax {\n  constructor(element, transLimits, topBoundingOffsets = {\n    top: 0,\n    bottom: 0\n  }, transformFunction) {\n    this.element = element;\n    this.topBoundingOffsets = topBoundingOffsets;\n    this.transLimits = transLimits;\n    this.transformFunction = transformFunction;\n    this.topBounding = this.getTopBoundings();\n    this.relativeScrollInput = this.getRelativeScrollInput();\n    this.animate();\n  }\n\n  getTopBoundings() {\n    const topBounding = this.element.getBoundingClientRect().top;\n    return {\n      start: topBounding - window.innerHeight + this.topBoundingOffsets.top,\n      end: topBounding + this.element.clientHeight + this.topBoundingOffsets.bottom\n    };\n  }\n\n  getRelativeScrollInput() {\n    return new _ScrollInput__WEBPACK_IMPORTED_MODULE_0__[\"default\"](this.topBounding);\n  }\n\n  animate() {\n    new _Transform__WEBPACK_IMPORTED_MODULE_1__[\"default\"](this.element, this.relativeScrollInput, this.transLimits, this.transformFunction);\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Parallax);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Parallax.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ScrollInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ScrollInput */ \"./app/assets/scripts/modules/ScrollInput.js\");\n/* harmony import */ var _TranslateOnScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TranslateOnScroll */ \"./app/assets/scripts/modules/TranslateOnScroll.js\");\n\n\n\nclass Parallax {\n  constructor(element, transLimits, topBoundingOffsets = {\n    top: 0,\n    bottom: 0\n  }, transformFunction) {\n    this.element = element;\n    this.topBoundingOffsets = topBoundingOffsets;\n    this.transLimits = transLimits;\n    this.transformFunction = transformFunction;\n    this.topBounding = this.getTopBoundings();\n    this.relativeScrollInput = this.getRelativeScrollInput();\n    this.animate();\n  }\n\n  getTopBoundings() {\n    const topBounding = this.element.getBoundingClientRect().top;\n    return {\n      start: topBounding - window.innerHeight + this.topBoundingOffsets.top,\n      end: topBounding + this.element.clientHeight + this.topBoundingOffsets.bottom\n    };\n  }\n\n  getRelativeScrollInput() {\n    return new _ScrollInput__WEBPACK_IMPORTED_MODULE_0__[\"default\"](this.topBounding);\n  }\n\n  animate() {\n    new _TranslateOnScroll__WEBPACK_IMPORTED_MODULE_1__[\"default\"](this.element, this.relativeScrollInput, this.transLimits, this.transformFunction);\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Parallax);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Parallax.js?");
 
 /***/ }),
 
@@ -362,27 +362,27 @@ eval("__webpack_require__.r(__webpack_exports__);\nclass TextLineAnimation {\n  
 
 /***/ }),
 
-/***/ "./app/assets/scripts/modules/Transform.js":
-/*!*************************************************!*\
-  !*** ./app/assets/scripts/modules/Transform.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Scroller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Scroller */ \"./app/assets/scripts/modules/Scroller.js\");\n\n\nclass Transform {\n  constructor(element, scrollInput, limits, custumTransFunction) {\n    this.scrollInput = scrollInput;\n    this.limits = limits;\n    this.element = element;\n    this.transformFunction = custumTransFunction ? custumTransFunction : this.transformFunction;\n    _Scroller__WEBPACK_IMPORTED_MODULE_0__[\"default\"].addListener(this.transformFunction.bind(this));\n  }\n\n  getCurrentValue() {\n    const {\n      start,\n      end\n    } = this.limits;\n    return start + this.scrollInput.fraction * (end - start);\n  }\n\n  transformFunction() {\n    this.element.style.transform = `translateX(${this.getCurrentValue()}px)`;\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Transform);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Transform.js?");
-
-/***/ }),
-
-/***/ "./app/assets/scripts/modules/TransformOnMouseMove.js":
+/***/ "./app/assets/scripts/modules/TranslateOnMouseMove.js":
 /*!************************************************************!*\
-  !*** ./app/assets/scripts/modules/TransformOnMouseMove.js ***!
+  !*** ./app/assets/scripts/modules/TranslateOnMouseMove.js ***!
   \************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass TransformOnMouseMove {\n  constructor(element, transLimit, mouseInput) {\n    this.move = () => {\n      this.element.style.transform = `translate(${this.getXvalue()}px, ${this.getYvalue()}px)`;\n    };\n\n    this.element = element;\n    this.transLimit = transLimit;\n    this.mouseInput = mouseInput;\n    this.setMouseEvent();\n  }\n\n  setMouseEvent() {\n    document.body.addEventListener('mousemove', this.move);\n  }\n\n  getXvalue() {\n    const {\n      xFraction\n    } = this.mouseInput;\n    const {\n      min,\n      max\n    } = this.transLimit.x;\n    return min + (max - min) * xFraction;\n  }\n\n  getYvalue() {\n    const {\n      yFraction\n    } = this.mouseInput;\n    const {\n      min,\n      max\n    } = this.transLimit.y;\n    return min + (max - min) * yFraction;\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TransformOnMouseMove);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TransformOnMouseMove.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass TransformOnMouseMove {\n  constructor(element, transLimit, mouseInput) {\n    this.move = () => {\n      this.element.style.transform = `translate(${this.getXvalue()}px, ${this.getYvalue()}px)`;\n    };\n\n    this.element = element;\n    this.transLimit = transLimit;\n    this.mouseInput = mouseInput;\n    this.setMouseEvent();\n  }\n\n  setMouseEvent() {\n    document.body.addEventListener('mousemove', this.move);\n  }\n\n  getXvalue() {\n    const {\n      xFraction\n    } = this.mouseInput;\n    const {\n      min,\n      max\n    } = this.transLimit.x;\n    return min + (max - min) * xFraction;\n  }\n\n  getYvalue() {\n    const {\n      yFraction\n    } = this.mouseInput;\n    const {\n      min,\n      max\n    } = this.transLimit.y;\n    return min + (max - min) * yFraction;\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TransformOnMouseMove);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateOnMouseMove.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/TranslateOnScroll.js":
+/*!*********************************************************!*\
+  !*** ./app/assets/scripts/modules/TranslateOnScroll.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Scroller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Scroller */ \"./app/assets/scripts/modules/Scroller.js\");\n\n\nclass TranslateOnScroll {\n  constructor(element, scrollInput, limits, custumTransFunction) {\n    this.scrollInput = scrollInput;\n    this.limits = limits;\n    this.element = element;\n    this.transformFunction = custumTransFunction ? custumTransFunction : this.transformFunction;\n    _Scroller__WEBPACK_IMPORTED_MODULE_0__[\"default\"].addListener(this.transformFunction.bind(this));\n  }\n\n  getCurrentValue() {\n    const {\n      start,\n      end\n    } = this.limits;\n    return start + this.scrollInput.fraction * (end - start);\n  }\n\n  transformFunction() {\n    this.element.style.transform = `translateX(${this.getCurrentValue()}px)`;\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (TranslateOnScroll);\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/TranslateOnScroll.js?");
 
 /***/ }),
 
