@@ -1,6 +1,5 @@
 import AnimateLinksOnHover from './modules/AnimateLinksOnHover';
 import MoveLoaderOnMouseMove from './modules/MoveLoaderOnMouseMove';
-import AnimateContactMeLinksOnWaypoint from './modules/AnimateContactMeLinksOnWaypoint';
 import AnimateAwardsOnWaypoint from './modules/AnimateAwardsOnWaypoint';
 import AnimateMyNameOnScroll from './modules/AnimateMyNameOnScroll';
 import Preload from './modules/Preload';
@@ -41,7 +40,6 @@ setTimeout(() => {
     new ImageHoverEffect();
     new AnimateMyNameOnScroll();
     new AnimateAwardsOnWaypoint();
-    new AnimateContactMeLinksOnWaypoint();
     new MoveLoaderOnMouseMove();
     new AnimateLinksOnHover();
   }
