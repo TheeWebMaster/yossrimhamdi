@@ -5,8 +5,8 @@ class AnimateContactMeLinksOnWaypoint {
   constructor() {
     this.links = document.querySelectorAll('.contact-me__links > li');
 
-    // this.hideLinks();
-    // this.setWaypoints();
+    this.hideLinks();
+    this.setWaypoints();
   }
 
   setWaypoints() {

@@ -41,10 +41,11 @@ setTimeout(() => {
     new ImageHoverEffect();
     new AnimateMyNameOnScroll();
     new AnimateAwardsOnWaypoint();
-    new AnimateContactMeLinksOnWaypoint();
+
     new MoveLoaderOnMouseMove();
   }
 }, 1000);
 
 new Preload();
 new AnimateLinksOnHover();
+new AnimateContactMeLinksOnWaypoint();

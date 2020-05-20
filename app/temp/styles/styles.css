@@ -677,7 +677,8 @@ body {
     cursor: none;
   }.line-animation {
   opacity: 0;
-}.line-animation span {
+}.line-animation__outer-span,
+  .line-animation__inner-span {
     display: block;
   }.line-animation__outer-span {
     overflow: hidden;
