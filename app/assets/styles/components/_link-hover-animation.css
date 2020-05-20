@@ -17,13 +17,14 @@
       left: 0;
     }
 
-    & .link-hover-animation__letter-wrapper:first-child {
+    .link-hover-animation__letter-wrapper:first-child {
       text-transform: capitalize;
     }
   }
 
   &__capital {
     white-space: nowrap;
+    text-transform: uppercase;
     position: absolute;
     left: 0;
 

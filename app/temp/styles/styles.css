@@ -716,6 +716,7 @@ body {
       text-transform: capitalize;
     }.link-hover-animation__capital {
     white-space: nowrap;
+    text-transform: uppercase;
     position: absolute;
     left: 0;
   }.link-hover-animation__capital .link-hover-animation__letter {
