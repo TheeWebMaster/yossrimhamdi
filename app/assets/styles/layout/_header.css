@@ -100,6 +100,10 @@
     overflow: hidden;
     transform: translateX(100%);
 
+    @supports (-moz-appearance: none) {
+      padding-right: 1.2em;
+    }
+
     &--is-fully-visible .header__nav-link--active::before {
       width: 100%;
       transform: translate(0.5em, -50%);
@@ -173,6 +177,10 @@
     left: 1.2em;
     transition: transform 400ms;
     clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+
+    @supports (-moz-appearance: none) {
+      top: -1px;
+    }
 
     @mixin atLarge {
       left: 1em;
