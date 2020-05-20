@@ -407,6 +407,8 @@ body {
       font-size: 8.5rem;
       padding-bottom: 6px
   }
+  }.project__link {
+    display: block;
   }.project__marqee {
     color: #ff0d00;
     word-spacing: 15px;

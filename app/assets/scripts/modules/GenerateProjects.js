@@ -2,8 +2,8 @@ class GenerateProjects {
   constructor() {
     this.projectsContainer = document.querySelector('.projects-container');
     this.projects = {
-      title: ['roots', 'mackmedia', 'ammolite', 'grape garage', 'dorfjungs', 'mueller', 'my portfolio'],
-      link: ['#', '#', '#', '#', '#', '#', 'https://yossrimhamdi.netlify.com'],
+      title: ['bcharity', 'mackmedia', 'ammolite', 'grape garage', 'dorfjungs', 'mueller', 'my portfolio'],
+      link: ['https://bcharity-thewebmaster.netlify.com', '#', '#', '#', '#', '#', 'https://yossrimhamdi.netlify.com'],
       marqee:
         'javascript animations smooth wordpress tansition parallax react nextjs scrolling smoovy gulp post-css webpack node-js automation github git npm',
     };
@@ -27,7 +27,7 @@ class GenerateProjects {
           <p class="project__marqee">${this.projects.marqee}</p>
           <p class="project__marqee project__marqee--left-content-support">${this.projects.marqee}</p>
         </div>
-        <a href="${projectLink}" target="_blank">
+        <a class="project__link" href="${projectLink}" target="_blank">
           <div class="project__image-container" data-project-title="${projectTitle.split(' ').join('-')}"></div>
         <a/>
       </div>

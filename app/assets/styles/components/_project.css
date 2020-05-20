@@ -45,6 +45,10 @@
     }
   }
 
+  &__link {
+    display: block;
+  }
+
   &__marqee {
     color: $mainRed;
     word-spacing: 15px;
