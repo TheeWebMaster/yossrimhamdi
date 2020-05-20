@@ -700,7 +700,16 @@ body {
 }.link-hover-animation__lower {
     text-transform: lowercase;
     transition: color 400ms;
-  }.link-hover-animation__capital {
+    position: ralative;
+  }.link-hover-animation__lower::before {
+      content: '';
+      width: 75%;
+      height: 3px;
+      background-color: #000;
+      position: absolute;
+      bottom: 9px;
+      left: 0;
+    }.link-hover-animation__capital {
     position: absolute;
     left: 0;
   }.link-hover-animation__capital .link-hover-animation__letter {
@@ -713,7 +722,8 @@ body {
     vertical-align: top;
   }.link-hover-animation__letter {
     transition: transform 1100ms cubic-bezier(0.81, 0.69, 0.03, 0.93);
-    text-decoration: underline;
+    -webkit-text-decoration: underline #000;
+            text-decoration: underline #000;
   }.link-hover-animation:hover .link-hover-animation__capital .link-hover-animation__letter {
       transform: translateX(0);
     }.link-hover-animation:hover .link-hover-animation__lower .link-hover-animation__letter {

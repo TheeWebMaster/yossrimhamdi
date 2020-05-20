@@ -4,6 +4,17 @@
   &__lower {
     text-transform: lowercase;
     transition: color 400ms;
+    position: ralative;
+
+    &::before {
+      content: '';
+      width: 75%;
+      height: 3px;
+      background-color: $mainBlack;
+      position: absolute;
+      bottom: 9px;
+      left: 0;
+    }
   }
 
   &__capital {
@@ -27,7 +38,7 @@
 
   &__letter {
     transition: transform 1100ms cubic-bezier(0.81, 0.69, 0.03, 0.93);
-    text-decoration: underline;
+    text-decoration: underline $mainBlack;
   }
 
   &:hover {
