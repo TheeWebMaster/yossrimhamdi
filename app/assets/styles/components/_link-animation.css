@@ -1,0 +1,40 @@
+.link-animation {
+  position: relative;
+
+  &__lower {
+    text-transform: lowercase;
+    transition: color 400ms;
+  }
+
+  &__capital {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .link-animation__letter {
+      transform: translateX(-100%);
+    }
+  }
+
+  &__letter-wrapper {
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  &__letter {
+    transition: transform 1100ms cubic-bezier(0.81, 0.69, 0.03, 0.93);
+    display: inline-block;
+  }
+
+  &:hover {
+    .link-animation__capital .link-animation__letter {
+      transform: translateX(0);
+    }
+    .link-animation__lower .link-animation__letter {
+      transform: translateX(100%);
+    }
+    .link-animation__lower {
+      color: $mainRed;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import './modules/LinkHoverAnimation';
 import MoveLoaderOnMouseMove from './modules/MoveLoaderOnMouseMove';
 import AnimateContactMeLinksOnWaypoint from './modules/AnimateContactMeLinksOnWaypoint';
 import AnimateAwardsOnWaypoint from './modules/AnimateAwardsOnWaypoint';
