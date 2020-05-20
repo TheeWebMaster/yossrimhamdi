@@ -4,28 +4,30 @@
   &__lower {
     text-transform: lowercase;
     transition: color 400ms;
-    border: 1px solid green;
   }
 
   &__capital {
     position: absolute;
     left: 0;
-    border: 1px solid red;
 
     .link-hover-animation__letter {
       transform: translateX(-100%);
     }
   }
 
+  &__letter-wrapper,
+  &__letter {
+    display: inline-block;
+  }
+
   &__letter-wrapper {
     overflow: hidden;
     vertical-align: top;
-    display: inline-block;
   }
 
   &__letter {
     transition: transform 1100ms cubic-bezier(0.81, 0.69, 0.03, 0.93);
-    display: inline-block;
+    text-decoration: underline;
   }
 
   &:hover {
