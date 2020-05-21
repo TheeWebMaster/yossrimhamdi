@@ -84,7 +84,6 @@ class Preload {
 
   enableMouseInteractions = () => {
     this.clearInterval();
-    console.log(this.timer.reached);
 
     if (this.timer.reached) {
       this.enableScrolling();
