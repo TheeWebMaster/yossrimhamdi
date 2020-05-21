@@ -31,6 +31,7 @@ class Preload {
       start: 0,
       interval: null,
       limit: 300,
+      reached: false,
     };
 
     this.setReadyStateEvent();
@@ -68,7 +69,9 @@ class Preload {
   };
 
   showPageContent = () => {
-    if (this.reachedTimeLimit()) {
+    this.checkTimer();
+
+    if (this.timer.reached) {
       this.clearInterval();
       this.hideClickAndHoldMessage();
       this.animateNavAndAvailabilityMessage();
@@ -81,8 +84,9 @@ class Preload {
 
   enableMouseInteractions = () => {
     this.clearInterval();
+    console.log(this.timer.reached);
 
-    if (this.reachedTimeLimit()) {
+    if (this.timer.reached) {
       this.enableScrolling();
       this.cursor.setMouseEvent();
       new CursorInteractions();
@@ -101,8 +105,8 @@ class Preload {
     scroller.removeListener(this.disableScrolling);
   }
 
-  reachedTimeLimit() {
-    return Date.now() - this.timer.start >= this.timer.limit;
+  checkTimer() {
+    this.timer.reached = Date.now() - this.timer.start >= this.timer.limit;
   }
 
   showClickAndHoldMessage() {
