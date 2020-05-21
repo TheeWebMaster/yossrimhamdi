@@ -45,4 +45,6 @@ setTimeout(() => {
   }
 }, 1000);
 
-new Preload();
+if (window.innerWidth >= 1024) {
+  new Preload();
+}

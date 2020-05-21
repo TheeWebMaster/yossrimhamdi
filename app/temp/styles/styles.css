@@ -239,9 +239,11 @@ body {
       left: 30vw;
       transform: translate(-100%, 50%)
   }
-  }.header__availability-message li {
-      opacity: 0;
-    }.header__nav {
+
+      .header__availability-message li {
+        opacity: 0;
+      }
+  }.header__nav {
     line-height: 2.3em;
     text-align: right;
     counter-reset: nav-counter;
@@ -264,7 +266,9 @@ body {
       }.header__nav-list-wrapper {
     padding-right: 1em;
     overflow: hidden;
-    transform: translateX(100%);
+  }@media only screen and (min-width: 1024px) {.header__nav-list-wrapper {
+      transform: translateX(100%)
+  }
   }@supports (-moz-appearance: none) {.header__nav-list-wrapper {
       padding-right: 1.2em
   }

@@ -59,10 +59,10 @@
       bottom: 0;
       left: 30vw;
       transform: translate(-100%, 50%);
-    }
 
-    li {
-      opacity: 0;
+      li {
+        opacity: 0;
+      }
     }
   }
   &__nav {
@@ -98,7 +98,10 @@
   &__nav-list-wrapper {
     padding-right: 1em;
     overflow: hidden;
-    transform: translateX(100%);
+
+    @mixin atLarge {
+      transform: translateX(100%);
+    }
 
     @supports (-moz-appearance: none) {
       padding-right: 1.2em;
