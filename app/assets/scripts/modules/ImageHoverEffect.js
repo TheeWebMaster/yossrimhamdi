@@ -6,7 +6,7 @@ class ImageHoverEffect {
   constructor() {
     this.imagesContainer = document.querySelectorAll('.project__image-container');
     this.imagesDim = [
-      { width: 1000, height: 627 },
+      { width: 1029, height: 513 },
       { width: 1920, height: 907 },
       { width: 1865, height: 902 },
       { width: 1440, height: 747 },
