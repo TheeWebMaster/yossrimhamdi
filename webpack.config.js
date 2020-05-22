@@ -1,15 +1,15 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: ['./src/scripts/App.js', './src/styles/styles.css']
+    app: ['./src/scripts/App.js', './src/styles/styles.css'],
   },
   output: {
     path: `${__dirname}/dist/`,
-    filename: '[name].js',
-    publicPath: '/'
+    filename: '[contenthash].js',
+    publicPath: '/',
   },
   mode: 'development',
   module: {
@@ -21,27 +21,23 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['transform-class-properties']
-          }
-        }
+            plugins: ['transform-class-properties'],
+          },
+        },
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          'postcss-loader'
-        ]
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, { loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader'],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'test.css'
+      filename: '[contenthash].css',
     }),
     new HTMLWebpackPlugin({
-      template: './static/index.html'
+      template: './static/index.html',
     }),
-    new CleanWebpackPlugin()
-  ]
-}
+    new CleanWebpackPlugin(),
+  ],
+};
