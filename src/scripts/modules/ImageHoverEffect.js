@@ -20,7 +20,6 @@ class ImageHoverEffect {
   setImageContainerHeight() {
     this.imagesContainer.forEach((imageContainer, i) => {
       const width = imageContainer.clientWidth;
-      console.log(width);
       imageContainer.style.height = `${this.imagesDim[i].height / (this.imagesDim[i].width / width)}px`;
     });
   }
