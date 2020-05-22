@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -12,7 +13,7 @@ module.exports = {
     filename: '[contenthash].js',
     publicPath: '/',
   },
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
@@ -44,6 +45,14 @@ module.exports = {
       patterns: [{ from: 'static/images', to: 'images' }],
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserWebpackPlugin({
+        extractComments: true,
+      }),
+    ],
+  },
   devServer: {
     port: 3000,
   },
