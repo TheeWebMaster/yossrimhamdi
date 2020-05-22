@@ -1,4 +1,4 @@
-import scroller from './scroller';
+import scroller from './Scroller';
 
 class Waypoint {
   constructor(element, handler, offset) {

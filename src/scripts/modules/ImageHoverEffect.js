@@ -30,9 +30,9 @@ class ImageHoverEffect {
       new HoverEffect({
         parent: imageContainer,
         intensity: 0.2,
-        image1: './../assets/images/displacements/transparent.png',
-        image2: `../../assets/images/projects/${imageTitle}/${imageTitle}.jpg`,
-        displacementImage: '../../assets/images/displacements/cloud.jpg',
+        image1: './images/displacements/transparent.png',
+        image2: `./images/projects/${imageTitle}/${imageTitle}.jpg`,
+        displacementImage: './images/displacements/cloud.jpg',
         imagesRatio: this.imagesDim[i].height / this.imagesDim[i].width,
       });
     });

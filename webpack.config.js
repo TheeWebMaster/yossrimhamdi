@@ -1,19 +1,50 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
-  entry: './app/assets/scripts/App.js',
+  entry: {
+    app: ['./src/scripts/App.js', './src/styles/styles.css'],
+  },
   output: {
-    filename: 'App.js',
+    path: `${__dirname}/dist/`,
+    filename: '[contenthash].js',
+    publicPath: '/',
   },
   mode: 'development',
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
+        test: /\.js$/i,
         exclude: /node_modules/,
-        query: {
-          plugins: ['transform-class-properties'],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['transform-class-properties'],
+          },
         },
       },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, { loader: 'css-loader', options: { importLoaders: 1 } }, 'postcss-loader'],
+      },
     ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[contenthash].css',
+    }),
+    new HTMLWebpackPlugin({
+      template: './static/index.html',
+    }),
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'static/images', to: 'images' }],
+    }),
+  ],
+  devServer: {
+    port: 3000,
   },
 };
