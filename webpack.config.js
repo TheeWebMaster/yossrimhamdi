@@ -15,7 +15,7 @@ module.exports = {
     filename: '[contenthash].js',
     publicPath: '/',
   },
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
