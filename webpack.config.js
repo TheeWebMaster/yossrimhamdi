@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: ['./src/scripts/App.js', './src/styles/styles.scss']
+    app: ['./src/scripts/App.js', './src/styles/styles.css']
   },
   output: {
     path: `${__dirname}/dist/`,
@@ -26,8 +26,12 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'postcss-loader'
+        ]
       }
     ]
   },
