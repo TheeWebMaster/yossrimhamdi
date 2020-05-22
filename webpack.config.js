@@ -44,4 +44,7 @@ module.exports = {
       patterns: [{ from: 'static/images', to: 'images' }],
     }),
   ],
+  devServer: {
+    port: 3000,
+  },
 };
