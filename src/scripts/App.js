@@ -19,7 +19,9 @@ import GenerateCostumHTMLLinksDOM from './modules/GenerateCostumHTMLLinksDOM';
 import GenerateProjects from './modules/GenerateProjects';
 import ImageHoverEffect from './modules/ImageHoverEffect';
 
-setTimeout(() => {
+window.addEventListener('load', runAnimationCode);
+
+function runAnimationCode() {
   new ScrollBar();
   new GenerateProjects();
   new GenerateCostumHTMLLinksDOM();
@@ -43,7 +45,7 @@ setTimeout(() => {
     new MoveLoaderOnMouseMove();
     new AnimateLinksOnHover();
   }
-}, 1000);
+}
 
 if (window.innerWidth >= 1024) {
   new Preload();
