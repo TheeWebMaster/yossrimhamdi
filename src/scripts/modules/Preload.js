@@ -34,14 +34,14 @@ class Preload {
       reached: false,
     };
 
-    this.setReadyStateEvent();
+    this.setLoadEvent();
     this.animateMyNameAndAdListIntoView();
 
     scroller.addListener(this.disableScrolling);
   }
 
-  setReadyStateEvent() {
-    document.addEventListener('readystatechange', this.handleReadyState);
+  setLoadEvent() {
+    window.addEventListener('load', this.handleReadyState);
   }
 
   setMousePressEvents() {
@@ -52,15 +52,13 @@ class Preload {
   handleReadyState = e => {
     const { circle, wrapper } = this.DOM.loader;
 
-    if (e.target.readyState === 'complete') {
-      circle.style.animation = 'loaded 2000ms forwards';
+    circle.style.animation = 'loaded 2000ms forwards';
 
-      setTimeout(() => {
-        this.showClickAndHoldMessage();
-        this.setMousePressEvents();
-        wrapper.classList.add('loader--interactive');
-      }, 1900);
-    }
+    setTimeout(() => {
+      this.showClickAndHoldMessage();
+      this.setMousePressEvents();
+      wrapper.classList.add('loader--interactive');
+    }, 1900);
   };
 
   showPageContentIfReachedTimeLimit = () => {
