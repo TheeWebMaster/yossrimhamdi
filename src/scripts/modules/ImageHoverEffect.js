@@ -6,13 +6,13 @@ class ImageHoverEffect {
   constructor() {
     this.imagesContainer = document.querySelectorAll('.project__image-container');
     this.imagesDim = [
-      { width: 1029, height: 513 },
-      { width: 1920, height: 907 },
-      { width: 1865, height: 902 },
-      { width: 1440, height: 747 },
-      { width: 1024, height: 576 },
-      { width: 1107, height: 676 },
-      { width: 907, height: 606 },
+      { width: 476, height: 237 }, //bcharity
+      { width: 1100, height: 520 }, //mackmedia
+      { width: 820, height: 396 }, //ammolite
+      { width: 1030, height: 534 }, //dorfungs
+      { width: 1024, height: 576 }, //dorfjungs
+      { width: 600, height: 366 }, // mueeler
+      { width: 709, height: 443 }, // my portfilio
     ];
     this.setImageContainerHeight();
     this.setImageHoverEffect();
@@ -20,6 +20,7 @@ class ImageHoverEffect {
   setImageContainerHeight() {
     this.imagesContainer.forEach((imageContainer, i) => {
       const width = imageContainer.clientWidth;
+      console.log(width);
       imageContainer.style.height = `${this.imagesDim[i].height / (this.imagesDim[i].width / width)}px`;
     });
   }
