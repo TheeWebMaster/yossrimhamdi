@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -39,5 +40,8 @@ module.exports = {
       template: './static/index.html',
     }),
     new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: 'static/images', to: 'images' }],
+    }),
   ],
 };
