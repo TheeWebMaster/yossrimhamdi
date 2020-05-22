@@ -3,6 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
+const { default: ImageMinWebpackPlugin } = require('imagemin-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -43,6 +44,10 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [{ from: 'static/images', to: 'images' }],
+    }),
+    new ImageMinWebpackPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      disable: process.env.NODE_ENV !== 'production',
     }),
   ],
   optimization: {
