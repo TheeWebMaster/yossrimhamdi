@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const ImageMinWebpackPlugin = require('imagemin-webpack-plugin').default;
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -56,6 +57,7 @@ module.exports = {
       new TerserWebpackPlugin({
         extractComments: false,
       }),
+      new OptimizeCssAssetsWebpackPlugin(),
     ],
   },
   devServer: {
