@@ -55,7 +55,7 @@ module.exports = {
     }),
   ],
   optimization: {
-    minimize: true,
+    minimize: process.env.NODE_ENV === 'production',
     minimizer: [
       new TerserWebpackPlugin({
         extractComments: false,
@@ -65,6 +65,6 @@ module.exports = {
   },
   devServer: {
     port: 3000,
-    open: 'chrome',
+    // open: 'chrome',
   },
 };
