@@ -15,7 +15,6 @@ module.exports = {
     filename: '[contenthash].js',
     publicPath: '/',
   },
-  mode: 'production',
   module: {
     rules: [
       {
@@ -52,7 +51,7 @@ module.exports = {
     }),
     new ImageMinWebpackPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
-      disable: process.env.NODE_ENV !== 'production',
+      disable: process.env.NODE_ENV === 'development',
     }),
   ],
   optimization: {
