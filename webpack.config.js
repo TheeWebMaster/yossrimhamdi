@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/dist/`,
-    filename: process.env.NODE_ENV === 'production' ? 'app.min.[contenthash].js' : 'app.[hash].js',
+    filename: process.env.NODE_ENV === 'production' ? '[name].[contenthash].min.js' : '[name].[hash].js',
     publicPath: '/',
   },
   module: {
@@ -40,7 +40,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles.min.[contenthash].css',
+      filename: 'styles.[contenthash].min.css',
     }),
     new HTMLWebpackPlugin({
       template: './static/index.html',
@@ -62,6 +62,20 @@ module.exports = {
       }),
       new OptimizeCssAssetsWebpackPlugin(),
     ],
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+            return `chunk.${packageName.replace('@', '')}`;
+          },
+        },
+      },
+    },
   },
   devServer: {
     port: 3000,
