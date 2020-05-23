@@ -25,8 +25,8 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-easy-import": "^3.0.0",
     "postcss-hexrgba": "^2.0.0",
-    "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-mixins": "^6.2.3",
     "postcss-nested": "^4.2.1",
@@ -38,8 +38,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "hover-effect": "^1.1.0",
     "gsap": "^3.2.6",
+    "hover-effect": "^1.1.0",
     "smooth-scrollbar": "^8.5.2",
     "three": "^0.115.0"
   }

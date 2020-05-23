@@ -1,6 +1,8 @@
 module.exports = {
   plugins: {
-    'postcss-import': {},
+    'postcss-easy-import': {
+      prefix: '_',
+    },
     'postcss-mixins': {},
     'postcss-nested': {},
     'postcss-hexrgba': {},
