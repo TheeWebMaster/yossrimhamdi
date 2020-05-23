@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/dist/`,
-    filename: '[contenthash].js',
+    filename: 'app.min.[contenthash].js',
     publicPath: '/',
   },
   module: {
@@ -40,7 +40,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[contenthash].css',
+      filename: 'styles.min.[contenthash].css',
     }),
     new HTMLWebpackPlugin({
       template: './static/index.html',
@@ -66,5 +66,6 @@ module.exports = {
   devServer: {
     port: 3000,
     open: 'chrome',
+    writeToDisk: true,
   },
 };
