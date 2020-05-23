@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/dist/`,
-    filename: 'app.min.[contenthash].js',
+    filename: process.env.NODE_ENV === 'production' ? 'app.min.[contenthash].js' : 'app.[hash].js',
     publicPath: '/',
   },
   module: {
@@ -31,7 +31,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
           { loader: 'css-loader', options: { importLoaders: 1 } },
           'postcss-loader',
         ],
@@ -67,5 +67,6 @@ module.exports = {
     port: 3000,
     open: 'chrome',
     writeToDisk: true,
+    hot: true,
   },
 };
