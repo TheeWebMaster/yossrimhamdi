@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/dist/`,
-    filename: process.env.NODE_ENV === 'production' ? 'app.[contenthash].min.js' : 'chunk.[hash].js',
+    filename: process.env.NODE_ENV === 'production' ? 'app.[contenthash].min.js' : 'app.[hash].js',
     chunkFilename: 'chunk.[id].[contenthash].js',
     publicPath: '/',
   },
