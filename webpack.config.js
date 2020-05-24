@@ -66,7 +66,7 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       maxInitialRequests: Infinity,
-      minSize: 10000,
+      minSize: 30000,
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
