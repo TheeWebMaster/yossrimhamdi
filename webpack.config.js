@@ -12,8 +12,8 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/dist/`,
-    filename: process.env.NODE_ENV === 'production' ? 'app.[contenthash].min.js' : 'app.[hash].js',
-    chunkFilename: 'chunk.[id].[contenthash].js',
+    filename: process.env.NODE_ENV === 'production' ? '[contenthash].js' : 'app.[hash].js',
+    chunkFilename: '[contenthash].js',
     publicPath: '/',
   },
   module: {
@@ -41,7 +41,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles.[contenthash].min.css',
+      filename: '[contenthash].css',
     }),
     new HTMLWebpackPlugin({
       template: './static/index.html',
@@ -66,17 +66,18 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       maxInitialRequests: Infinity,
-      minSize: 0,
+      minSize: 10000,
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name(module) {
             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-            return `chunk.${packageName.replace('@', '')}`;
+            return `${packageName.replace('@', '')}`;
           },
         },
       },
     },
+    runtimeChunk: true,
   },
   devServer: {
     port: 3000,
