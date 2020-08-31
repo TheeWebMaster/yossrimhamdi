@@ -13,13 +13,16 @@ class AnimateMyNameOnScroll {
       transform: { start: -300, end: 0 },
       bounding: {
         top: document.querySelector('.me__my-name').clientHeight / 2,
-        bottom: document.querySelector('.me__my-name').clientHeight + 300 - window.innerHeight,
+        bottom:
+          document.querySelector('.me__my-name').clientHeight +
+          300 -
+          window.innerHeight,
       },
     };
     this.waypoints = [
       { offset: 300, text: 'hello!' },
       { offset: 150, text: 'who am I?' },
-      { offset: 40, text: 'yossri' },
+      { offset: 40, text: 'yosri' },
     ];
 
     this.setupParallax();
@@ -29,7 +32,12 @@ class AnimateMyNameOnScroll {
   }
 
   setupParallax() {
-    new Parallax(this.DOM.myName, this.limits.transform, this.limits.bounding, this.transformFunction);
+    new Parallax(
+      this.DOM.myName,
+      this.limits.transform,
+      this.limits.bounding,
+      this.transformFunction,
+    );
   }
 
   transformFunction() {
